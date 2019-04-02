@@ -18,6 +18,7 @@ import javax.mail.SendFailedException;
 
 public class register extends AppCompatActivity {
     private boolean idCheckValue = false;
+    private boolean AuthDone = false;
     private EditText et_email;
     private String Auth;
     @Override
@@ -59,25 +60,27 @@ public class register extends AppCompatActivity {
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String mailadd = et_email.getText().toString() + "@pusan.ac.kr";
-                String mailcontent = "Sotobi 회원가입을 위한 인증 메일입니다. - 인증 문자 : ";
-                if(mailadd.length()<=12){
-                    Toast.makeText(getApplicationContext(), "이메일을 입력하세요.", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    try {
-                        MailSender gMailSender = new MailSender("zz5473@pusan.ac.kr", "Redsky76^");
-                        Auth = gMailSender.getEmailCode();
-                        mailcontent+=Auth;
-                        //GMailSender.sendMail(제목, 본문내용, 받는사람);
-                        gMailSender.sendMail("[Sotobi]회원가입 인증 메일", mailcontent, mailadd);
-                        Toast.makeText(getApplicationContext(), "이메일을 성공적으로 보냈습니다.", Toast.LENGTH_SHORT).show();
-                    } catch (SendFailedException e) {
-                        Toast.makeText(getApplicationContext(), "이메일 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show();
-                    } catch (MessagingException e) {
-                        Toast.makeText(getApplicationContext(), "인터넷 연결을 확인해주십시오", Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                if(!AuthDone){
+                    String mailadd = et_email.getText().toString() + "@pusan.ac.kr";
+                    String mailcontent = "Sotobi 회원가입을 위한 인증 메일입니다. - 인증 문자 : ";
+                    if(mailadd.length()<=12){
+                        Toast.makeText(getApplicationContext(), "이메일을 입력하세요.", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        try {
+                            MailSender gMailSender = new MailSender("zz5473@pusan.ac.kr", "Redsky76^");
+                            Auth = gMailSender.getEmailCode();
+                            mailcontent+=Auth;
+                            //GMailSender.sendMail(제목, 본문내용, 받는사람);
+                            gMailSender.sendMail("[Sotobi]회원가입 인증 메일", mailcontent, mailadd);
+                            Toast.makeText(getApplicationContext(), "이메일을 성공적으로 보냈습니다.", Toast.LENGTH_SHORT).show();
+                        } catch (SendFailedException e) {
+                            Toast.makeText(getApplicationContext(), "이메일 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show();
+                        } catch (MessagingException e) {
+                            Toast.makeText(getApplicationContext(), "인터넷 연결을 확인해주십시오", Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -88,21 +91,21 @@ public class register extends AppCompatActivity {
         codeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText et_code = (EditText)findViewById(R.id.register_code);
-                if(et_code.getText().toString().equals(Auth)){
-                    Toast.makeText(getApplicationContext(), "인증완료", Toast.LENGTH_SHORT).show();
-                    codeBtn.setText("완료");
-                    et_code.setText("-");
-                    et_code.setFocusableInTouchMode(false);
-                    et_email.setText("-");
-                    et_email.setFocusableInTouchMode(false);
-                    emailBtn.setText("완료");
+                if(!AuthDone){
+                    EditText et_code = (EditText)findViewById(R.id.register_code);
+                    if(et_code.getText().toString().equals(Auth)){
+                        Toast.makeText(getApplicationContext(), "인증완료", Toast.LENGTH_SHORT).show();
+                        codeBtn.setText("완료");
+                        et_code.setFocusableInTouchMode(false);
+                        et_email.setFocusableInTouchMode(false);
+                        emailBtn.setText("완료");
+                        AuthDone = true;
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "인증실패", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
-                else{
-                    Toast.makeText(getApplicationContext(), "인증실패", Toast.LENGTH_SHORT).show();
-                }
-
              }
         });
 
