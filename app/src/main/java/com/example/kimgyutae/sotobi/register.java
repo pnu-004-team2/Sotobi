@@ -61,10 +61,14 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String str = "인증 번호 : " + AuthNum;
+                String mailadd = et_email.getText().toString() + "@pusan.ac.kr";
+                if(mailadd.charAt('@')==0){
+                    Toast.makeText(getApplicationContext(), "이메일을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
                 try {
                     MailSender gMailSender = new MailSender("zz5473@pusan.ac.kr", "Redsky76^");
                     //GMailSender.sendMail(제목, 본문내용, 받는사람);
-                    gMailSender.sendMail("[Sotobi]회원가입 인증 메일", str, et_email.toString()+"@pusan.ac.kr");
+                    gMailSender.sendMail("[Sotobi]회원가입 인증 메일", str, mailadd);
                     Toast.makeText(getApplicationContext(), "이메일을 성공적으로 보냈습니다.", Toast.LENGTH_SHORT).show();
                 } catch (SendFailedException e) {
                     Toast.makeText(getApplicationContext(), "이메일 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show();
@@ -73,8 +77,6 @@ public class register extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
                 }
         });
 
