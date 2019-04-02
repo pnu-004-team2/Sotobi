@@ -134,13 +134,23 @@
                 android:layout_height="35dp"
                 android:layout_gravity="left"
                 android:gravity="center"
-                android:hint="E-MAIL 입력"
+                android:hint="E-MAIL"
                 android:maxLength="10"
-                android:layout_weight="1"
+                android:layout_weight="1.1"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:inputType="textNoSuggestions"
                 android:background="@drawable/input_layout"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:layout_weight="1.2"
+                android:text= " @ pusan.ac.kr"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                />
             // 이메일 인증 버튼
             <Button
                 android:id="@+id/email_check"
@@ -148,7 +158,7 @@
                 android:layout_height="35dp"
                 android:layout_gravity="right"
                 android:layout_marginLeft="5dp"
-                android:layout_weight="3"
+                android:layout_weight="1.4"
                 android:text="인증"
                 android:textSize="15sp"
                 android:textStyle="bold"
