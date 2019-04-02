@@ -12,13 +12,12 @@ public class login extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // 로그인 버튼
-        //gogogogoo
         Button loginBtn = (Button)findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(login.this, mainmenu.class);
-                //startActivity(intent);
+                Intent intent = new Intent(login.this, modeselect.class);
+                startActivity(intent);
                 finish();
             }
         });
