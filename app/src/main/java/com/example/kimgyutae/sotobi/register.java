@@ -129,7 +129,7 @@ public class register extends AppCompatActivity {
                     if(pw.length() > 0){
                         if(pw.equals(pw_same)) {
                             if(pName.length() > 0){
-                                if(email.length() > 0){
+                                if(AuthDone){
                                     if(phone.length() > 0){
                                        // 서버 전송
                                        Toast.makeText(getApplicationContext(), "가입 완료", Toast.LENGTH_SHORT).show();
@@ -158,23 +158,5 @@ public class register extends AppCompatActivity {
             }
         });
     }
-    // 회원가입 유형 선택 editText 잠금
-    public void radioCheck(RadioButton radio_person, RadioButton radio_team, EditText rpn, EditText rtn) {
-        if (radio_person.isChecked()) {
-            rpn.setClickable(true);
-            rpn.setFocusable(true);
-            rpn.setFocusableInTouchMode(true);
-            rtn.setClickable(false);
-            rtn.setFocusable(false);
-            rtn.setText(null);
-        }
-        else if (radio_team.isChecked()) {
-            rpn.setClickable(false);
-            rpn.setFocusable(false);
-            rpn.setText(null);
-            rtn.setClickable(true);
-            rtn.setFocusable(true);
-            rtn.setFocusableInTouchMode(true);
-        }
-    }
+
 }
