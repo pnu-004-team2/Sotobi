@@ -27,7 +27,7 @@ public class modeselect extends AppCompatActivity {
         });
         // 승차 요청
         Button pickme = (Button)findViewById(R.id.gotopickme);
-        rent.setOnClickListener(new View.OnClickListener() {
+        pickme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, pickme.class);
@@ -37,7 +37,7 @@ public class modeselect extends AppCompatActivity {
         });
         // 동승 찾기
         Button pickup = (Button)findViewById(R.id.gotopickup);
-        rent.setOnClickListener(new View.OnClickListener() {
+        pickup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, pickup.class);
