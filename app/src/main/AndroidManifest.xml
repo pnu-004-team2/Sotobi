@@ -18,7 +18,13 @@
         </activity>
         <activity android:name=".login" />
         <activity android:name=".register" />
+        <activity android:name=".modeselect" />
+        <activity android:name=".rent" />
+        <activity android:name=".pickme" />
+        <activity android:name=".pickup" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
 </manifest>

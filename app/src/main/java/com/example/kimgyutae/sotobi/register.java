@@ -154,6 +154,8 @@ public class register extends AppCompatActivity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(register.this, login.class);
+                startActivity(intent);
                 finish();
             }
         });
