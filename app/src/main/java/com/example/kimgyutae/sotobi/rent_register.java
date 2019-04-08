@@ -20,28 +20,10 @@ public class rent_register extends AppCompatActivity {
     ArrayList<String> timeList_min;
     ArrayAdapter<String> timeAdapter_min;
 
-<<<<<<< HEAD
-=======
-=======
-import android.widget.Button;
-
-public class rent_register extends AppCompatActivity {
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
-import android.widget.Button;
-
-public class rent_register extends AppCompatActivity {
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcanrent);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
         timeList = new ArrayList<>();
         timeList.add("0");
         timeList.add("1");
@@ -89,13 +71,6 @@ public class rent_register extends AppCompatActivity {
         spinner_min = (Spinner)findViewById(R.id.rent_min);
         spinner_min.setAdapter(timeAdapter_min);
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
         Button agreerentBtn = (Button)findViewById(R.id.agreerentBtn);
         agreerentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,21 +89,7 @@ public class rent_register extends AppCompatActivity {
             }
         });
     }
-<<<<<<< HEAD
-    
-=======
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(rent_register.this, rent.class);

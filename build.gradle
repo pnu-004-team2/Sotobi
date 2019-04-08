@@ -8,17 +8,6 @@ buildscript {
 
     }
     dependencies {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        classpath 'com.android.tools.build:gradle:3.0.1'
-
-
-=======
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
         classpath 'com.android.tools.build:gradle:3.3.2'
 
 
@@ -34,19 +23,7 @@ allprojects {
 
         maven {
             url 'https://navercorp.bintray.com/maps'
-<<<<<<< HEAD
         }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-=======
-    }
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
-    }
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
 
     }
 }
