@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     android:gravity="center_vertical"
     >
     <TextView
@@ -99,27 +84,10 @@
             android:textStyle="bold"
             android:text="포인트"/>
     </LinearLayout>
-
-<<<<<<< HEAD
-=======
-
-=======
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-    android:gravity="center_vertical">
-
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="선택하신 위치의 오토바이는 2대 있습니다."/>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -128,19 +96,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp">
-<<<<<<< HEAD
-        // 로그인 버튼
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // 대여 확정
-=======
-        // 로그인 버튼
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
-        // 로그인 버튼
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
+        // 동의 버튼
         <Button
             android:id="@+id/agreerentBtn"
             android:layout_width="match_parent"
@@ -152,7 +108,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:background="@drawable/button_layout"/>
-        // 회원가입 버튼
+        // 반납 버튼
         <Button
             android:id="@+id/returntorentBtn"
             android:layout_width="match_parent"
