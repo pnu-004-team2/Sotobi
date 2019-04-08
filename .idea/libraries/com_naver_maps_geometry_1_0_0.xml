@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.naver.maps:geometry-1.0.0">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/geometry-1.0.0.aar/aa40063685fc3884faae401cf182bccf/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/geometry-1.0.0.aar/aa40063685fc3884faae401cf182bccf/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/geometry-1.0.0.aar/1bdbd1fa68af4912a67d6505973f9279/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/geometry-1.0.0.aar/1bdbd1fa68af4912a67d6505973f9279/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.naver.maps/geometry/1.0.0/dac3afcb105b2b5f7b17b62336b37d75624a1ca7/geometry-1.0.0-javadoc.jar!/" />
