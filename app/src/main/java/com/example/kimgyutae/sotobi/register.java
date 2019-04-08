@@ -1,5 +1,6 @@
 package com.example.kimgyutae.sotobi;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Random;
 
 import javax.mail.MessagingException;
@@ -21,12 +29,15 @@ public class register extends AppCompatActivity {
     private boolean AuthDone = false;
     private EditText et_email;
     private String Auth;
+    private boolean reg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         et_email = (EditText)findViewById(R.id.register_email);
 
+        reg = false;
         Auth = new String("");
 
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
@@ -43,15 +54,42 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String input_id = et_id.getText().toString();
+                final String input_id = et_id.getText().toString();
 
-                if(input_id.length() > 0) {
-                    Toast.makeText(getApplicationContext(), "생성 가능한 아이디 입니다", Toast.LENGTH_SHORT).show();
-                    idCheckValue = true;
-                    et_id.setClickable(false);
-                    et_id.setFocusable(false);
-                }
-                else Toast.makeText(getApplicationContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+
+                            if (success) {
+                                if(input_id.length() > 4) {
+                                    Toast.makeText(getApplicationContext(), "생성 가능한 아이디 입니다", Toast.LENGTH_SHORT).show();
+                                    idCheckValue = true;
+                                    et_id.setClickable(false);
+                                    et_id.setFocusable(false);
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "아이디 5자 이상 입력하세요", Toast.LENGTH_SHORT).show();
+                                }
+
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+                                builder.setMessage("아이디 중복입니다")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                DupcheckRequest dupcheckrequest = new DupcheckRequest(input_id, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(register.this);
+                queue.add(dupcheckrequest);
             }
         });
 
@@ -118,24 +156,48 @@ public class register extends AppCompatActivity {
                 EditText et_pw_same = (EditText)findViewById(R.id.register_pw_same);
                 EditText et_pName = (EditText)findViewById(R.id.register_person_name);
                 EditText et_phone = (EditText)findViewById(R.id.register_phone);
+                EditText et_id = (EditText)findViewById(R.id.register_id);
 
                 String pw = et_pw.getText().toString();
                 String pw_same = et_pw_same.getText().toString();
                 String pName = et_pName.getText().toString();
                 String phone = et_phone.getText().toString();
                 String email = et_email.getText().toString();
+                String id = et_id.getText().toString();
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if (success) {
+                                Intent intent = new Intent(register.this, login.class);
+                                register.this.startActivity(intent);
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+                                builder.setMessage("Register Failed")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
 
                 if(idCheckValue){
                     if(pw.length() > 0){
                         if(pw.equals(pw_same)) {
                             if(pName.length() > 0){
-                                if(email.length() > 0){
+                                if(AuthDone){
                                     if(phone.length() > 0){
                                        // 서버 전송
-                                       Toast.makeText(getApplicationContext(), "가입 완료", Toast.LENGTH_SHORT).show();
-                                       Intent intent = new Intent(register.this, login.class);
-                                       startActivity(intent);
-                                       finish();
+                                        Toast.makeText(getApplicationContext(), "전송", Toast.LENGTH_SHORT).show();
+                                        registerRequest registerrequest = new registerRequest(email, id, pName, pw, phone, responseListener);
+                                        RequestQueue queue = Volley.newRequestQueue(register.this);
+                                        queue.add(registerrequest);
                                     }
                                     else Toast.makeText(getApplicationContext(), "전화 번호 입력해주세요", Toast.LENGTH_SHORT).show();
                                 }
@@ -154,27 +216,11 @@ public class register extends AppCompatActivity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(register.this, login.class);
+                startActivity(intent);
                 finish();
             }
         });
     }
-    // 회원가입 유형 선택 editText 잠금
-    public void radioCheck(RadioButton radio_person, RadioButton radio_team, EditText rpn, EditText rtn) {
-        if (radio_person.isChecked()) {
-            rpn.setClickable(true);
-            rpn.setFocusable(true);
-            rpn.setFocusableInTouchMode(true);
-            rtn.setClickable(false);
-            rtn.setFocusable(false);
-            rtn.setText(null);
-        }
-        else if (radio_team.isChecked()) {
-            rpn.setClickable(false);
-            rpn.setFocusable(false);
-            rpn.setText(null);
-            rtn.setClickable(true);
-            rtn.setFocusable(true);
-            rtn.setFocusableInTouchMode(true);
-        }
-    }
+
 }

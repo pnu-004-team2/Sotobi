@@ -18,7 +18,18 @@
         </activity>
         <activity android:name=".login" />
         <activity android:name=".register" />
+        <activity android:name=".modeselect" />
+        <activity android:name=".rent" />
+        <activity android:name=".pickme" />
+        <activity android:name=".pickup" />
+        <activity android:name=".rent_register" />
+        <activity android:name=".pickme_register" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="iinq5sej2u" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 </manifest>

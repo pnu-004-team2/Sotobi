@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+<<<<<<< HEAD
+    android:gravity="center_vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="대여 신청"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="  # 정보 입력"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="대여 가능  10대"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:textColor="#000000"
+                android:text="대여 시간"
+                android:layout_weight="1.5"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <Spinner
+                android:id="@+id/rent_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"></Spinner>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:textColor="#000000"
+                android:text="시"
+                android:layout_weight="2"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <Spinner
+                android:id="@+id/rent_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"></Spinner>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:textColor="#000000"
+                android:text="분"
+                android:layout_weight="2"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="포인트"/>
+    </LinearLayout>
+
+
+=======
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="선택하신 위치의 오토바이는 2대 있습니다."/>
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp">
+<<<<<<< HEAD
+        // 대여 확정
+=======
+        // 로그인 버튼
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+        <Button
+            android:id="@+id/agreerentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Rent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_layout"/>
+        // 회원가입 버튼
+        <Button
+            android:id="@+id/returntorentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="Back"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_layout"/>
+    </LinearLayout>
+</LinearLayout>
