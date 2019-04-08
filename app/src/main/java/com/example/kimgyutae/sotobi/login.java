@@ -29,8 +29,6 @@ public class login extends AppCompatActivity{
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-<<<<<<< HEAD
-
                 final String id = lg_id.getText().toString();
                 final String password = lg_pw.getText().toString();
 
@@ -71,11 +69,9 @@ public class login extends AppCompatActivity{
 
                 //Intent intent = new Intent(login.this, mainmenu.class);
                 //startActivity(intent);
-=======
                 Intent intent = new Intent(login.this, modeselect.class);
                 startActivity(intent);
                 finish();
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
             }
         });
         // 회원가입 버튼

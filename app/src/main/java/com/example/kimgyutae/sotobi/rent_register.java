@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,16 +20,10 @@ public class rent_register extends AppCompatActivity {
     ArrayList<String> timeList_min;
     ArrayAdapter<String> timeAdapter_min;
 
-=======
-import android.widget.Button;
-
-public class rent_register extends AppCompatActivity {
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcanrent);
 
-<<<<<<< HEAD
         timeList = new ArrayList<>();
         timeList.add("0");
         timeList.add("1");
@@ -78,8 +71,6 @@ public class rent_register extends AppCompatActivity {
         spinner_min = (Spinner)findViewById(R.id.rent_min);
         spinner_min.setAdapter(timeAdapter_min);
 
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
         Button agreerentBtn = (Button)findViewById(R.id.agreerentBtn);
         agreerentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,14 +89,7 @@ public class rent_register extends AppCompatActivity {
             }
         });
     }
-
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+    
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(rent_register.this, rent.class);

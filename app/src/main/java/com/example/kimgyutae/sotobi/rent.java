@@ -6,13 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-=======
-import android.widget.Button;
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
 
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
@@ -51,10 +47,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
 
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
     }
 
     // 위치 사용 허용 요청

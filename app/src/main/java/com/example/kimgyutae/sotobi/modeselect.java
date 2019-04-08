@@ -33,10 +33,6 @@ public class modeselect extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, pickme.class);
                 startActivity(intent);
-<<<<<<< HEAD
-                startActivity(intent);
-=======
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
                 finish();
             }
         });
