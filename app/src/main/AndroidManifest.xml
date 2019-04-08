@@ -22,9 +22,13 @@
         <activity android:name=".rent" />
         <activity android:name=".pickme" />
         <activity android:name=".pickup" />
+        <activity android:name=".viewcanrent" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="iinq5sej2u" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
 </manifest>
