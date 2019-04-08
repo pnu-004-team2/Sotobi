@@ -29,6 +29,12 @@ public class login extends AppCompatActivity{
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+>>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
                 final String id = lg_id.getText().toString();
                 final String password = lg_pw.getText().toString();
 
@@ -69,6 +75,12 @@ public class login extends AppCompatActivity{
 
                 //Intent intent = new Intent(login.this, mainmenu.class);
                 //startActivity(intent);
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+>>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
                 Intent intent = new Intent(login.this, modeselect.class);
                 startActivity(intent);
                 finish();

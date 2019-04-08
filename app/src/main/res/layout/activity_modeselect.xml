@@ -4,6 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,6 +30,15 @@
             android:padding="7dp"
             android:src="@drawable/userinfo"/>
     </LinearLayout>
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+=======
+
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+>>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     <Button
         android:id="@+id/gotorent"
         android:layout_width="match_parent"
