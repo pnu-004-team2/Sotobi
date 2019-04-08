@@ -22,7 +22,8 @@
         <activity android:name=".rent" />
         <activity android:name=".pickme" />
         <activity android:name=".pickup" />
-        <activity android:name=".viewcanrent" />
+        <activity android:name=".rent_register" />
+        <activity android:name=".pickme_register" />
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"

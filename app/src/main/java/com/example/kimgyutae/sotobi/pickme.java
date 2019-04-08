@@ -49,6 +49,9 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
             @Override
             public void onClick(View view) {
                 // 여기서 LatandLng.latitude와 LatandLng.longitude를 저장하여 호출
+                Intent intent = new Intent(pickme.this, pickme_register.class);
+                startActivity(intent);
+                finish();
             }
         });
 

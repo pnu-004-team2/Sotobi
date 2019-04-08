@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class viewcanrent extends AppCompatActivity {
+public class rent_register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcanrent);
@@ -15,16 +15,15 @@ public class viewcanrent extends AppCompatActivity {
         agreerentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(viewcanrent.this, rent.class);
-                startActivity(intent);
-                finish();
+                // 대여를 시작한다.
+                // 구현 필요
             }
         });
         Button returntorentBtn = (Button)findViewById(R.id.returntorentBtn);
         returntorentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(viewcanrent.this, rent.class);
+                Intent intent = new Intent(rent_register.this, rent.class);
                 startActivity(intent);
                 finish();
             }
@@ -33,7 +32,7 @@ public class viewcanrent extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(viewcanrent.this, rent.class);
+        Intent intent = new Intent(rent_register.this, rent.class);
         startActivity(intent);
         finish();
     }

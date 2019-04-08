@@ -71,13 +71,15 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
         markerList.add(new Marker(new LatLng(37.7670135, 126.9783740)));
         markerList.add(new Marker(new LatLng(37.8670135, 126.9783740)));
 
+
         for(Marker marker:markerList){
             marker.setMap(naverMap);
             // 각 마커에 대한 오토바이 등록 정보
             marker.setOnClickListener(new Overlay.OnClickListener() {
                 @Override
                 public boolean onClick(@NonNull Overlay overlay) {
-                    Intent intent = new Intent(rent.this, viewcanrent.class);
+                    // 누른 마크에 대한 위도 경도 옮기기
+                    Intent intent = new Intent(rent.this, rent_register.class);
                     startActivity(intent);
                     finish();
                     return false;
