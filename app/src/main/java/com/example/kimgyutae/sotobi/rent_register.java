@@ -4,11 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;

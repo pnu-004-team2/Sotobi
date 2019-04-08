@@ -1,28 +1,11 @@
 package com.example.kimgyutae.sotobi;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-<<<<<<< HEAD
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-=======
-import android.widget.Button;
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
-import android.widget.Button;
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
 
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
@@ -60,18 +43,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
         mapFragment.getMapAsync(this); // 지도 준비된 것 동기화
 
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
-=======
-
->>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
->>>>>>> 30f7fa97580fa91557db300170282cfc37f55c67
     }
 
     // 위치 사용 허용 요청
