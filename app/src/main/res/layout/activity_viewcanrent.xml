@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
 =======
 >>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
 <LinearLayout
@@ -8,6 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
 <<<<<<< HEAD
     android:gravity="center_vertical"
     >
@@ -92,12 +96,17 @@
 
 
 =======
+=======
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
     android:gravity="center_vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="선택하신 위치의 오토바이는 2대 있습니다."/>
+<<<<<<< HEAD
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+=======
 >>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
 
     <LinearLayout
@@ -108,7 +117,11 @@
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp">
 <<<<<<< HEAD
+<<<<<<< HEAD
         // 대여 확정
+=======
+        // 로그인 버튼
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
 =======
         // 로그인 버튼
 >>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a

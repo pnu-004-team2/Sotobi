@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -26,10 +27,16 @@ import android.widget.Button;
 
 public class rent_register extends AppCompatActivity {
 >>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+=======
+import android.widget.Button;
+
+public class rent_register extends AppCompatActivity {
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcanrent);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         timeList = new ArrayList<>();
         timeList.add("0");
@@ -80,6 +87,8 @@ public class rent_register extends AppCompatActivity {
 
 =======
 >>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
+=======
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
         Button agreerentBtn = (Button)findViewById(R.id.agreerentBtn);
         agreerentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,10 +109,13 @@ public class rent_register extends AppCompatActivity {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
 =======
 >>>>>>> 335e8f11cbf5986ecb294ce215874bc9328f083a
     @Override
