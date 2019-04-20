@@ -58,6 +58,7 @@ public class rent_register extends AppCompatActivity {
         spinner_hour.setAdapter(timeAdapter);
 
         timeList_min = new ArrayList<>();
+        timeList_min.add("0");
         timeList_min.add("10");
         timeList_min.add("20");
         timeList_min.add("30");

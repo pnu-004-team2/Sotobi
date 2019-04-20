@@ -66,12 +66,6 @@ public class login extends AppCompatActivity{
                 loginRequest loginrequest = new loginRequest(id, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(login.this);
                 queue.add(loginrequest);
-
-                //Intent intent = new Intent(login.this, mainmenu.class);
-                //startActivity(intent);
-                Intent intent = new Intent(login.this, modeselect.class);
-                startActivity(intent);
-                finish();
             }
         });
         // 회원가입 버튼

@@ -1,22 +1,28 @@
 package com.example.kimgyutae.sotobi;
 
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
+import android.content.Intent;
+import android.location.Location;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationResult;
 import com.naver.maps.geometry.LatLng;
+import com.naver.maps.map.CameraAnimation;
 import com.naver.maps.map.CameraPosition;
+import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.NaverMapOptions;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
+
 
 import java.util.ArrayList;
 
@@ -36,8 +42,7 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
 
         // 지도 띄우기
         if (mapFragment == null) {
-            mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
-                    NaverMap.DEFAULT_CAMERA_POSITION.target, NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
+            mapFragment = MapFragment.newInstance(new NaverMapOptions().locationButtonEnabled(false));
             getSupportFragmentManager().beginTransaction().add(R.id.map_fragment, mapFragment).commit();
         }
         mapFragment.getMapAsync(this); // 지도 준비된 것 동기화
@@ -84,7 +89,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
             });
         }
     }
-
 
     @Override
     public void onBackPressed() {

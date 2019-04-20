@@ -54,17 +54,6 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
                 finish();
             }
         });
-
-        Button returntopickmeBtn = (Button)findViewById(R.id.returntopickmeBtn);
-        returntopickmeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(pickme.this, modeselect.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
     }
 
     // 위치 사용 허용 요청
