@@ -116,7 +116,7 @@
             android:layout_height="35dp"
             android:gravity="center"
             android:hint="휴대폰 번호 입력"
-            android:maxLength="10"
+            android:maxLength="11"
             android:textSize="20sp"
             android:textStyle="bold"
             android:inputType="textNoSuggestions"

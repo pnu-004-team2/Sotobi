@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Random;
+import java.util.regex.Pattern;
 
 import javax.mail.MessagingException;
 import javax.mail.SendFailedException;
@@ -55,41 +56,42 @@ public class register extends AppCompatActivity {
             public void onClick(View view) {
 
                 final String input_id = et_id.getText().toString();
+                if( Pattern.matches("^[0-9a-zA-Z가-힣]*$", input_id)){
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonResponse = new JSONObject(response);
+                                boolean success = jsonResponse.getBoolean("success");
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
+                                if (success) {
+                                    if(input_id.length() > 4) {
+                                        Toast.makeText(getApplicationContext(), "생성 가능한 아이디 입니다", Toast.LENGTH_SHORT).show();
+                                        idCheckValue = true;
+                                        et_id.setClickable(false);
+                                        et_id.setFocusable(false);
+                                    }
+                                    else{
+                                        Toast.makeText(getApplicationContext(), "아이디 5자 이상 입력하세요", Toast.LENGTH_SHORT).show();
+                                    }
 
-                            if (success) {
-                                if(input_id.length() > 4) {
-                                    Toast.makeText(getApplicationContext(), "생성 가능한 아이디 입니다", Toast.LENGTH_SHORT).show();
-                                    idCheckValue = true;
-                                    et_id.setClickable(false);
-                                    et_id.setFocusable(false);
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "아이디 중복입니다", Toast.LENGTH_SHORT).show();
                                 }
-                                else{
-                                    Toast.makeText(getApplicationContext(), "아이디 5자 이상 입력하세요", Toast.LENGTH_SHORT).show();
-                                }
 
-                            } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
-                                builder.setMessage("아이디 중복입니다")
-                                        .setNegativeButton("Retry", null)
-                                        .create()
-                                        .show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
-                    }
-                };
-                DupcheckRequest dupcheckrequest = new DupcheckRequest(input_id, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(register.this);
-                queue.add(dupcheckrequest);
+                    };
+                    DupcheckRequest dupcheckrequest = new DupcheckRequest(input_id, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(register.this);
+                    queue.add(dupcheckrequest);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "ID는 영문자와 숫자를 혼합하여 입력하세요", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
@@ -175,11 +177,7 @@ public class register extends AppCompatActivity {
                                 Intent intent = new Intent(register.this, login.class);
                                 register.this.startActivity(intent);
                             } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
-                                builder.setMessage("Register Failed")
-                                        .setNegativeButton("Retry", null)
-                                        .create()
-                                        .show();
+                                Toast.makeText(getApplicationContext(), "등록 실패", Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -189,22 +187,26 @@ public class register extends AppCompatActivity {
 
                 if(idCheckValue){
                     if(pw.length() > 0){
-                        if(pw.equals(pw_same)) {
-                            if(pName.length() > 0){
-                                if(AuthDone){
-                                    if(phone.length() > 0){
-                                       // 서버 전송
-                                        Toast.makeText(getApplicationContext(), "전송", Toast.LENGTH_SHORT).show();
-                                        registerRequest registerrequest = new registerRequest(email, id, pName, pw, phone, responseListener);
-                                        RequestQueue queue = Volley.newRequestQueue(register.this);
-                                        queue.add(registerrequest);
+                        if(pw.length() > 4 && !pw.equals(pw.toLowerCase()) && !pw.equals(pw.toUpperCase()) && Pattern.matches("^[0-9a-zA-Z가-힣]*$", pw)){
+                            if(pw.equals(pw_same)) {
+                                if(pName.length() > 0 && Pattern.matches("^[가-힣]*$", pName)){
+                                    if(AuthDone){
+                                        if(phone.length() > 0){
+                                            // 서버 전송
+                                            Toast.makeText(getApplicationContext(), "전송", Toast.LENGTH_SHORT).show();
+                                            registerRequest registerrequest = new registerRequest(email, id, pName, pw, phone, responseListener);
+                                            RequestQueue queue = Volley.newRequestQueue(register.this);
+                                            queue.add(registerrequest);
+                                        }
+                                        else Toast.makeText(getApplicationContext(), "전화 번호 입력해주세요", Toast.LENGTH_SHORT).show();
                                     }
-                                    else Toast.makeText(getApplicationContext(), "전화 번호 입력해주세요", Toast.LENGTH_SHORT).show();
+                                    else Toast.makeText(getApplicationContext(), "이메일 인증해주세요", Toast.LENGTH_SHORT).show();
                                 }
+                                else Toast.makeText(getApplicationContext(), "이름을 올바르게 입력해주세요", Toast.LENGTH_SHORT).show();
                             }
-                            else Toast.makeText(getApplicationContext(), "이름 입력해주세요", Toast.LENGTH_SHORT).show();
+                            else Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
                         }
-                        else Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                        else Toast.makeText(getApplicationContext(), "비밀번호는 대/소문자, 숫자를 혼합하여 5자이상 입력하세요", Toast.LENGTH_SHORT).show();
                     }
                     else Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
                 }

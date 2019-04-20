@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,40 +33,63 @@ public class login extends AppCompatActivity{
                 final String id = lg_id.getText().toString();
                 final String password = lg_pw.getText().toString();
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
+                if(id.length()<1){
+                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                else if(password.length()<1){
+                    Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonResponse = new JSONObject(response);
+                                boolean success = jsonResponse.getBoolean("success");
+                                if (!success) {
+                                    Response.Listener<String> responseListener2 = new Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+                                            try {
+                                                JSONObject jsonResponse2 = new JSONObject(response);
+                                                boolean success = jsonResponse2.getBoolean("success");
 
-                            if (success) {
-                                String gid = jsonResponse.getString("id");
-                                String name = jsonResponse.getString("name");
+                                                if (success) {
+                                                    String gid = jsonResponse2.getString("id");
+                                                    String name = jsonResponse2.getString("name");
 
-                                Intent intent = new Intent(login.this, modeselect.class);
-                                intent.putExtra("id", gid);
-                                intent.putExtra("name", name);
-                                login.this.startActivity(intent);
+                                                    Intent intent = new Intent(login.this, modeselect.class);
+                                                    intent.putExtra("id", gid);
+                                                    intent.putExtra("name", name);
+                                                    login.this.startActivity(intent);
 
-                                finish();
-                            } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(login.this);
-                                builder.setMessage("Login Failed")
-                                        .setNegativeButton("Retry", null)
-                                        .create()
-                                        .show();
+                                                    finish();
+                                                } else {
+                                                    Toast.makeText(getApplicationContext(), "로그인 실패! 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show();
+                                                }
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    };
+
+                                    loginRequest loginrequest = new loginRequest(id, password, responseListener2);
+                                    RequestQueue queue = Volley.newRequestQueue(login.this);
+                                    queue.add(loginrequest);
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "로그인 실패! 아이디를 확인하세요", Toast.LENGTH_SHORT).show();
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
-                    }
-                };
-
-                loginRequest loginrequest = new loginRequest(id, password, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(login.this);
-                queue.add(loginrequest);
+                    };
+                    DupcheckRequest dupcheckrequest = new DupcheckRequest(id, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(login.this);
+                    queue.add(dupcheckrequest);
+                }
             }
         });
         // 회원가입 버튼
