@@ -24,6 +24,8 @@ public class registerRequest extends StringRequest {
         params.put("name", name);
         params.put("password", password);
         params.put("phonenumber", phonenumber);
+        params.put("motormodel", "x");
+        params.put("motornumber", "x");
     }
 
     @Override
