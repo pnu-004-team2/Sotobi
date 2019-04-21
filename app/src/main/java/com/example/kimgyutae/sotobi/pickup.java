@@ -2,9 +2,13 @@ package com.example.kimgyutae.sotobi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -36,17 +40,19 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickup);
 
+        final LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED ){
+            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (mapFragment == null) {
+                mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
+                        new LatLng(location.getLatitude(), location.getLongitude()), NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
+                getSupportFragmentManager().beginTransaction().add(R.id.map_fragment, mapFragment).commit();
+            }
 
-        // 지도 띄우기
-        if (mapFragment == null) {
-            mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
-                    NaverMap.DEFAULT_CAMERA_POSITION.target, NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
-            getSupportFragmentManager().beginTransaction().add(R.id.map_fragment, mapFragment).commit();
+            mapFragment.getMapAsync(this); // 지도 준비된 것 동기화
+
+            locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
         }
-        mapFragment.getMapAsync(this); // 지도 준비된 것 동기화
-
-        locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
-
 
     }
 
