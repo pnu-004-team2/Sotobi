@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
@@ -16,6 +17,16 @@ public class modeselect extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modeselect);
+        // 내 정보
+        ImageView myinfo = (ImageView)findViewById(R.id.my_info);
+        myinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(modeselect.this, myinfo.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         // 대여
         Button rent = (Button)findViewById(R.id.gotorent);
         rent.setOnClickListener(new View.OnClickListener() {

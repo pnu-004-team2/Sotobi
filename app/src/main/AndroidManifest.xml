@@ -24,6 +24,7 @@
         <activity android:name=".pickup" />
         <activity android:name=".rent_register" />
         <activity android:name=".pickme_register" />
+        <activity android:name=".myinfo"></activity>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="iinq5sej2u" />
