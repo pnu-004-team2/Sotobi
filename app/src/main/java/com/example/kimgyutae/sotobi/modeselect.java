@@ -58,4 +58,11 @@ public class modeselect extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(modeselect.this, login.class);
+        startActivity(intent);
+        finish();
+    }
 }

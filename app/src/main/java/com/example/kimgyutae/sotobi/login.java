@@ -55,14 +55,14 @@ public class login extends AppCompatActivity{
                                                 boolean success = jsonResponse2.getBoolean("success");
 
                                                 if (success) {
-                                                    String gemail = jsonResponse2.getString("email");
+
                                                     String gid = jsonResponse2.getString("id");
-                                                    String name = jsonResponse2.getString("name");
+                                                    String name = " ";//jsonResponse2.getString("phonenumber");
 
                                                     Intent intent = new Intent(login.this, modeselect.class);
                                                     intent.putExtra("id", gid);
                                                     intent.putExtra("name", name);
-                                                    Toast.makeText(getApplicationContext(), "name : "+name+ " id : " +id + " email " + gemail, Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getApplicationContext(), "name : "+name+ " id : " +id, Toast.LENGTH_SHORT).show();
 
                                                     login.this.startActivity(intent);
 
