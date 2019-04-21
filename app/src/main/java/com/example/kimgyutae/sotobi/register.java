@@ -193,7 +193,7 @@ public class register extends AppCompatActivity {
                                     if(AuthDone){
                                         if(phone.length() > 0){
                                             // 서버 전송
-                                            Toast.makeText(getApplicationContext(), "전송", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "회원가입 완료!", Toast.LENGTH_SHORT).show();
                                             registerRequest registerrequest = new registerRequest(email, id, pName, pw, phone, responseListener);
                                             RequestQueue queue = Volley.newRequestQueue(register.this);
                                             queue.add(registerrequest);
