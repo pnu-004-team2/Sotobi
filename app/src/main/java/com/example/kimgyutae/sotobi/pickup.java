@@ -74,10 +74,10 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
 
         ArrayList<Marker> markerList = new ArrayList();
 
-        markerList.add(new Marker(new LatLng(37.5670135, 126.9783740)));
-        markerList.add(new Marker(new LatLng(37.6670135, 126.9783740)));
-        markerList.add(new Marker(new LatLng(37.7670135, 126.9783740)));
-        markerList.add(new Marker(new LatLng(37.8670135, 126.9783740)));
+        markerList.add(new Marker(new LatLng(35.2318263, 129.0825006)));
+        markerList.add(new Marker(new LatLng(35.2372553, 129.0873740)));
+        markerList.add(new Marker(new LatLng(35.2376547, 129.0836640)));
+        markerList.add(new Marker(new LatLng(35.2372602, 129.0845680)));
 
         for(Marker marker:markerList){
             marker.setIcon(MarkerIcons.YELLOW);

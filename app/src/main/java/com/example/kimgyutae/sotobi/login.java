@@ -57,6 +57,7 @@ public class login extends AppCompatActivity{
                                                 if (success) {
                                                     String gid = jsonResponse2.getString("id");
                                                     String name = jsonResponse2.getString("name");
+                                                    Toast.makeText(getApplicationContext(), gid, Toast.LENGTH_SHORT).show();
 
                                                     Intent intent = new Intent(login.this, modeselect.class);
                                                     intent.putExtra("id", gid);

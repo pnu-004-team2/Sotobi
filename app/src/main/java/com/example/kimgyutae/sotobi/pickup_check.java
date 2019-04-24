@@ -1,37 +1,33 @@
 package com.example.kimgyutae.sotobi;
 
-/**
- * Created by kjh on 08/04/2019.
- */
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class pickme_register extends AppCompatActivity{
+public class pickup_check extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pickme_register);
+        setContentView(R.layout.activity_pickup_check);
 
-        // 승차 신청 버튼
-        Button agreeBtn = (Button)findViewById(R.id.pickme_agreeBtn);
+        // 승락 버튼
+        Button agreeBtn = (Button)findViewById(R.id.pickup_agreeBtn);
         agreeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(pickme_register.this, pickme_complete_ready.class);
+                Intent intent = new Intent(pickup_check.this, pickme_complete_ready.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        // 승차 취소 버튼
-        Button returntopickmeBtn = (Button)findViewById(R.id.returntopickmeBtn);
-        returntopickmeBtn.setOnClickListener(new View.OnClickListener() {
+        // 취소 버튼
+        Button returntopickupBtn = (Button)findViewById(R.id.returntopickupBtn);
+        returntopickupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(pickme_register.this, pickme.class);
+                Intent intent = new Intent(pickup_check.this, pickup.class);
                 startActivity(intent);
                 finish();
             }
@@ -41,11 +37,9 @@ public class pickme_register extends AppCompatActivity{
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(pickme_register.this, pickme.class);
+        Intent intent = new Intent(pickup_check.this, pickup.class);
         startActivity(intent);
         finish();
     }
 
 }
-
-

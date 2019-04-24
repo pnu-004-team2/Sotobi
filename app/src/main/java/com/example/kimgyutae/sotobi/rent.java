@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationResult;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraAnimation;
@@ -38,6 +39,7 @@ import java.util.ArrayList;
 public class rent extends AppCompatActivity implements OnMapReadyCallback {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private FusedLocationSource locationSource;
+
     MapFragment mapFragment = (MapFragment)getSupportFragmentManager().findFragmentById(R.id.map_fragment);
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +81,13 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
 
         ArrayList<Marker> markerList = new ArrayList();
 
-        markerList.add(new Marker(new LatLng(37.5670135, 126.9783740)));
-        markerList.add(new Marker(new LatLng(37.6670135, 126.9783740)));
-        markerList.add(new Marker(new LatLng(37.7670135, 126.9783740)));
-        markerList.add(new Marker(new LatLng(37.8670135, 126.9783740)));
+        markerList.add(new Marker(new LatLng(35.2318263, 129.0825006)));
+        markerList.add(new Marker(new LatLng(35.2372553, 129.0873740)));
+        markerList.add(new Marker(new LatLng(35.2376547, 129.0836640)));
+        markerList.add(new Marker(new LatLng(35.2372602, 129.0845680)));
 
 
-        for(Marker marker:markerList){
+        for(final Marker marker:markerList){
             marker.setMap(naverMap);
             // 각 마커에 대한 오토바이 등록 정보
             marker.setOnClickListener(new Overlay.OnClickListener() {
@@ -93,6 +95,7 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
                 public boolean onClick(@NonNull Overlay overlay) {
                     // 누른 마크에 대한 위도 경도 옮기기
                     Intent intent = new Intent(rent.this, rent_register.class);
+                    intent.putExtra("latlng", marker.getPosition());
                     startActivity(intent);
                     finish();
                     return false;
@@ -100,7 +103,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
             });
         }
     }
-
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(rent.this, modeselect.class);
