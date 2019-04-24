@@ -55,13 +55,15 @@ public class login extends AppCompatActivity{
                                                 boolean success = jsonResponse2.getBoolean("success");
 
                                                 if (success) {
+
                                                     String gid = jsonResponse2.getString("id");
-                                                    String name = jsonResponse2.getString("name");
-                                                    Toast.makeText(getApplicationContext(), gid, Toast.LENGTH_SHORT).show();
+                                                    String name = " ";//jsonResponse2.getString("phonenumber");
 
                                                     Intent intent = new Intent(login.this, modeselect.class);
                                                     intent.putExtra("id", gid);
                                                     intent.putExtra("name", name);
+                                                    Toast.makeText(getApplicationContext(), "name : "+name+ " id : " +id, Toast.LENGTH_SHORT).show();
+
                                                     login.this.startActivity(intent);
 
                                                     finish();
