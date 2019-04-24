@@ -18,13 +18,27 @@
         </activity>
         <activity android:name=".login" />
         <activity android:name=".register" />
+
         <activity android:name=".modeselect" />
         <activity android:name=".rent" />
         <activity android:name=".pickme" />
         <activity android:name=".pickup" />
+
         <activity android:name=".rent_register" />
+        <activity android:name=".rent_complete" />
+        <activity android:name=".return_rent" />
+
         <activity android:name=".pickme_register" />
-        <activity android:name=".myinfo"></activity>
+        <activity android:name=".pickme_complete_ready" />
+        <activity android:name=".pickme_matching" />
+
+        <activity android:name=".pickup_check" />
+        <activity android:name=".pickup_matching" />
+
+        <activity android:name=".matching_done" />
+
+        <activity android:name=".myinfo">
+        </activity>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="iinq5sej2u" />
