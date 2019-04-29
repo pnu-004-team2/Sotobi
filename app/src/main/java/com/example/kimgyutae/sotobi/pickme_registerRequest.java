@@ -22,7 +22,7 @@ public class pickme_registerRequest extends StringRequest {
         params.put("Meet_up", meet_up);
         params.put("Give_Point", give_point);
         try {
-            params.put("name", URLEncoder.encode(dest,"utf-8"));
+            params.put("Dest", URLEncoder.encode(dest,"utf-8"));
         } catch (UnsupportedEncodingException e) {
             params.put("Dest", dest);
         }
