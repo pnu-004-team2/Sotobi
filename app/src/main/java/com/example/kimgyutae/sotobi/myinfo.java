@@ -136,6 +136,18 @@ public class myinfo extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"기존 비밀번호 확인", Toast.LENGTH_SHORT).show();
             }
         });
+        Button regiBtn = (Button)findViewById(R.id.myinfo_change);
+        regiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(myinfo.this, vehicle_register.class);
+                intent.putExtra("id",loginId);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
         Button cancelBtn = (Button)findViewById(R.id.myinfo_back);
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override

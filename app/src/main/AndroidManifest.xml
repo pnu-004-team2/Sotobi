@@ -37,7 +37,9 @@
 
         <activity android:name=".matching_done" />
 
-        <activity android:name=".myinfo">
+        <activity android:name=".myinfo"/>
+
+        <activity android:name=".vehicle_register">
         </activity>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
