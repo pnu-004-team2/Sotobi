@@ -9,17 +9,58 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class pickme_register extends AppCompatActivity{
+    Intent intent;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme_register);
-
+        intent = getIntent();
         // 승차 신청 버튼
         Button agreeBtn = (Button)findViewById(R.id.pickme_agreeBtn);
         agreeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // 응답 받기
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if (success) {
+                                Toast.makeText(getApplicationContext(), "승차 신청 완료!", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                Toast.makeText(getApplicationContext(), "승차 신청 실패", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                EditText How_give_point = (EditText)findViewById(R.id.pickme_Give_point);
+                EditText Where_go = (EditText)findViewById(R.id.pickme_Dest);
+                String Point = How_give_point.getText().toString();
+                String Dest = Where_go.getText().toString();
+                String Lat  = intent.getStringExtra("Lat");
+                String Lng  = intent.getStringExtra("Lng");
+
+                //서버 전송
+                pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x","x","x", Point, Dest, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
+                queue.add(pickme_request);
+
                 Intent intent = new Intent(pickme_register.this, pickme_complete_ready.class);
                 startActivity(intent);
                 finish();

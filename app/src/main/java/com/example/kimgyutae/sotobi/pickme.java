@@ -1,6 +1,5 @@
 package com.example.kimgyutae.sotobi;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,7 +8,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -43,7 +41,6 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
 
 
         final LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
         if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED ){
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (mapFragment == null) {
@@ -54,23 +51,22 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
 
             mapFragment.getMapAsync(this); // 지도 준비된 것 동기화
 
-        }
-        else{
-            int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = PackageManager.PERMISSION_GRANTED;
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+            locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
         }
 
         Button agreepickmeBtn = (Button)findViewById(R.id.agreepickmeBtn);
         agreepickmeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 여기서 LatandLng.latitude와 LatandLng.longitude를 저장하여 호출
-                Intent intent = new Intent(pickme.this, pickme_register.class);
-
-                startActivity(intent);
-                finish();
+                if(LatandLng != null) {
+                    Intent intent = new Intent(pickme.this, pickme_register.class);
+                    intent.putExtra("Lat",Double.toString(LatandLng.latitude));
+                    intent.putExtra("Lng",Double.toString(LatandLng.longitude));
+                    startActivity(intent);
+                    finish();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "승차 위치 찍어주세요", Toast.LENGTH_SHORT).show();
             }
         });
     }
