@@ -16,6 +16,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 public class login extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,7 @@ public class login extends AppCompatActivity{
                                                 if (success) {
 
                                                     String gid = jsonResponse2.getString("id");
-                                                    String name = " ";//jsonResponse2.getString("phonenumber");
+                                                    String name = URLDecoder.decode(jsonResponse2.getString("name"),"utf-8");
 
                                                     Intent intent = new Intent(login.this, modeselect.class);
                                                     intent.putExtra("id", gid);
@@ -71,6 +74,8 @@ public class login extends AppCompatActivity{
                                                     Toast.makeText(getApplicationContext(), "로그인 실패! 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show();
                                                 }
                                             } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            } catch (UnsupportedEncodingException e) {
                                                 e.printStackTrace();
                                             }
                                         }

@@ -4,7 +4,9 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +23,11 @@ public class registerRequest extends StringRequest {
         params = new HashMap<>();
         params.put("email", email);
         params.put("id", id);
-        params.put("name", name);
+        try {
+            params.put("name", URLEncoder.encode(name,"utf-8"));
+        } catch (UnsupportedEncodingException e) {
+            params.put("name", name);
+        }
         params.put("password", password);
         params.put("phonenumber", phonenumber);
         params.put("motormodel", "x");
