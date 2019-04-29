@@ -62,6 +62,8 @@ public class pickme_register extends AppCompatActivity{
                 queue.add(pickme_request);
 
                 Intent intent = new Intent(pickme_register.this, pickme_complete_ready.class);
+                intent.putExtra("Lat",Lat);
+                intent.putExtra("Lng",Lng);
                 startActivity(intent);
                 finish();
             }
