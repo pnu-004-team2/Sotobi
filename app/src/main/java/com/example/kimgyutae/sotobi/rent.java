@@ -113,8 +113,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
     }
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(rent.this, modeselect.class);
-        startActivity(intent);
         finish();
     }
 }

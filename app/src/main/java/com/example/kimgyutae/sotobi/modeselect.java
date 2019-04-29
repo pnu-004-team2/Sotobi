@@ -29,8 +29,8 @@ public class modeselect extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, myinfo.class);
+                intent.putExtra("id", loginId);
                 startActivity(intent);
-                finish();
             }
         });
         // 대여
@@ -40,7 +40,6 @@ public class modeselect extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, rent.class);
                 startActivity(intent);
-                finish();
             }
         });
         // 승차 요청
@@ -50,7 +49,6 @@ public class modeselect extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, pickme.class);
                 startActivity(intent);
-                finish();
             }
         });
         // 동승 찾기
@@ -60,7 +58,6 @@ public class modeselect extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, pickup.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

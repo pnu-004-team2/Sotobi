@@ -107,8 +107,6 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(pickup.this, modeselect.class);
-        startActivity(intent);
         finish();
     }
 }

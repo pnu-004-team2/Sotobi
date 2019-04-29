@@ -16,6 +16,7 @@ import java.util.Map;
 
 public class registerRequest extends StringRequest {
     private static final String REGISTER_REQUEST_URL = "http://jwu8615.dothome.co.kr/Register.php";
+    private static final String REGISTER_REQUEST_URL1 = "http://jwu8615.dothome.co.kr/Modified.php";
     private Map<String, String> params;
 
     public registerRequest(String email, String id, String name, String password, String phonenumber, com.android.volley.Response.Listener<String> listener) {
@@ -32,6 +33,11 @@ public class registerRequest extends StringRequest {
         params.put("phonenumber", phonenumber);
         params.put("motormodel", "x");
         params.put("motornumber", "x");
+    }
+    public registerRequest( String id, com.android.volley.Response.Listener<String> listener) {
+        super(Method.POST, REGISTER_REQUEST_URL1, listener, null);
+        params = new HashMap<>();
+        params.put("id", id);
     }
 
     @Override

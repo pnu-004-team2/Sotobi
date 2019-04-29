@@ -58,7 +58,6 @@ public class login extends AppCompatActivity{
                                                 boolean success = jsonResponse2.getBoolean("success");
 
                                                 if (success) {
-
                                                     String gid = jsonResponse2.getString("id");
                                                     String name = URLDecoder.decode(jsonResponse2.getString("name"),"utf-8");
 

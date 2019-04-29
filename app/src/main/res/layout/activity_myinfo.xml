@@ -106,6 +106,7 @@
                 android:gravity="left"
                 android:layout_weight="2.5"/>
             <TextView
+                android:id="@+id/myinfo_phonenumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
@@ -132,6 +133,7 @@
                 android:gravity="left"
                 android:layout_weight="2.5"/>
             <TextView
+                android:id="@+id/myinfo_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
@@ -158,6 +160,8 @@
                 android:gravity="left"
                 android:layout_weight="1.38"/>
             <EditText
+                android:inputType="textPassword"
+                android:id="@+id/myinfo_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="이전 비밀번호"
@@ -169,6 +173,7 @@
                 android:layout_weight="1"/>
             // 비밀번호 확인 버튼
             <Button
+                android:id="@+id/myinfo_checkPass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.5"
@@ -195,6 +200,8 @@
                 android:gravity="left"
                 android:layout_weight="1.38"/>
             <EditText
+                android:inputType="textPassword"
+                android:id="@+id/myinfo_newPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="새 비밀번호"
@@ -206,6 +213,7 @@
                 android:layout_weight="1"/>
             // 비밀번호 변경 버튼
             <Button
+                android:id="@+id/myinfo_changePass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.5"
@@ -239,6 +247,7 @@
                 android:gravity="left"
                 android:layout_weight="1"/>
             <TextView
+                android:id="@+id/myinfo_motornumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="미 등록"
@@ -266,6 +275,7 @@
                 android:gravity="left"
                 android:layout_weight="1"/>
             <TextView
+                android:id="@+id/myinfo_motormodel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="미 등록"
