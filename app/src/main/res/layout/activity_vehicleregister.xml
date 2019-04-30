@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    // 로고 출력
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:src="@drawable/login_image" />
+    // 오토바이 등록
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="오토바이 등록"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+
+        // 차량 종류
+        <EditText
+            android:id="@+id/vehicle_model"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:hint="차량 종류"
+            android:maxLength="10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/input_layout"/>
+        // 차량 번호
+        <EditText
+            android:id="@+id/vehicle_number"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:hint="차량 번호"
+            android:maxLength="10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/input_layout"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp">
+    <Button
+        android:id="@+id/vehicle_register"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="right"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="3"
+        android:text="등록"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_layout_thin"/>
+    <Button
+        android:id="@+id/vehicle_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="right"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="3"
+        android:text="취소"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_layout_thin"/>
+</LinearLayout>
+</LinearLayout>
