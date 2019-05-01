@@ -30,7 +30,6 @@ public class pickme_register extends AppCompatActivity{
         agreeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 // 응답 받기
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -56,16 +55,22 @@ public class pickme_register extends AppCompatActivity{
                 String Lat  = intent.getStringExtra("Lat");
                 String Lng  = intent.getStringExtra("Lng");
 
-                //서버 전송
-                pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x","x","x", Point, Dest, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
-                queue.add(pickme_request);
+                if(Dest.length() > 0 && Point.length() > 0){
+                    //서버 전송
+                    pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x","x","x", Point, Dest, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
+                    queue.add(pickme_request);
 
-                Intent intent = new Intent(pickme_register.this, pickme_complete_ready.class);
-                intent.putExtra("Lat",Lat);
-                intent.putExtra("Lng",Lng);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(pickme_register.this, pickme_complete_ready.class);
+                    intent.putExtra("Lat",Lat);
+                    intent.putExtra("Lng",Lng);
+                    intent.putExtra("Dest",Dest);
+                    intent.putExtra("Point",Point);
+                    startActivity(intent);
+                    finish();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "모든 정보를 입력바랍니다.", Toast.LENGTH_SHORT).show();
             }
         });
 

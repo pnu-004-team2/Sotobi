@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -19,6 +20,14 @@ public class pickme_complete_ready extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme_complete);
+
+        String Dest  = intent.getStringExtra("Dest");
+        String Point  = intent.getStringExtra("Point");
+        EditText Where_go = (EditText)findViewById(R.id.pickme_Dest);
+        EditText How_give_point = (EditText)findViewById(R.id.pickme_Give_point);
+
+        Where_go.setText(Dest);
+        How_give_point.setText(Point);
 
         // 승차 취소 버튼
         Button pickme_cancel_Btn = (Button)findViewById(R.id.pickme_cancel_Btn);
@@ -55,4 +64,9 @@ public class pickme_complete_ready extends AppCompatActivity {
             }
         });
     }
+    //수시로 정보를 받는 것을 구현해야한다.
+    //Intent intent = new Intent(pickme_complete_ready.this, pickme_matching.class);
+    //startActivity(intent);
+    //finish();
+
 }

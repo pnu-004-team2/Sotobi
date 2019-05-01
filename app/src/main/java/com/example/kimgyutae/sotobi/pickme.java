@@ -39,7 +39,6 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme);
 
-
         final LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED ){
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -101,6 +100,8 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     public void onBackPressed() {
+        Intent intent = new Intent(pickme.this, modeselect.class);
+        startActivity(intent);
         finish();
     }
 }
