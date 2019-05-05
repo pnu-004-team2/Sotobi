@@ -20,6 +20,7 @@ public class pickme_complete_ready extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme_complete);
+        intent = getIntent();
 
         String Dest  = intent.getStringExtra("Dest");
         String Point  = intent.getStringExtra("Point");
@@ -34,7 +35,7 @@ public class pickme_complete_ready extends AppCompatActivity {
         pickme_cancel_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = getIntent();
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

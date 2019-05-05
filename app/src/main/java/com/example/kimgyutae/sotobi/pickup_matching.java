@@ -9,7 +9,7 @@ import android.widget.Button;
 public class pickup_matching extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pickme_matching);
+        setContentView(R.layout.activity_pickup_matching);
 
 
 
