@@ -4,229 +4,329 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical"
+    android:gravity="center"
     android:background="#FFFFFF">
-    // 로고 출력
-    <ImageView
+    // line
+    <View
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:src="@drawable/login_image"/>
-    // 회원 가입 문구
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
+    // head
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:textAlignment="center"
         android:text="회원가입"
-        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        />
-
-    // 정보 입력 문구
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="# 정보 입력"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textSize="40sp"
         android:textColor="#000000"/>
+    // line
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6sp"
+        android:background="#4472C0"
+        android:layout_marginBottom="10sp"/>
+    // body
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp">
+        android:orientation="vertical">
+        // 아이디 입력
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
-            // 아이디 입력
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="1.38"/>
             <EditText
                 android:id="@+id/register_id"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="left"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:hint="아이디 입력"
                 android:maxLength="10"
-                android:layout_weight="1"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                android:inputType="textNoSuggestions"
-                android:background="@drawable/input_layout"/>
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"/>
             // 아이디 확인 버튼
             <Button
                 android:id="@+id/id_check"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="right"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
                 android:text="확인"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                android:layout_marginLeft="10sp"
                 android:background="@drawable/button_layout_thin"/>
         </LinearLayout>
         // 비밀번호 입력
-        <EditText
-            android:id="@+id/register_pw"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:hint="비밀번호 입력"
-            android:maxLength="10"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:inputType="textPassword"
-            android:background="@drawable/input_layout"/>
-        // 비밀번호 확인
-        <EditText
-            android:id="@+id/register_pw_same"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:hint="비밀번호 확인"
-            android:maxLength="10"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:inputType="textPassword"
-            android:background="@drawable/input_layout"/>
-        // 이름 입력
-        <EditText
-            android:id="@+id/register_person_name"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:hint="이름"
-            android:maxLength="10"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:inputType="textNoSuggestions"
-            android:background="@drawable/input_layout"/>
-        // 휴대폰 번호 입력
-        <EditText
-            android:id="@+id/register_phone"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:hint="휴대폰 번호 입력"
-            android:maxLength="11"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:inputType="textNoSuggestions"
-            android:background="@drawable/input_layout"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp">
-            // 이메일 입력
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="2.5"/>
+            <EditText
+                android:id="@+id/register_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:maxLength="10"
+                android:background="@drawable/input_layout"
+                android:hint="비밀번호 번호 입력"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        // 비밀번호 확인
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="2.5"/>
+            <EditText
+                android:id="@+id/register_pw_same"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:maxLength="10"
+                android:background="@drawable/input_layout"
+                android:hint="비밀번호 일치 확인"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        // 이름
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="2.5"/>
+            <EditText
+                android:id="@+id/register_person_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:hint="이름 입력"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        // 휴대폰 번호 입력
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="휴대폰"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="2.5"/>
+            <EditText
+                android:id="@+id/register_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:hint="휴대폰 번호 입력"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        // line
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6sp"
+            android:background="#4472C0"
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="10sp"/>
+        // 아이디 조건 문구
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="부산대 이메일만 가능합니다"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#4472C0"
+                android:gravity="center"/>
+        </LinearLayout>
+        // 이메일 입력
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이메일"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="1.38"/>
             <EditText
                 android:id="@+id/register_email"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="left"
-                android:gravity="center"
-                android:hint="E-MAIL"
+                android:layout_height="wrap_content"
+                android:hint="이메일 입력"
                 android:maxLength="10"
-                android:layout_weight="1.1"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:inputType="textNoSuggestions"
-                android:background="@drawable/input_layout"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:gravity="center"
-                android:layout_weight="1.2"
-                android:text= " @ pusan.ac.kr"
-                android:textSize="13sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
-                />
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"/>
             // 이메일 인증 버튼
             <Button
                 android:id="@+id/email_check"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="right"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1.4"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
                 android:text="인증"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                android:layout_marginLeft="10sp"
                 android:background="@drawable/button_layout_thin"/>
         </LinearLayout>
+        // 인증번호 입력
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="0dp">
-            // 인증번호 입력
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="인증번호"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="1.38"/>
             <EditText
                 android:id="@+id/register_code"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="left"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:hint="인증번호 입력"
                 android:maxLength="10"
-                android:layout_weight="1"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                android:inputType="textNoSuggestions"
-                android:background="@drawable/input_layout"/>
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"/>
             // 인증번호 확인 버튼
             <Button
                 android:id="@+id/code_check"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="right"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
                 android:text="확인"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                android:layout_marginLeft="10sp"
                 android:background="@drawable/button_layout_thin"/>
         </LinearLayout>
+        // line
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6sp"
+            android:background="#4472C0"
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="10sp"/>
     </LinearLayout>
+    // tail
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         // 등록 버튼
         <Button
             android:id="@+id/register_makeBtn"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="등 록"
-            android:textSize="15sp"
+            android:text="등록"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:background="@drawable/button_layout_thin"/>
+            android:background="@drawable/button_layout"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"/>
         // 취소 버튼
         <Button
             android:id="@+id/register_cancleBtn"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="취 소"
-            android:textSize="15sp"
+            android:text="취소"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:background="@drawable/button_layout_thin"/>
+            android:background="@drawable/button_layout"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"/>
     </LinearLayout>
 </LinearLayout>
