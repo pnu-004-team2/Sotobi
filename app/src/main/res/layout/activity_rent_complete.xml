@@ -67,10 +67,10 @@
                 android:textSize="20sp"
                 android:textStyle="bold"/>
             <TextView
+                android:id="@+id/Left_time"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:textColor="#000000"
-                android:text="03 : 22"
                 android:layout_weight="1.5"
                 android:textSize="20sp"
                 android:textStyle="bold"/>

@@ -7,6 +7,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,7 +32,34 @@ public class rent_complete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_complete);
-        //시간 계산 필요
+        // modified by hdy
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    String timestamp = jsonResponse.getString("time"); //받아와서
+                    long time = Long.parseLong(timestamp); //바꾸고
+                    long currtime = System.currentTimeMillis();
+
+                    long resulttime = currtime - time;
+
+                    String stringtime = Long.toString(resulttime);
+
+                    TextView left_time = (TextView)findViewById(R.id.Left_time);
+                    left_time.setText(stringtime);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        rent_completeRequest rent_completeRequest = new rent_completeRequest(UserID,responseListener);
+        RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
+        queue.add(rent_completeRequest);
+
+
+
 
         // 반납 신청 버튼
         Button returnBtn = (Button)findViewById(R.id.returnBtn);
