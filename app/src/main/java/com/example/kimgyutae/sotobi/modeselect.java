@@ -20,6 +20,15 @@ public class modeselect extends AppCompatActivity {
         setContentView(R.layout.activity_modeselect);
 
         // 내 정보
+        ImageView errorreport = (ImageView)findViewById(R.id.error_report);
+        errorreport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(modeselect.this, errorreport.class);
+                startActivity(intent);
+            }
+        });
+        // 내 정보
         ImageView myinfo = (ImageView)findViewById(R.id.my_info);
         myinfo.setOnClickListener(new View.OnClickListener() {
             @Override
