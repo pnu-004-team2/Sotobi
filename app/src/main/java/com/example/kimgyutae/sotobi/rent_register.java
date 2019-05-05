@@ -18,7 +18,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
@@ -110,7 +112,7 @@ public class rent_register extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int rent = 0;
-                rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition()/10;
+                rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
                 rent_point.setText(String.valueOf(rent));
             }
 
@@ -123,7 +125,7 @@ public class rent_register extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int rent = 0;
-                rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition()/10;
+                rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
                 rent_point.setText(String.valueOf(rent));
             }
 
@@ -138,11 +140,35 @@ public class rent_register extends AppCompatActivity {
         agreerentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(rent_register.this, rent_complete.class);
-                intent.putExtra("point_time", (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition());
-                // 앞에서 받은 latlng을 이용해서 그 오토바이에 하나 사용
-                startActivity(intent);
-                finish();
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+
+                            Intent intent = new Intent(rent_register.this, rent_complete.class);
+                            intent.putExtra("point_time", (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition());
+                            // 앞에서 받은 latlng을 이용해서 그 오토바이에 하나 사용
+                            startActivity(intent);
+                            finish();
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                long regTime = System.currentTimeMillis();
+                regTime += (spinner_hour.getSelectedItemPosition()*6 + spinner_min.getSelectedItemPosition())*60*1000;
+
+
+                rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(rent_register.this);
+                queue.add(RRrequest);
+
             }
         });
 

@@ -8,7 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+
+import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
 public class rent_complete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +30,27 @@ public class rent_complete extends AppCompatActivity {
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(rent_complete.this, return_rent.class);
-                startActivity(intent);
-                finish();
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+
+                            Intent intent = new Intent(rent_complete.this, return_rent.class);
+                            startActivity(intent);
+                            finish();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                rentedRequest rentedrequest = new rentedRequest(UserID, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
+                queue.add(rentedrequest);
+
             }
         });
     }
