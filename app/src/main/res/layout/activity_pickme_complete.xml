@@ -153,7 +153,6 @@
             android:id="@+id/pickme_cancel_Btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:text="취소하기"
             android:textSize="25sp"

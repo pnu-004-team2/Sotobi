@@ -4,57 +4,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    >
+    android:gravity="center"
+    android:background="#FFFFFF">
+    // line
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
+    // head
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp">
-
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/login_image"/>
     </LinearLayout>
-    <TextView
+    // line
+    <View
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp"
-        android:text="고장 및 에러신고"/>
-    <EditText
-        android:id="@+id/error_content"
-        android:layout_width="350dp"
-        android:layout_gravity="center"
-        android:layout_height="350dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="30dp"
-        android:gravity="left"
-        android:hint="이용에 불편하신 사항 입력바랍니다."
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:inputType="textNoSuggestions"
-        android:background="@drawable/input_layout"/>
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
+    // body
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp">
-        // 반납 버튼
-        <Button
-            android:id="@+id/DoneBtn"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        // 고장 및 에러신고 문구
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:text="Done"
-            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:gravity="center"
             android:textStyle="bold"
-            android:background="@drawable/button_layout"/>
+            android:layout_marginTop="20dp"
+            android:text="고장 및 에러신고"/>
+        // 리뷰 작성
+        <EditText
+            android:id="@+id/error_content"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:hint="이용에 불편하신 사항 입력바랍니다."
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:inputType="textNoSuggestions"
+            android:background="@drawable/input_layout"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp">
+            // 작성 버튼
+            <Button
+                android:id="@+id/DoneBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="작성"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_layout"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
