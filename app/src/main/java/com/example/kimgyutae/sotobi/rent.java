@@ -13,6 +13,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationResult;
@@ -29,9 +32,18 @@ import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
+import com.naver.maps.map.util.MarkerIcons;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -44,9 +56,52 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
 
     MapFragment mapFragment = (MapFragment)getSupportFragmentManager().findFragmentById(R.id.map_fragment);
 
+    ArrayList<Marker> markerList = new ArrayList();
+    Timer mTimer;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent);
+
+        TimerTask mTask = new TimerTask() {
+            @Override
+            public void run() {
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            JSONArray jsonArray = jsonResponse.getJSONArray("Show");
+                            for(Marker marker:markerList){marker.setMap(null);}
+                            markerList.clear();
+
+                            for(int i=0;i<jsonArray.length();i++){
+
+                                JSONObject item = jsonArray.getJSONObject(i);
+
+                                double lat = Double.parseDouble(item.getString("Latitude"));
+                                double lng = Double.parseDouble(item.getString("Longitude"));
+
+
+                                markerList.add(new Marker(new LatLng(lat, lng)));
+
+                            }
+                            mapFragment.getMapAsync(rent.this); // 지도 준비된 것 동기화
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                };
+                rentRequest rentrequest = new rentRequest(responseListener);
+                RequestQueue queue = Volley.newRequestQueue(rent.this);
+                queue.add(rentrequest);
+            }
+        };
+        mTimer = new Timer();
+        mTimer.schedule(mTask,0,10000);
+
 
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
@@ -78,7 +133,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
             }
         }
         // 지도 띄우기
-
     }
 
     // 위치 사용 허용 요청
@@ -97,24 +151,16 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
 
-        ArrayList<Marker> markerList = new ArrayList();
-
-        markerList.add(new Marker(new LatLng(35.2318263, 129.0825006)));
-        markerList.add(new Marker(new LatLng(35.2372553, 129.0873740)));
-        markerList.add(new Marker(new LatLng(35.2376547, 129.0836640)));
-        markerList.add(new Marker(new LatLng(35.2372602, 129.0845680)));
-
-
         for(final Marker marker:markerList){
             marker.setMap(naverMap);
-            // 각 마커에 대한 오토바이 등록 정보
             marker.setOnClickListener(new Overlay.OnClickListener() {
                 @Override
                 public boolean onClick(@NonNull Overlay overlay) {
-                    // 누른 마크에 대한 위도 경도 옮기기
                     Intent intent = new Intent(rent.this, rent_register.class);
-                    intent.putExtra("latlng", marker.getPosition());
+                    intent.putExtra("Lat", Double.toString(marker.getPosition().latitude));
+                    intent.putExtra("Lng", Double.toString(marker.getPosition().longitude));
                     startActivity(intent);
+                    mTimer.cancel();
                     finish();
                     return false;
                 }
@@ -124,5 +170,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     public void onBackPressed() {
         finish();
+        mTimer.cancel();
     }
 }

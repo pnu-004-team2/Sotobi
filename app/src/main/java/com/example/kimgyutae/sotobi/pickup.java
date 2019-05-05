@@ -75,7 +75,7 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
                             markerList.clear();
                             destList.clear();
                             pointList.clear();
-                            markerList.clear();
+
 
                             for(int i=0;i<jsonArray.length();i++){
                                 try{
@@ -164,7 +164,6 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
     public void onMapReady(@NonNull NaverMap naverMap) {
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
-
         for(final Marker marker:markerList){
             final int index = markerList.indexOf(marker);
 
