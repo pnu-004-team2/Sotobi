@@ -20,6 +20,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.regex.Pattern;
 
+import static com.example.kimgyutae.sotobi.modeselect.UserID;
+
 /**
  * Created by Jeong Jae Gwang on 2019-04-21.
  */
@@ -33,6 +35,7 @@ public class myinfo extends AppCompatActivity {
     String name = "";
     String motormodel = "";
     String motornumber = "";
+    String point = "";
     String comparePass = "";
     String newpassword = "";
     boolean passOk = false;
@@ -44,7 +47,7 @@ public class myinfo extends AppCompatActivity {
 
         Intent loginInfo = getIntent();
         // 아이디 불러오기
-        final String loginId = loginInfo.getStringExtra("id");
+        final String loginId = UserID;
         /*TextView myinfo_id = (TextView)findViewById(R.id.myinfo_id);
         myinfo_id.setText(loginId);
         // 이름 불러오기
@@ -64,6 +67,7 @@ public class myinfo extends AppCompatActivity {
                     name = URLDecoder.decode(jsonResponse.getString("name"),"utf-8");
                     motormodel = jsonResponse.getString("motormodel");
                     motornumber = jsonResponse.getString("motornumber");
+                    point = jsonResponse.getString("point");
 
                     TextView myinfo_id = (TextView)findViewById(R.id.myinfo_id);
                     myinfo_id.setText(id);

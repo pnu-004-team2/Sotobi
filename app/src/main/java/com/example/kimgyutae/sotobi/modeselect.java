@@ -19,19 +19,12 @@ public class modeselect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modeselect);
 
-        // 아이디, 이름 넘겨주기
-        Intent loginInfo = getIntent();
-        final String loginId = loginInfo.getStringExtra("id");
-        final String loginName = loginInfo.getStringExtra("name");
-        UserID = loginId;
-
         // 내 정보
         ImageView myinfo = (ImageView)findViewById(R.id.my_info);
         myinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(modeselect.this, myinfo.class);
-                intent.putExtra("id", loginId);
                 startActivity(intent);
             }
         });

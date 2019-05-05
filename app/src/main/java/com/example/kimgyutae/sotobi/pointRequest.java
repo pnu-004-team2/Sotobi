@@ -10,7 +10,7 @@ public class pointRequest extends StringRequest {
     private static final String LOGIN_REQUEST_URL = "http://jwu8615.dothome.co.kr/Pointcheck.php";
     private Map<String, String> params;
 
-    public pointRequest(String id, String password, Response.Listener<String> listener) {
+    public pointRequest(String id, Response.Listener<String> listener) {
         super(Method.POST, LOGIN_REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("id", id);

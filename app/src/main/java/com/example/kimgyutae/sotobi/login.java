@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
+import static com.example.kimgyutae.sotobi.modeselect.UserID;
 public class login extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +63,7 @@ public class login extends AppCompatActivity{
                                                     String name = URLDecoder.decode(jsonResponse2.getString("name"),"utf-8");
 
                                                     Intent intent = new Intent(login.this, modeselect.class);
-                                                    intent.putExtra("id", gid);
-                                                    intent.putExtra("name", name);
+                                                    UserID = gid;
                                                     Toast.makeText(getApplicationContext(), "name : "+name+ " id : " +id, Toast.LENGTH_SHORT).show();
 
                                                     login.this.startActivity(intent);
