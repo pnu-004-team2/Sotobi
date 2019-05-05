@@ -38,16 +38,25 @@ public class rent_complete extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
-                    String timestamp = jsonResponse.getString("time"); //받아와서
-                    long time = Long.parseLong(timestamp); //바꾸고
-                    long currtime = System.currentTimeMillis();
+                    boolean success = jsonResponse.getBoolean("success");
+                    if(success){
 
-                    long resulttime = currtime - time;
+                        String timestamp = jsonResponse.getString("time"); //받아와서
 
-                    String stringtime = Long.toString(resulttime);
+                        long time = Long.parseLong(timestamp); //바꾸고
+                        long currtime = System.currentTimeMillis();
 
-                    TextView left_time = (TextView)findViewById(R.id.Left_time);
-                    left_time.setText(stringtime);
+                        long resulttime = time - currtime;
+
+                        String stringtime = Long.toString(resulttime);
+                        String stringtimeH = Long.toString(resulttime/1000/60/60);
+                        String stringtimeM = Long.toString(resulttime/1000/60%60);
+
+                        TextView left_time = (TextView)findViewById(R.id.Left_time);
+                        left_time.setText(stringtimeH +"시 : "+ stringtimeM+"분");
+
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

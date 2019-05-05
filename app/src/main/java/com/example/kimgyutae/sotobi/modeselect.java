@@ -57,8 +57,7 @@ public class modeselect extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-
-                            if (success) {
+                            if (!success) {
                                 Intent intent = new Intent(modeselect.this, rent.class);
                                 startActivity(intent);
                             } else {
@@ -70,9 +69,9 @@ public class modeselect extends AppCompatActivity {
                         }
                     }
                 };
-                rentedRequest rentedrequest = new rentedRequest(UserID, responseListener);
+                rent_completeRequest rent_completerequest = new rent_completeRequest(UserID, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(modeselect.this);
-                queue.add(rentedrequest);
+                queue.add(rent_completerequest);
             }
         });
         // 승차 요청

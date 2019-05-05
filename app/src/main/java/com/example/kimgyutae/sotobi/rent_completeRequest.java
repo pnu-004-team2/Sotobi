@@ -11,8 +11,8 @@ public class rent_completeRequest extends StringRequest {
 
     public rent_completeRequest(String id, com.android.volley.Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL, listener, null);
-        params.put("id",id);
         params = new HashMap<>();
+        params.put("id",id);
     }
 
     @Override

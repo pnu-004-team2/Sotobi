@@ -162,7 +162,7 @@ public class rent_register extends AppCompatActivity {
                 };
 
                 long regTime = System.currentTimeMillis();
-                regTime += (spinner_hour.getSelectedItemPosition()*6 + spinner_min.getSelectedItemPosition())*60*1000;
+                regTime += (spinner_hour.getSelectedItemPosition()*60 + spinner_min.getSelectedItemPosition()*10)*60*1000;
 
 
                 rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, responseListener);
