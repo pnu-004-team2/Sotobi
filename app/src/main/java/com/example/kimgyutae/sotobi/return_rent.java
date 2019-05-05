@@ -47,7 +47,8 @@ public class return_rent extends AppCompatActivity {
                 mailadd = errorcontent.getText().toString();
                 mailcontent = "[Sotobi] 고장 및 에러접수 내용입니다.\n" + "접수자 : ";
                 if(mailadd.length()<=0){
-                    Toast.makeText(getApplicationContext(), "고장 및 에러신고 내용을 입력하세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "고장 및 에러신고 접수 없이 반납 완료.", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else{
                     try {

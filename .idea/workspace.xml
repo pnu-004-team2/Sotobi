@@ -109,9 +109,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/return_rent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="129">
+              <caret line="49" column="83" lean-forward="true" selection-start-line="49" selection-start-column="83" selection-end-line="49" selection-end-column="83" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1299#2936#0" expanded="true" />
                 <element signature="e#2935#2936#0" expanded="true" />
               </folding>
@@ -120,10 +121,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/vehicle_registerRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="51" column="82" selection-start-line="51" selection-start-column="82" selection-end-line="51" selection-end-column="82" />
               <folding>
                 <element signature="e#1079#2346#0" expanded="true" />
                 <element signature="e#2345#2346#0" expanded="true" />
@@ -226,6 +236,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_matching_done.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/return_rent.java" />
       </list>
     </option>
   </component>
@@ -246,11 +258,6 @@
             <path>
               <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
@@ -431,9 +438,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22859451" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22859451" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -571,19 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-          <folding>
-            <element signature="e#1079#2346#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-            <element signature="e#2927#3597#0" expanded="true" />
-            <element signature="e#3596#3597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentedRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -666,17 +661,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rent.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/return_rent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="e#1299#2936#0" expanded="true" />
-            <element signature="e#2935#2936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_return_rent.xml">
       <provider editor-type-id="android-designer2" />
@@ -783,6 +767,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="51" column="82" selection-start-line="51" selection-start-column="82" selection-end-line="51" selection-end-column="82" />
+          <folding>
+            <element signature="e#1079#2346#0" expanded="true" />
+            <element signature="e#2345#2346#0" expanded="true" />
+            <element signature="e#2927#3597#0" expanded="true" />
+            <element signature="e#3596#3597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/vehicle_registerRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/return_rent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="49" column="83" lean-forward="true" selection-start-line="49" selection-start-column="83" selection-end-line="49" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1299#2936#0" expanded="true" />
+            <element signature="e#2935#2936#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
