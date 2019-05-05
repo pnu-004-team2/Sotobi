@@ -13,9 +13,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d3be475-cf7b-469d-9de3-50ff0b6dc0ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/myinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/myinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_myinfo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_myinfo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/activation/.gradle/" />
@@ -73,128 +81,97 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/register.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_matching_done.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="46" column="42" selection-start-line="42" selection-end-line="46" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="115" column="9" lean-forward="true" selection-end-line="126" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_modeselect.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="148" column="81" selection-start-line="148" selection-start-column="81" selection-end-line="148" selection-end-column="81" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="215">
+              <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_myinfo.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
-              <folding>
-                <element signature="e#1079#1873#0" expanded="true" />
-                <element signature="e#1872#1873#0" expanded="true" />
-                <element signature="e#2377#3047#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="171">
+              <caret line="9" column="9" selection-end-line="355" selection-end-column="15" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentedRequest.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="266">
+              <caret line="155" column="37" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_matching.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_register.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="160" column="58" lean-forward="true" selection-start-line="160" selection-start-column="58" selection-end-line="160" selection-end-column="58" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/errorreport.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_matching.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="163">
+              <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/MailSender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/registerRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/myinfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#974#1212#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1340#1573#0" expanded="true" />
-                <element signature="e#1572#1573#0" expanded="true" />
-                <element signature="e#1681#2957#0" expanded="true" />
-                <element signature="e#1838#2721#0" expanded="true" />
-                <element signature="e#2720#2721#0" expanded="true" />
-                <element signature="e#2956#2957#0" expanded="true" />
-                <element signature="e#3074#3307#0" expanded="true" />
-                <element signature="e#3306#3307#0" expanded="true" />
-                <element signature="e#3424#3657#0" expanded="true" />
-                <element signature="e#3656#3657#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -222,13 +199,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/myinfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_modeselect.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_matching.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_complete.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentedRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/errorreport.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_error_report.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_matching_done.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml" />
       </list>
     </option>
   </component>
@@ -243,17 +223,13 @@
     <panes>
       <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
@@ -266,15 +242,25 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="sotobi" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Sotobi" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="device.picker.selection" value="ce0217129d69a42405" />
+    <property name="device.picker.selection" value="Nexus_5X_API_27" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -402,7 +388,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e6979ee-d97f-49e7-b032-c6e81d0d2d93" name="Default Changelist" comment="" />
+      <changelist id="6d3be475-cf7b-469d-9de3-50ff0b6dc0ad" name="Default Changelist" comment="" />
       <created>1557040954671</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -422,15 +408,22 @@
       <option name="project" value="LOCAL" />
       <updated>1557048951080</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="리뷰 작성 레이아웃">
+      <created>1557052114711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557052114711</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22859451" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22818792" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -452,13 +445,14 @@
       <window_info anchor="right" id="Gradle" order="2" weight="0.32955465" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Preview" order="5" weight="0.3295302" />
+      <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.3295302" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="register / pickme_completer 레이아웃 변경" />
     <MESSAGE value="남은시간 보여주기" />
-    <option name="LAST_COMMIT_MESSAGE" value="남은시간 보여주기" />
+    <MESSAGE value="리뷰 작성 레이아웃" />
+    <option name="LAST_COMMIT_MESSAGE" value="리뷰 작성 레이아웃" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/pickup.java">
@@ -516,120 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_register.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="160" column="58" lean-forward="true" selection-start-line="160" selection-start-column="58" selection-end-line="160" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_matching.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="96" column="43" lean-forward="true" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_modeselect.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_loading.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="331" column="15" selection-start-line="331" selection-start-column="15" selection-end-line="331" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rent.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_vehicleregister.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_viewcanrent.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_matching.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_myinfo.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="9" selection-end-line="355" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_error_report.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_matching_done.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_return_rent.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rent_complete.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="148" column="81" selection-start-line="148" selection-start-column="81" selection-end-line="148" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_completeRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -661,32 +541,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/myinfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/registerRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="437">
           <caret line="46" column="42" selection-start-line="42" selection-end-line="46" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="148" column="81" selection-start-line="148" selection-start-column="81" selection-end-line="148" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentedRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -695,64 +580,179 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/MailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
+        <state relative-caret-position="1026">
           <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentedRequest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="931">
+          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/registerRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/myinfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="931">
           <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#974#1212#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1340#1573#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1681#2957#0" expanded="true" />
-            <element signature="e#1838#2721#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-            <element signature="e#2956#2957#0" expanded="true" />
-            <element signature="e#3074#3307#0" expanded="true" />
-            <element signature="e#3306#3307#0" expanded="true" />
-            <element signature="e#3424#3657#0" expanded="true" />
-            <element signature="e#3656#3657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
-          <folding>
-            <element signature="e#1079#1873#0" expanded="true" />
-            <element signature="e#1872#1873#0" expanded="true" />
-            <element signature="e#2377#3047#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/errorreport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
+        <state relative-caret-position="292">
           <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="331" column="15" selection-start-line="331" selection-start-column="15" selection-end-line="331" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rent.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/return_rent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_return_rent.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rent_complete.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_vehicleregister.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_viewcanrent.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_error_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_loading.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_myinfo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="9" selection-end-line="355" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_modeselect.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_matching_done.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="115" column="9" lean-forward="true" selection-end-line="126" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="155" column="37" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_register.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="160" column="58" lean-forward="true" selection-start-line="160" selection-start-column="58" selection-end-line="160" selection-end-column="58" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_matching.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_matching.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>
