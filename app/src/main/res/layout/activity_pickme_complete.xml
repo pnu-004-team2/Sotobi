@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="지원자 대기 중"
-            android:textSize="30sp"
+            android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#4472C0"
             android:layout_marginBottom="20dp"
@@ -48,9 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:textSize="28sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:gravity="left"
+            android:gravity="center"
             android:layout_margin="5sp"
             android:text="승차 신청 내용"/>
         // 목적지 입력
