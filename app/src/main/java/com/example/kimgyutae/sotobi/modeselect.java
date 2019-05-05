@@ -13,6 +13,7 @@ import android.widget.Toast;
  */
 
 public class modeselect extends AppCompatActivity {
+    public static String UserID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class modeselect extends AppCompatActivity {
         Intent loginInfo = getIntent();
         final String loginId = loginInfo.getStringExtra("id");
         final String loginName = loginInfo.getStringExtra("name");
+        UserID = loginId;
 
         // 내 정보
         ImageView myinfo = (ImageView)findViewById(R.id.my_info);

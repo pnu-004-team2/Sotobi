@@ -134,6 +134,18 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+
+            if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) ==
+                    PackageManager.PERMISSION_GRANTED ){
+                Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if (mapFragment == null) {
+                    mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
+                            new LatLng(location.getLatitude(), location.getLongitude()), NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
+                    getSupportFragmentManager().beginTransaction().add(R.id.map_fragment, mapFragment).commit();
+                }
+                mapFragment.getMapAsync(this); // 지도 준비된 것 동기화
+
+            }
         }
     }
 

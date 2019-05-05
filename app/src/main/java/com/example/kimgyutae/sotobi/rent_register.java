@@ -9,6 +9,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -77,15 +85,35 @@ public class rent_register extends AppCompatActivity {
         final EditText left_point = (EditText)findViewById(R.id.Left_Point);
         final EditText rent_point = (EditText)findViewById(R.id.Rent_Point);
 
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        loginRequest loginrequest = new loginRequest(id, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(rent_register.this);
+        queue.add(loginrequest);
+
         int left = 0;
-        left_point.setText(left);
+
+        left_point.setText();
+
+
 
         spinner_hour.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int rent = 0;
                 rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
-                rent_point.setText(rent);
             }
 
             @Override
@@ -98,7 +126,6 @@ public class rent_register extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int rent = 0;
                 rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
-                rent_point.setText(rent);
             }
 
             @Override
