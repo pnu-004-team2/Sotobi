@@ -286,6 +286,33 @@
                 android:background="@drawable/input_layout"
                 android:layout_weight="1"/>
         </LinearLayout>
+        // 잔여 포인트
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="잔여 포인트"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/myinfo_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"/>
+        </LinearLayout>
     </LinearLayout>
     // line
     <View

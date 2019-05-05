@@ -81,6 +81,8 @@ public class myinfo extends AppCompatActivity {
                     myinfo_motormodel.setText(motormodel);
                     TextView myinfo_motornumber = (TextView)findViewById(R.id.myinfo_motornumber);
                     myinfo_motornumber.setText(motornumber);
+                    TextView myinfo_point = (TextView)findViewById(R.id.myinfo_point);
+                    myinfo_point.setText(point);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
