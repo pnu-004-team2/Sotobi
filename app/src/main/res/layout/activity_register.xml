@@ -155,6 +155,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
+                android:maxLength="5"
                 android:background="@drawable/input_layout"
                 android:hint="이름 입력"
                 android:layout_weight="1"/>
@@ -183,6 +184,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
+                android:maxLength="10"
                 android:background="@drawable/input_layout"
                 android:hint="휴대폰 번호 입력"
                 android:layout_weight="1"/>

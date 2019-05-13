@@ -169,6 +169,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
+                android:maxLength="10"
                 android:background="@drawable/input_layout"
                 android:layout_weight="1"/>
             // 비밀번호 확인 버튼
@@ -209,6 +210,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
+                android:maxLength="10"
                 android:background="@drawable/input_layout"
                 android:layout_weight="1"/>
             // 비밀번호 변경 버튼

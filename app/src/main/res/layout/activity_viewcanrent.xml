@@ -4,93 +4,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    >
-    <TextView
+    android:gravity="center"
+    android:background="#FFFFFF">
+    // line
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="대여 신청"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginBottom="50dp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="  # 정보 입력"/>
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
+    // head
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp">
-
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/login_image"/>
+    </LinearLayout>
+    // line
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
+    // body
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        // 대여 신청 문구
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="대여 신청"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#4472C0"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+        // 정보 입력 문구
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_margin="5sp"
+            android:text="정보 입력"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:textColor="#000000"
                 android:text="대여 시간"
-                android:layout_weight="1.5"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_weight="0.7"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5sp"/>
             <Spinner
                 android:id="@+id/rent_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"
+                android:layout_weight="0.95"
                 android:textSize="20sp"
                 android:textStyle="bold"></Spinner>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:textColor="#000000"
                 android:text="시"
-                android:layout_weight="2"
+                android:layout_weight="1.1"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
             <Spinner
                 android:id="@+id/rent_min"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"
+                android:layout_weight="0.95"
                 android:textSize="20sp"
                 android:textStyle="bold"></Spinner>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:textColor="#000000"
                 android:text="분"
-                android:layout_weight="2"
+                android:layout_weight="1.1"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
         </LinearLayout>
+        // 잔여 포인트
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:text="잔여 포인트"
-                android:layout_weight="1"/>
+                android:layout_marginLeft="5sp"
+                android:layout_weight="1.4"/>
             <EditText
                 android:id="@+id/Left_Point"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="left"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxLength="10"
                 android:layout_weight="1"
@@ -101,24 +127,25 @@
                 android:focusable="false"
                 android:clickable="false"/>
         </LinearLayout>
-
+        // 사용 포인트
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:text="사용 포인트"
-                android:layout_weight="1"/>
+                android:layout_marginLeft="5sp"
+                android:layout_weight="1.4"/>
             <EditText
                 android:id="@+id/Rent_Point"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="left"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxLength="10"
                 android:layout_weight="1"
@@ -130,14 +157,15 @@
                 android:clickable="false"/>
         </LinearLayout>
     </LinearLayout>
+    // tail
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp">
-        // 동의 버튼
+        // 렌트 버튼
         <Button
             android:id="@+id/agreerentBtn"
             android:layout_width="match_parent"
@@ -145,11 +173,11 @@
             android:layout_gravity="left"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="Rent"
-            android:textSize="18sp"
+            android:text="렌트"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:background="@drawable/button_layout"/>
-        // 반납 버튼
+        // 취소 버튼
         <Button
             android:id="@+id/returntorentBtn"
             android:layout_width="match_parent"
@@ -157,8 +185,8 @@
             android:layout_gravity="right"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="Back"
-            android:textSize="18sp"
+            android:text="취소"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:background="@drawable/button_layout"/>
     </LinearLayout>
