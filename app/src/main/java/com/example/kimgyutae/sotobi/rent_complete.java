@@ -29,9 +29,15 @@ import java.util.ArrayList;
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
 public class rent_complete extends AppCompatActivity {
+    String password;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_complete);
+
+        TextView rent_PW = (TextView)findViewById(R.id.rentPW);
+        password = createCode.getCode();
+        rent_PW.setText(password);
+
         // modified by hdy
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -54,7 +60,6 @@ public class rent_complete extends AppCompatActivity {
 
                         TextView left_time = (TextView)findViewById(R.id.Left_time);
                         left_time.setText(stringtimeH +"시 : "+ stringtimeM+"분");
-
                     }
 
                 } catch (JSONException e) {
@@ -63,7 +68,7 @@ public class rent_complete extends AppCompatActivity {
             }
         };
 
-        rent_completeRequest rent_completeRequest = new rent_completeRequest(UserID,responseListener);
+        rent_completeRequest rent_completeRequest = new rent_completeRequest(UserID,password,responseListener);
         RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
         queue.add(rent_completeRequest);
 

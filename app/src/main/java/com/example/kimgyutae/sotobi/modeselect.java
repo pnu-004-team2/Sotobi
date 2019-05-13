@@ -69,7 +69,7 @@ public class modeselect extends AppCompatActivity {
                         }
                     }
                 };
-                rent_completeRequest rent_completerequest = new rent_completeRequest(UserID, responseListener);
+                rent_completeRequest rent_completerequest = new rent_completeRequest(UserID, "PW", responseListener);
                 RequestQueue queue = Volley.newRequestQueue(modeselect.this);
                 queue.add(rent_completerequest);
             }
