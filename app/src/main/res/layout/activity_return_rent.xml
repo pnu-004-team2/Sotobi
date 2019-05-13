@@ -43,45 +43,6 @@
             android:textColor="#4472C0"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"/>
-        // 이용 정보
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="이용 정보"/>
-        // 사용시간
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10sp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="사용 시간"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginLeft="5sp"
-                android:layout_weight="1.5"/>
-            <TextView
-                android:id="@+id/Left_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:maxLength="10"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:inputType="textNoSuggestions"
-                android:background="@drawable/input_layout"
-                android:focusable="false"
-                android:clickable="false"
-                android:textColor="#000000"/>
-        </LinearLayout>
         // 고장 및 기타 문의
         <TextView
             android:layout_width="match_parent"
