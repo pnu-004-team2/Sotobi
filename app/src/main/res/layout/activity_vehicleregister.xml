@@ -43,7 +43,20 @@
             android:textStyle="bold"
             android:textColor="#000000"/>
         // 차량 종류
-        <EditText
+        <Spinner
+            android:id="@+id/vehicle_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:gravity="center"
+            android:hint="제조사명"
+            android:maxLength="10"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:background="@drawable/input_layout"/>
+        <Spinner
             android:id="@+id/vehicle_model"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,8 +68,7 @@
             android:maxLength="10"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:background="@drawable/input_layout"
-            android:textColor="#000000"/>
+            android:background="@drawable/input_layout"/>
         // 차량 번호
         <EditText
             android:id="@+id/vehicle_number"
@@ -70,8 +82,7 @@
             android:maxLength="10"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:background="@drawable/input_layout"
-            android:textColor="#000000"/>
+            android:background="@drawable/input_layout"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

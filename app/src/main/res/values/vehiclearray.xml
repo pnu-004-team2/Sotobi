@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="company">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="KR_Motors">
+        <item>뉴티</item>
+        <item>엑스피드</item>
+        <item>아퀼라</item>
+        <item>DD100</item>
+        <item>DD110</item>
+        <item>델리로드</item>
+        <item>비버</item>
+        <item>와우</item>
+        <item>아띠</item>
+        <item>에이온</item>
+        <item>요타</item>
+        <item>메가젯</item>
+        <item>비버</item>
+        <item>코멧</item>
+        <item>트로이</item>
+        <item>RT125D</item>
+        <item>라온</item>
+        <item>에스코트</item>
+        <item>아이미</item>
+        <item>토리</item>
+        <item>티니</item>
+    </string-array>
+    <string-array name="Daelim">
+        <item>에디</item>
+        <item>커플</item>
+        <item>비글</item>
+        <item>위티</item>
+        <item>FC125</item>
+        <item>VA125</item>
+        <item>VF125</item>
+        <item>VN100</item>
+        <item>위티</item>
+        <item>Q2</item>
+        <item>스티져</item>
+        <item>VJF125</item>
+        <item>네오포르테</item>
+        <item>다트</item>
+        <item>데이스타</item>
+        <item>로드윈</item>
+        <item>베스비</item>
+        <item>비본</item>
+        <item>슈퍼리드</item>
+        <item>씨티에이스</item>
+        <item>윌리</item>
+        <item>프리윙</item>
+        <item>아로마</item>
+        <item>카이트</item>
+    </string-array>
+    <string-array name="Honda">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="SYM">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="Vespa">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="Italjet">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="Suzuki">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="Yamaha">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="Kymco">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+    <string-array name="Piaggio">
+        <item>KR Motors</item>
+        <item>Daelim</item>
+        <item>Honda</item>
+        <item>SYM</item>
+        <item>Vespa</item>
+        <item>Italjet</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Kymco</item>
+        <item>Piaggio</item>
+    </string-array>
+
+
+</resources>
