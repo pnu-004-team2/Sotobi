@@ -20,6 +20,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 /**
  *  Created by hdy 19-04-21
  */
@@ -221,7 +224,12 @@ public class vehicle_register extends AppCompatActivity {
             public void onClick(View view) {
                 EditText et_number = (EditText) findViewById(R.id.vehicle_number);
                 String company = choice_do;
-                String model = choice_se;
+                String model = null;
+                try {
+                    model = URLEncoder.encode(choice_se,"utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
                 String number = et_number.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -247,7 +255,7 @@ public class vehicle_register extends AppCompatActivity {
                 if (model.length() > 0) {
                     if (number.length() > 0) {// 서버 전송
                         //Toast.makeText(getApplicationContext(), "전송", Toast.LENGTH_SHORT).show();
-                        vehicle_registerRequest Vrequest = new vehicle_registerRequest(id,model,number, responseListener);
+                        vehicle_registerRequest Vrequest = new vehicle_registerRequest(id,company,model,number, responseListener);
                         RequestQueue queue = Volley.newRequestQueue(vehicle_register.this);
                         queue.add(Vrequest);
                     } else  Toast.makeText(getApplicationContext(), "차량 번호를 입력해주세요", Toast.LENGTH_SHORT).show();

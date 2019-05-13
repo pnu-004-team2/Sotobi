@@ -65,7 +65,7 @@ public class myinfo extends AppCompatActivity {
                     email = jsonResponse.getString("email");
                     phonenumber = jsonResponse.getString("phonenumber");
                     name = URLDecoder.decode(jsonResponse.getString("name"),"utf-8");
-                    motormodel = jsonResponse.getString("motormodel");
+                    motormodel = URLDecoder.decode(jsonResponse.getString("motormodel"),"utf-8");
                     motornumber = jsonResponse.getString("motornumber");
                     point = jsonResponse.getString("point");
 

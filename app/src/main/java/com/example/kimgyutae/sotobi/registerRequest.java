@@ -33,6 +33,7 @@ public class registerRequest extends StringRequest {
         params.put("phonenumber", phonenumber);
         params.put("motormodel", "x");
         params.put("motornumber", "x");
+        params.put("motorcompany", "x");
         params.put("point", "100");
     }
     public registerRequest( String id, com.android.volley.Response.Listener<String> listener) {
