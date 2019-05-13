@@ -80,7 +80,8 @@
                 android:inputType="textNoSuggestions"
                 android:background="@drawable/input_layout"
                 android:focusable="false"
-                android:clickable="false"/>
+                android:clickable="false"
+                android:textColor="#000000"/>
         </LinearLayout>
         // 획득 포인트
         <LinearLayout
@@ -109,7 +110,8 @@
                 android:inputType="textNoSuggestions"
                 android:background="@drawable/input_layout"
                 android:focusable="false"
-                android:clickable="false"/>
+                android:clickable="false"
+                android:textColor="#000000"/>
         </LinearLayout>
     </LinearLayout>
     // tail
