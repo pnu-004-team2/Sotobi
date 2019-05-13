@@ -51,6 +51,8 @@ import java.util.TimerTask;
  */
 
 public class rent extends AppCompatActivity implements OnMapReadyCallback {
+    public static double rLong;
+    public static double rLat;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private FusedLocationSource locationSource;
 
@@ -157,6 +159,9 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
                 @Override
                 public boolean onClick(@NonNull Overlay overlay) {
                     Intent intent = new Intent(rent.this, rent_register.class);
+                    rLong = marker.getPosition().longitude;
+                    rLat = marker.getPosition().latitude;
+
                     intent.putExtra("Lat", Double.toString(marker.getPosition().latitude));
                     intent.putExtra("Lng", Double.toString(marker.getPosition().longitude));
                     startActivity(intent);

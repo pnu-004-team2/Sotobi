@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.rent.rLat;
+import static com.example.kimgyutae.sotobi.rent.rLong;
 
 public class rent_register extends AppCompatActivity {
     private Spinner spinner_hour;
@@ -32,7 +34,8 @@ public class rent_register extends AppCompatActivity {
     private Spinner spinner_min;
     ArrayList<Integer> timeList_min;
     ArrayAdapter<Integer> timeAdapter_min;
-
+    int usePoints;
+    int orgPoints;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcanrent);
@@ -97,6 +100,7 @@ public class rent_register extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
                     String uPoint = jsonResponse.getString("point");
                     left_point.setText(uPoint);
+                    orgPoints = Integer.parseInt(uPoint);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -114,6 +118,7 @@ public class rent_register extends AppCompatActivity {
                 int rent = 0;
                 rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
                 rent_point.setText(String.valueOf(rent));
+                usePoints = orgPoints - rent;
             }
 
             @Override
@@ -127,6 +132,7 @@ public class rent_register extends AppCompatActivity {
                 int rent = 0;
                 rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
                 rent_point.setText(String.valueOf(rent));
+                usePoints = orgPoints - rent;
             }
 
             @Override
@@ -165,7 +171,7 @@ public class rent_register extends AppCompatActivity {
                 regTime += (spinner_hour.getSelectedItemPosition()*60 + spinner_min.getSelectedItemPosition()*10)*60*1000;
 
 
-                rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, responseListener);
+                rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, usePoints , rLat, rLong, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(rent_register.this);
                 queue.add(RRrequest);
 
