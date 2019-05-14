@@ -31,7 +31,7 @@ import static com.example.kimgyutae.sotobi.modeselect.UserID;
 public class rent_complete extends AppCompatActivity {
     String password;
     Intent BikeN = getIntent();
-    String bnum = BikeN.getStringExtra("bnum");
+    public static String bnum;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

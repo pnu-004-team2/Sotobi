@@ -25,6 +25,7 @@ import java.util.Date;
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 import static com.example.kimgyutae.sotobi.rent.rLat;
 import static com.example.kimgyutae.sotobi.rent.rLong;
+import static com.example.kimgyutae.sotobi.rent_complete.bnum;
 
 public class rent_register extends AppCompatActivity {
     private Spinner spinner_hour;
@@ -154,14 +155,12 @@ public class rent_register extends AppCompatActivity {
 
                 if(Lat == 35.231457 && Lng == 129.0839022)
                     locat = 1;
-                else if(Lat == 35.2318263 && Lng == 129.0825006)
+                else if(Lat == 35.23805 && Lng == 129.077125)
                     locat = 2;
-                else if(Lat == 35.2311954 && Lng == 129.0826959)
-                    locat = 3;
                 else if(Lat == 35.2358219 && Lng == 129.0828055)
+                    locat = 3;
+                else if(Lat == 35.2338779 && Lng == 129.0753506)
                     locat = 4;
-                else if(Lat == 35.2335284 && Lng == 129.0807338)
-                    locat = 5;
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -169,15 +168,12 @@ public class rent_register extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            String Bnum = jsonResponse.getString("bnum");
-
+                            bnum = jsonResponse.getString("bnum");
                             Intent intent = new Intent(rent_register.this, rent_complete.class);
                             intent.putExtra("point_time", (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition());
-                            intent.putExtra("bnum", Bnum);
                             // 앞에서 받은 latlng을 이용해서 그 오토바이에 하나 사용
                             startActivity(intent);
                             finish();
-
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -189,7 +185,7 @@ public class rent_register extends AppCompatActivity {
                 regTime += (spinner_hour.getSelectedItemPosition()*60 + spinner_min.getSelectedItemPosition()*10)*60*1000;
 
 
-                rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, usePoints , rLat, rLong,locat, responseListener);
+                rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, usePoints , locat, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(rent_register.this);
                 queue.add(RRrequest);
 

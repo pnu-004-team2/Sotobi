@@ -84,7 +84,6 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
                                 double lat = Double.parseDouble(item.getString("Latitude"));
                                 double lng = Double.parseDouble(item.getString("Longitude"));
 
-
                                 markerList.add(new Marker(new LatLng(lat, lng)));
 
                             }
