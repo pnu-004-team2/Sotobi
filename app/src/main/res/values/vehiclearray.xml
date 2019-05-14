@@ -62,100 +62,124 @@
         <item>카이트</item>
     </string-array>
     <string-array name="Honda">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>덩크</item>
+        <item>몽키</item>
+        <item>조르노</item>
+        <item>NSC50R</item>
+        <item>CB125R</item>
+        <item>MSX125</item>
+        <item>PCX</item>
+        <item>알파</item>
+        <item>벤리</item>
+        <item>슈퍼커브</item>
+        <item>엘리트</item>
+        <item>SCR110</item>
+        <item>SH125i</item>
+        <item>디오</item>
+        <item>비전</item>
+        <item>포르자125</item>
+        <item>SH Mode</item>
+        <item>리드125</item>
+        <item>FSH125</item>
+        <item>줌머-엑스</item>
     </string-array>
     <string-array name="SYM">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>미오</item>
+        <item>와이드에보</item>
+        <item>WOO100</item>
+        <item>제트</item>
+        <item>조이라이드</item>
+        <item>Z1</item>
+        <item>울프</item>
+        <item>GR125</item>
+        <item>GTS125</item>
+        <item>조이맥스</item>
+        <item>티투스</item>
+        <item>캬브</item>
+        <item>제트파워</item>
     </string-array>
     <string-array name="Vespa">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>스프린트50</item>
+        <item>GTS125</item>
+        <item>LX125</item>
+        <item>스프린트125</item>
+        <item>프리마베라</item>
+        <item>엠포리오</item>
+        <item>PX125</item>
+        <item>쿼란타세이</item>
+        <item>LXV125</item>
+        <item>S125</item>
+        <item>LT125</item>
     </string-array>
     <string-array name="Italjet">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>그리폰125</item>
+        <item>필그림</item>
+        <item>필그림에보</item>
+        <item>포뮬라125</item>
+        <item>벨로시페</item>
+        <item>엔티크</item>
+        <item>칼라티카</item>
     </string-array>
     <string-array name="Suzuki">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>허슬러</item>
+        <item>필프리고</item>
+        <item>QuadSport</item>
+        <item>어드레스</item>
+        <item>버그만</item>
+        <item>GSX-R125</item>
+        <item>GSX-S125</item>
+        <item>GSR125</item>
+        <item>익사이트</item>
+        <item>플래그스타</item>
+        <item>반반125</item>
     </string-array>
     <string-array name="Yamaha">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>비노</item>
+        <item>주마</item>
+        <item>BW-S</item>
+        <item>조그</item>
+        <item>AEROX</item>
+        <item>기어</item>
+        <item>복스</item>
+        <item>악시스</item>
+        <item>NMAX</item>
+        <item>X-MAX</item>
+        <item>트리시티</item>
+        <item>시그너스</item>
+        <item>YZF-R125</item>
+        <item>TT</item>
+        <item>YB125</item>
+        <item>YZF-R125</item>
+        <item>비위즈</item>
+        <item>비티</item>
+        <item>크립톤</item>
+        <item>MT-125</item>
+        <item>WR125X</item>
+        <item>XENTER</item>
+        <item>YBR125</item>
     </string-array>
     <string-array name="Kymco">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>필리125</item>
+        <item>X-타운</item>
+        <item>Pulsar-S</item>
+        <item>K-파이프</item>
+        <item>G5125</item>
+        <item>GP125</item>
+        <item>Jetix125</item>
+        <item>VJR</item>
+        <item>그랜드딩크</item>
+        <item>다운타운</item>
+        <item>레이싱</item>
+        <item>캡처125</item>
+        <item>G-딩크</item>
     </string-array>
     <string-array name="Piaggio">
-        <item>KR Motors</item>
-        <item>Daelim</item>
-        <item>Honda</item>
-        <item>SYM</item>
-        <item>Vespa</item>
-        <item>Italjet</item>
-        <item>Suzuki</item>
-        <item>Yamaha</item>
-        <item>Kymco</item>
-        <item>Piaggio</item>
+        <item>타이푼</item>
+        <item>메들리</item>
+        <item>리버티</item>
+        <item>X10</item>
+        <item>MP3</item>
+        <item>비버리</item>
     </string-array>
 
 
