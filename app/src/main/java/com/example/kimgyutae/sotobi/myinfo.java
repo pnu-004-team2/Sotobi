@@ -38,6 +38,7 @@ public class myinfo extends AppCompatActivity {
     String point = "";
     String comparePass = "";
     String newpassword = "";
+    String motorcompany = "";
     boolean passOk = false;
 
     @Override
@@ -68,6 +69,7 @@ public class myinfo extends AppCompatActivity {
                     motormodel = URLDecoder.decode(jsonResponse.getString("motormodel"),"utf-8");
                     motornumber = jsonResponse.getString("motornumber");
                     point = jsonResponse.getString("point");
+                    motorcompany = jsonResponse.getString("motorcompany");
 
                     TextView myinfo_id = (TextView)findViewById(R.id.myinfo_id);
                     myinfo_id.setText(id);
@@ -82,7 +84,9 @@ public class myinfo extends AppCompatActivity {
                     TextView myinfo_motornumber = (TextView)findViewById(R.id.myinfo_motornumber);
                     myinfo_motornumber.setText(motornumber);
                     TextView myinfo_point = (TextView)findViewById(R.id.myinfo_point);
-                    myinfo_point.setText(point);
+                    myinfo_point.setText(point + "P");
+                    TextView myinfo_motorcompany = (TextView)findViewById(R.id.myinfo_motorcompany);
+                    myinfo_motorcompany.setText(motorcompany);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
