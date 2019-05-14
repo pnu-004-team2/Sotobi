@@ -22,6 +22,7 @@ package com.example.kimgyutae.sotobi;
 
 public class modeselect extends AppCompatActivity {
     public static String UserID;
+    public static String uPoint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +75,18 @@ public class modeselect extends AppCompatActivity {
                 queue.add(rent_completerequest);
             }
         });
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    uPoint = jsonResponse.getString("point");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
         // 승차 요청
         Button pickme = (Button)findViewById(R.id.gotopickme);
         pickme.setOnClickListener(new View.OnClickListener() {

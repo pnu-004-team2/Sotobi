@@ -166,25 +166,23 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
         for(final Marker marker:markerList){
             final int index = markerList.indexOf(marker);
-
-                marker.setIcon(MarkerIcons.YELLOW);
-                marker.setMap(naverMap);
-                // 각 마커에 대한 오토바이 픽업 요청 승인하기
-                marker.setOnClickListener(new Overlay.OnClickListener() {
-                    @Override
-                    public boolean onClick(@NonNull Overlay overlay) {
-                        Intent intent = new Intent(pickup.this, pickup_check.class); // 픽업하러 가겠다는 창 표시 필요
-                        intent.putExtra("Lat", Double.toString(marker.getPosition().latitude));
-                        intent.putExtra("Lng", Double.toString(marker.getPosition().longitude));
-                        intent.putExtra("Dest", destList.get(index));
-                        intent.putExtra("Get_Point", pointList.get(index));
-                        startActivity(intent);
-                        mTimer.cancel();
-                        finish();
-                        return false;
-                    }
-                });
-
+            marker.setIcon(MarkerIcons.YELLOW);
+            marker.setMap(naverMap);
+            // 각 마커에 대한 오토바이 픽업 요청 승인하기
+            marker.setOnClickListener(new Overlay.OnClickListener() {
+                @Override
+                public boolean onClick(@NonNull Overlay overlay) {
+                    Intent intent = new Intent(pickup.this, pickup_check.class); // 픽업하러 가겠다는 창 표시 필요
+                    intent.putExtra("Lat", Double.toString(marker.getPosition().latitude));
+                    intent.putExtra("Lng", Double.toString(marker.getPosition().longitude));
+                    intent.putExtra("Dest", destList.get(index));
+                    intent.putExtra("Get_Point", pointList.get(index));
+                    startActivity(intent);
+                    mTimer.cancel();
+                    finish();
+                    return false;
+                }
+            });
         }
     }
 

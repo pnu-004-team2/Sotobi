@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.modeselect.uPoint;
 import static com.example.kimgyutae.sotobi.rent.rLat;
 import static com.example.kimgyutae.sotobi.rent.rLong;
 import static com.example.kimgyutae.sotobi.rent_complete.bnum;
@@ -93,25 +94,8 @@ public class rent_register extends AppCompatActivity {
         final EditText left_point = (EditText)findViewById(R.id.Left_Point);
         final EditText rent_point = (EditText)findViewById(R.id.Rent_Point);
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    boolean success = jsonResponse.getBoolean("success");
-                    String uPoint = jsonResponse.getString("point");
-                    left_point.setText(uPoint);
-                    orgPoints = Integer.parseInt(uPoint);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-
-        pointRequest pointrequest = new pointRequest(UserID, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(rent_register.this);
-        queue.add(pointrequest);
-
+        left_point.setText(uPoint);
+        orgPoints = Integer.parseInt(uPoint);
 
         spinner_hour.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

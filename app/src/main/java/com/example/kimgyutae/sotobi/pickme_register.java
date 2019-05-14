@@ -19,12 +19,18 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.modeselect.uPoint;
+
 public class pickme_register extends AppCompatActivity{
     Intent intent;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme_register);
         intent = getIntent();
+        final EditText left_point = (EditText)findViewById(R.id.pickme_Left_Point);
+        left_point.setText(uPoint);
+
         // 승차 신청 버튼
         Button agreeBtn = (Button)findViewById(R.id.pickme_agreeBtn);
         agreeBtn.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +63,7 @@ public class pickme_register extends AppCompatActivity{
 
                 if(Dest.length() > 0 && Point.length() > 0){
                     //서버 전송
-                    pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x","x","x", Point, Dest, responseListener);
+                    pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x", UserID,"x", Point, Dest, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
                     queue.add(pickme_request);
 
@@ -66,6 +72,7 @@ public class pickme_register extends AppCompatActivity{
                     intent.putExtra("Lng",Lng);
                     intent.putExtra("Dest",Dest);
                     intent.putExtra("Point",Point);
+                    intent.putExtra("Left_Point",uPoint);
                     startActivity(intent);
                     finish();
                 }
