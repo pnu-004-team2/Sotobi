@@ -114,6 +114,7 @@ public class myinfo extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"비밀번호 미일치", Toast.LENGTH_SHORT).show();
             }
         });
+        //
         Button changePass = (Button)findViewById(R.id.myinfo_changePass);
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
