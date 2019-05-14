@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="company">
+        <item>--------</item>
         <item>KR Motors</item>
         <item>Daelim</item>
         <item>Honda</item>
@@ -11,6 +12,9 @@
         <item>Yamaha</item>
         <item>Kymco</item>
         <item>Piaggio</item>
+    </string-array>
+    <string-array name="empty">
+        <item>--------</item>
     </string-array>
     <string-array name="KR_Motors">
         <item>뉴티</item>

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:gravity="center">
     // line
     <View
         android:layout_width="match_parent"
@@ -41,48 +42,101 @@
             android:text="오토바이 등록"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#000000"/>
-        // 차량 종류
-        <Spinner
-            android:id="@+id/vehicle_company"
+            android:textColor="#4472C0"/>
+        // 오토바이 제조사
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:gravity="center"
-            android:hint="제조사명"
-            android:maxLength="10"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:background="@drawable/input_layout"/>
-        <Spinner
-            android:id="@+id/vehicle_model"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오토바이 제조사"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <Spinner
+                android:id="@+id/vehicle_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLength="10"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        // 오토바이 모델
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:gravity="center"
-            android:hint="차량 종류"
-            android:maxLength="10"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:background="@drawable/input_layout"/>
-        // 차량 번호
-        <EditText
-            android:id="@+id/vehicle_number"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오토바이 모델"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <Spinner
+                android:id="@+id/vehicle_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLength="10"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        // 오토바이 번호
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:gravity="center"
-            android:hint="차량 번호"
-            android:maxLength="10"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:background="@drawable/input_layout"/>
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오토바이 번호"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/vehicle_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:maxLength="10"
+                android:gravity="center"
+                android:background="@drawable/input_layout"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        // line
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6sp"
+            android:background="#4472C0"
+            android:layout_marginBottom="20sp"
+            android:layout_marginTop="20sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
