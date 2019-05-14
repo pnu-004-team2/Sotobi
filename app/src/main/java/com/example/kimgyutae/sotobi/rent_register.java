@@ -152,6 +152,7 @@ public class rent_register extends AppCompatActivity {
                 double Lng = Double.parseDouble(location.getStringExtra("Lng"));
 
                 int locat = 0;
+                int check = 0;
 
                 if(Lat == 35.231457 && Lng == 129.0839022)
                     locat = 1;
@@ -168,17 +169,22 @@ public class rent_register extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            bnum = jsonResponse.getString("bnum");
-                            Intent intent = new Intent(rent_register.this, rent_complete.class);
-                            intent.putExtra("point_time", (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition());
-                            // 앞에서 받은 latlng을 이용해서 그 오토바이에 하나 사용
-                            startActivity(intent);
-                            finish();
+                            if(success) {
+                                bnum = jsonResponse.getString("bnum");
+                                Intent intent = new Intent(rent_register.this, rent_complete.class);
+                                intent.putExtra("point_time", (spinner_hour.getSelectedItemPosition() * 6) + spinner_min.getSelectedItemPosition());
+                                // 앞에서 받은 latlng을 이용해서 그 오토바이에 하나 사용
+                                startActivity(intent);
+                                finish();
+                            }
+                            else
+                                Toast.makeText(getApplicationContext(), "현재 장소에 대여가능한 오토바이가 없습니다.", Toast.LENGTH_SHORT).show();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
+
                 };
 
                 long regTime = System.currentTimeMillis();
@@ -188,7 +194,6 @@ public class rent_register extends AppCompatActivity {
                 rentRegisterRequest RRrequest = new rentRegisterRequest(UserID, regTime, usePoints , locat, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(rent_register.this);
                 queue.add(RRrequest);
-
             }
         });
         // 대여 취소 버튼
