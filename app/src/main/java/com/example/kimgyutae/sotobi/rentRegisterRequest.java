@@ -10,7 +10,7 @@ public class rentRegisterRequest extends StringRequest {
     private static final String VEHICLE_REGISTER_REQUEST_URL = "http://jwu8615.dothome.co.kr/RentRegister.php";
     private Map<String, String> params;
 
-    public rentRegisterRequest(String id, long time, int point, double lati, double longi, Response.Listener<String> listener) {
+    public rentRegisterRequest(String id, long time, int point, double lati, double longi,int location, Response.Listener<String> listener) {
         super(Method.POST, VEHICLE_REGISTER_REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("id",id);
@@ -18,6 +18,8 @@ public class rentRegisterRequest extends StringRequest {
         params.put("point",String.valueOf(point));
         params.put("lati",String.valueOf(lati));
         params.put("longi",String.valueOf(longi));
+        params.put("location",String.valueOf(location));
+
     }
 
     @Override

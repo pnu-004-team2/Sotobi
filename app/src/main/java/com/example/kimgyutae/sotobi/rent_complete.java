@@ -30,13 +30,19 @@ import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
 public class rent_complete extends AppCompatActivity {
     String password;
+    Intent BikeN = getIntent();
+    String bnum = BikeN.getStringExtra("bnum");
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_complete);
 
         TextView rent_PW = (TextView)findViewById(R.id.rentPW);
+        TextView bikenum = (TextView)findViewById(R.id.motor_number);
+
         password = createCode.getCode();
         rent_PW.setText(password);
+        bikenum.setText(bnum);
 
         // modified by hdy
         Response.Listener<String> responseListener = new Response.Listener<String>() {
