@@ -22,6 +22,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.Timer;
 import java.util.TimerTask;
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 
 public class pickme_complete_ready extends AppCompatActivity {
     Intent intent;
@@ -35,7 +36,6 @@ public class pickme_complete_ready extends AppCompatActivity {
         Lat  = intent.getStringExtra("Lat");
         Lng  = intent.getStringExtra("Lng");
         String Dest  = intent.getStringExtra("Dest");
-        String Point  = intent.getStringExtra("Point");
         String Left_Point  = intent.getStringExtra("Left_Point");
 
         EditText Where_go = (EditText)findViewById(R.id.pickme_Dest);
@@ -43,7 +43,7 @@ public class pickme_complete_ready extends AppCompatActivity {
         EditText Left_point = (EditText)findViewById(R.id.pickme_Left_Point);
 
         Where_go.setText(Dest);
-        How_give_point.setText(Point);
+        How_give_point.setText(Using_Point);
         Left_point.setText(Left_Point);
 
         TimerTask mTask = new TimerTask() {

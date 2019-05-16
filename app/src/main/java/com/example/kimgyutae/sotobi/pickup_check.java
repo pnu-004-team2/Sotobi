@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 
 public class pickup_check extends AppCompatActivity {
     Intent intent;
@@ -27,7 +28,7 @@ public class pickup_check extends AppCompatActivity {
         Lat  = intent.getStringExtra("Lat");
         Lng  = intent.getStringExtra("Lng");
         String Dest  = intent.getStringExtra("Dest");
-        String Point  = intent.getStringExtra("Get_Point");
+        final String Point  = intent.getStringExtra("Get_Point");
 
         EditText Where_go = (EditText)findViewById(R.id.pickup_Dest);
         EditText How_get_point = (EditText)findViewById(R.id.pickup_Get_Point);
@@ -47,6 +48,7 @@ public class pickup_check extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
+                                Using_Point = Integer.toString(-Integer.parseInt(Point));
                                 Intent intent = new Intent(pickup_check.this, pickup_matching.class);
                                 intent.putExtra("Lat",Lat);
                                 intent.putExtra("Lng",Lng);

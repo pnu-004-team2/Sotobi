@@ -22,6 +22,7 @@ package com.example.kimgyutae.sotobi;
 
 public class modeselect extends AppCompatActivity {
     public static String UserID;
+    public static String Using_Point;
     public static String uPoint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,10 @@ public class modeselect extends AppCompatActivity {
                 }
             }
         };
+        pointRequest pointrequest = new pointRequest(UserID, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
+        queue.add(pointrequest);
+
         // 승차 요청
         Button pickme = (Button)findViewById(R.id.gotopickme);
         pickme.setOnClickListener(new View.OnClickListener() {

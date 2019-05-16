@@ -5,6 +5,7 @@ package com.example.kimgyutae.sotobi;
  */
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 import static com.example.kimgyutae.sotobi.modeselect.uPoint;
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 
 public class pickme_register extends AppCompatActivity{
     Intent intent;
@@ -56,14 +58,14 @@ public class pickme_register extends AppCompatActivity{
                 };
                 EditText How_give_point = (EditText)findViewById(R.id.pickme_Give_point);
                 EditText Where_go = (EditText)findViewById(R.id.pickme_Dest);
-                String Point = How_give_point.getText().toString();
+                Using_Point = How_give_point.getText().toString();
                 String Dest = Where_go.getText().toString();
                 String Lat  = intent.getStringExtra("Lat");
                 String Lng  = intent.getStringExtra("Lng");
 
-                if(Dest.length() > 0 && Point.length() > 0){
+                if(Dest.length() > 0 && Using_Point.length() > 0){
                     //서버 전송
-                    pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x", UserID,"x", Point, Dest, responseListener);
+                    pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x", UserID,"x", Using_Point, Dest, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
                     queue.add(pickme_request);
 
@@ -71,7 +73,6 @@ public class pickme_register extends AppCompatActivity{
                     intent.putExtra("Lat",Lat);
                     intent.putExtra("Lng",Lng);
                     intent.putExtra("Dest",Dest);
-                    intent.putExtra("Point",Point);
                     intent.putExtra("Left_Point",uPoint);
                     startActivity(intent);
                     finish();
