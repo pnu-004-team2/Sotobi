@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PointF;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,6 +28,8 @@ import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
 
+import java.util.List;
+
 /**
  * Created by KimGyuTae on 2019-04-02.
  */
@@ -43,7 +46,18 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
 
         final LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED ){
-            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            List<String> providers = lm.getProviders(true);
+            Location location = null;
+            for (String provider : providers) {
+                Location l = lm.getLastKnownLocation(provider);
+                if (l == null) {
+                    continue;
+                }
+                if (location == null || l.getAccuracy() < location.getAccuracy()) {
+                    // Found best last known location: %s", l);
+                    location = l;
+                }
+            }
             if (mapFragment == null) {
                 mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
                         new LatLng(location.getLatitude(), location.getLongitude()), NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
@@ -61,7 +75,19 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
                     MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 
             if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED ){
-                Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, mLocationListener);
+                List<String> providers = lm.getProviders(true);
+                Location location = null;
+                for (String provider : providers) {
+                    Location l = lm.getLastKnownLocation(provider);
+                    if (l == null) {
+                        continue;
+                    }
+                    if (location == null || l.getAccuracy() < location.getAccuracy()) {
+                        // Found best last known location: %s", l);
+                        location = l;
+                    }
+                }
                 if (mapFragment == null) {
                     mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
                             new LatLng(location.getLatitude(), location.getLongitude()), NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
@@ -90,6 +116,38 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
             }
         });
     }
+
+    private final LocationListener mLocationListener = new LocationListener() {
+        public void onLocationChanged(Location location) {
+            if (location.getProvider().equals(LocationManager.GPS_PROVIDER)) {
+                double longitude = location.getLongitude();
+
+                double latitude = location.getLatitude();
+
+                float accuracy = location.getAccuracy();
+
+            } else {
+
+            }
+
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+
+    };
 
     // 위치 사용 허용 요청
     @Override

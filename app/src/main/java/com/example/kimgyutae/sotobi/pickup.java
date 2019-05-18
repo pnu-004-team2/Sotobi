@@ -40,6 +40,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -120,7 +121,18 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
 
         if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) ==
                 PackageManager.PERMISSION_GRANTED ){
-            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            List<String> providers = lm.getProviders(true);
+            Location location = null;
+            for (String provider : providers) {
+                Location l = lm.getLastKnownLocation(provider);
+                if (l == null) {
+                    continue;
+                }
+                if (location == null || l.getAccuracy() < location.getAccuracy()) {
+                    // Found best last known location: %s", l);
+                    location = l;
+                }
+            }
             if (mapFragment == null) {
                 mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
                         new LatLng(location.getLatitude(), location.getLongitude()), NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
@@ -137,7 +149,18 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
 
             if(ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) ==
                     PackageManager.PERMISSION_GRANTED ){
-                Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                List<String> providers = lm.getProviders(true);
+                Location location = null;
+                for (String provider : providers) {
+                    Location l = lm.getLastKnownLocation(provider);
+                    if (l == null) {
+                        continue;
+                    }
+                    if (location == null || l.getAccuracy() < location.getAccuracy()) {
+                        // Found best last known location: %s", l);
+                        location = l;
+                    }
+                }
                 if (mapFragment == null) {
                     mapFragment = MapFragment.newInstance(new NaverMapOptions().camera(new CameraPosition(
                             new LatLng(location.getLatitude(), location.getLongitude()), NaverMap.DEFAULT_CAMERA_POSITION.zoom, 0, 0)));
