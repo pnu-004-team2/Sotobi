@@ -28,7 +28,7 @@ public class matching_done extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching_done);
-
+/*
         Point_Result = Integer.parseInt(uPoint) - Integer.parseInt(Using_Point);
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -60,5 +60,6 @@ public class matching_done extends AppCompatActivity {
                 finish();
             }
         });
+        */
     }
 }

@@ -54,18 +54,22 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1">
-            <Button
+            <ImageButton
                 android:id="@+id/gotorent"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/rent_icon"/>
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:background="#FFFFFF"
+                android:layout_weight="1"
+                android:src="@drawable/rent_icon"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:text="RENT"
+                android:layout_weight="3"
                 android:textStyle="bold"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textColor="#000000"/>
         </LinearLayout>
         // pick me button
@@ -74,18 +78,20 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1">
-            <Button
+            <ImageButton
                 android:id="@+id/gotopickme"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/pickme_icon"/>
+                android:scaleType="fitCenter"
+                android:background="#FFFFFF"
+                android:src="@drawable/pickme_icon"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:text="PICK ME"
                 android:textStyle="bold"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textColor="#000000"/>
         </LinearLayout>
         // pick up button
@@ -94,18 +100,20 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1">
-            <Button
+            <ImageButton
                 android:id="@+id/gotopickup"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/pickup_icon"/>
+                android:scaleType="fitCenter"
+                android:background="#FFFFFF"
+                android:src="@drawable/pickup_icon"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:text="PICK UP"
                 android:textStyle="bold"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textColor="#000000"/>
         </LinearLayout>
     </LinearLayout>

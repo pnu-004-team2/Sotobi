@@ -6,6 +6,7 @@ package com.example.kimgyutae.sotobi;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
         import android.widget.Button;
+        import android.widget.ImageButton;
         import android.widget.ImageView;
         import android.widget.Toast;
 
@@ -49,7 +50,7 @@ public class modeselect extends AppCompatActivity {
             }
         });
         // 대여
-        Button rent = (Button)findViewById(R.id.gotorent);
+        ImageButton rent = (ImageButton)findViewById(R.id.gotorent);
         rent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,7 +94,7 @@ public class modeselect extends AppCompatActivity {
         queue.add(pointrequest);
 
         // 승차 요청
-        Button pickme = (Button)findViewById(R.id.gotopickme);
+        ImageButton pickme = (ImageButton)findViewById(R.id.gotopickme);
         pickme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,7 +103,7 @@ public class modeselect extends AppCompatActivity {
             }
         });
         // 동승 찾기
-        Button pickup = (Button)findViewById(R.id.gotopickup);
+        ImageButton pickup = (ImageButton)findViewById(R.id.gotopickup);
         pickup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
