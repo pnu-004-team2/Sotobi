@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kimgyutae.sotobi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".rent_wait"></activity>
         <activity android:name=".loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,36 +23,26 @@
         </activity>
         <activity android:name=".login" />
         <activity android:name=".register" />
-
         <activity android:name=".modeselect" />
         <activity android:name=".rent" />
         <activity android:name=".pickme" />
         <activity android:name=".pickup" />
-
         <activity android:name=".rent_register" />
         <activity android:name=".rent_complete" />
         <activity android:name=".return_rent" />
-
         <activity android:name=".pickme_register" />
         <activity android:name=".pickme_complete_ready" />
         <activity android:name=".pickme_matching" />
-
         <activity android:name=".pickup_check" />
         <activity android:name=".pickup_matching" />
-
         <activity android:name=".matching_done" />
+        <activity android:name=".myinfo" />
+        <activity android:name=".errorreport" />
+        <activity android:name=".vehicle_register"></activity>
 
-        <activity android:name=".myinfo"/>
-
-        <activity android:name=".errorreport"/>
-
-        <activity android:name=".vehicle_register">
-        </activity>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="iinq5sej2u" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 </manifest>
