@@ -1,7 +1,9 @@
 package com.example.kimgyutae.sotobi;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -144,32 +146,94 @@ public class pickme_matching extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
-                            if (success) {
-                                Toast.makeText(getApplicationContext(), "승차 취소 완료!", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "승차 취소 실패", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder alert_confirm = new AlertDialog.Builder(pickme_matching.this);
+                alert_confirm.setMessage("승차 취소를 하시겠습니다?").setCancelable(false).setPositiveButton("예",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // 'YES'
+                                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        try {
+                                            JSONObject jsonResponse = new JSONObject(response);
+                                            boolean success = jsonResponse.getBoolean("success");
+                                            if (success) {
+                                                Toast.makeText(getApplicationContext(), "승차 취소 완료!", Toast.LENGTH_SHORT).show();
+                                            } else {
+                                                Toast.makeText(getApplicationContext(), "승차 취소 실패", Toast.LENGTH_SHORT).show();
+                                            }
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                };
+
+                                pickme_cancelRequest pickme_request = new pickme_cancelRequest(Lat,Lng, responseListener);
+                                RequestQueue queue = Volley.newRequestQueue(pickme_matching.this);
+                                queue.add(pickme_request);
+
+                                Intent intent = new Intent(pickme_matching.this, pickme.class);
+                                startActivity(intent);
+                                mTimer.cancel();
+                                finish();
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-
-                pickme_cancelRequest pickme_request = new pickme_cancelRequest(Lat,Lng, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(pickme_matching.this);
-                queue.add(pickme_request);
-
-                Intent intent = new Intent(pickme_matching.this, pickme.class);
-                startActivity(intent);
-                mTimer.cancel();
-                finish();
+                        }).setNegativeButton("아니요",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // 'No'
+                                return;
+                            }
+                        });
+                AlertDialog alert = alert_confirm.create();
+                alert.show();
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert_confirm = new AlertDialog.Builder(pickme_matching.this);
+        alert_confirm.setMessage("승차 취소를 하시겠습니다?").setCancelable(false).setPositiveButton("예",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 'YES'
+                        Response.Listener<String> responseListener = new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonResponse = new JSONObject(response);
+                                    boolean success = jsonResponse.getBoolean("success");
+                                    if (success) {
+                                        Toast.makeText(getApplicationContext(), "승차 취소 완료!", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "승차 취소 실패", Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+
+                        pickme_cancelRequest pickme_request = new pickme_cancelRequest(Lat,Lng, responseListener);
+                        RequestQueue queue = Volley.newRequestQueue(pickme_matching.this);
+                        queue.add(pickme_request);
+
+                        Intent intent = new Intent(pickme_matching.this, pickme.class);
+                        startActivity(intent);
+                        mTimer.cancel();
+                        finish();
+                    }
+                }).setNegativeButton("아니요",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 'No'
+                        return;
+                    }
+                });
+        AlertDialog alert = alert_confirm.create();
+        alert.show();
     }
 }
