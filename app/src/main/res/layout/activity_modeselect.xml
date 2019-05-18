@@ -47,7 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:paddingBottom="20dp">
         // rent button
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,7 +70,7 @@
                 android:text="RENT"
                 android:layout_weight="3"
                 android:textStyle="bold"
-                android:textSize="35sp"
+                android:textSize="35dp"
                 android:textColor="#000000"/>
         </LinearLayout>
         // pick me button
@@ -81,9 +82,10 @@
             <ImageButton
                 android:id="@+id/gotopickme"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="match_parent"
                 android:scaleType="fitCenter"
                 android:background="#FFFFFF"
+                android:layout_weight="1"
                 android:src="@drawable/pickme_icon"/>
             <TextView
                 android:layout_width="match_parent"
@@ -91,6 +93,7 @@
                 android:textAlignment="center"
                 android:text="PICK ME"
                 android:textStyle="bold"
+                android:layout_weight="3"
                 android:textSize="35sp"
                 android:textColor="#000000"/>
         </LinearLayout>
@@ -103,15 +106,17 @@
             <ImageButton
                 android:id="@+id/gotopickup"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="match_parent"
                 android:scaleType="fitCenter"
                 android:background="#FFFFFF"
+                android:layout_weight="1"
                 android:src="@drawable/pickup_icon"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:text="PICK UP"
+                android:layout_weight="3"
                 android:textStyle="bold"
                 android:textSize="35sp"
                 android:textColor="#000000"/>
