@@ -104,7 +104,7 @@ public class login extends AppCompatActivity{
         regiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(login.this, matching_done.class);
+                Intent intent = new Intent(login.this, register.class);
                 startActivity(intent);
                 finish();
             }
