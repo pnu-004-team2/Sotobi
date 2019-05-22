@@ -1,12 +1,18 @@
 package com.example.kimgyutae.sotobi;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -30,7 +36,7 @@ public class login extends AppCompatActivity{
         final EditText lg_pw = (EditText)findViewById(R.id.login_pw);
 
         // 로그인 버튼
-        Button loginBtn = (Button)findViewById(R.id.loginBtn);
+        final Button loginBtn = (Button)findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,5 +115,26 @@ public class login extends AppCompatActivity{
                 finish();
             }
         });
+
+        lg_pw.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        lg_pw.setOnEditorActionListener(new TextView.OnEditorActionListener()
+        {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+            {
+                if(actionId == EditorInfo.IME_ACTION_DONE)
+                {
+                    loginBtn.callOnClick();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
     }
 }
