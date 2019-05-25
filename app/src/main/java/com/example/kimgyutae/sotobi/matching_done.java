@@ -28,11 +28,18 @@ import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 
 public class matching_done extends AppCompatActivity {
     int Point_Result;
+    String mode;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching_done);
 
-        Point_Result = Integer.parseInt(uPoint) - Integer.parseInt(Using_Point);
+        Point_Result = Integer.parseInt(uPoint) + Integer.parseInt(Using_Point);
+        if((Using_Point.charAt(0)=='-')){
+            mode = "pickme";
+        }
+        else{
+            mode = "pickup";
+        }
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -49,6 +56,7 @@ public class matching_done extends AppCompatActivity {
                 }
             }
         };
+        history_register_request historyregisterrequest = new history_register_request(UserID, Long.toString(System.currentTimeMillis()),mode,Using_Point,Integer.toString(Point_Result),responseListener);
         LeftPoint_UpdateRequest inforequest = new LeftPoint_UpdateRequest(UserID, Integer.toString(Point_Result), responseListener);
         RequestQueue queue = Volley.newRequestQueue(matching_done.this);
         queue.add(inforequest);

@@ -48,7 +48,7 @@ public class pickup_check extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
-                                Using_Point = Integer.toString(-Integer.parseInt(Point));
+                                Using_Point = Integer.toString(Integer.parseInt(Point));
                                 Intent intent = new Intent(pickup_check.this, pickup_matching.class);
                                 intent.putExtra("Lat",Lat);
                                 intent.putExtra("Lng",Lng);
