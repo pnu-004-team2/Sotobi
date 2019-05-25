@@ -23,6 +23,8 @@ import java.net.URLDecoder;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
+
 public class pickme_matching extends AppCompatActivity {
     Intent intent;
     Timer mTimer;
@@ -98,6 +100,7 @@ public class pickme_matching extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
+                                Using_Point = "-"+Using_Point;
                                 Intent intent = new Intent(pickme_matching.this, matching_done.class);
                                 startActivity(intent);
                                 mTimer.cancel();

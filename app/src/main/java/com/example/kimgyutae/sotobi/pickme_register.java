@@ -70,7 +70,6 @@ public class pickme_register extends AppCompatActivity{
                     //서버 전송
                     pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x", UserID,"x", Using_Point, Dest, responseListener);
 
-                    Using_Point = "-"+Using_Point;
                     RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
                     queue.add(pickme_request);
 

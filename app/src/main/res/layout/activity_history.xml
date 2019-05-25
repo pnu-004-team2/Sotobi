@@ -1,79 +1,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/LinearLayout1"
-android:layout_width="match_parent"
-android:orientation="vertical"
-tools:context=".IntroActivity"
-android:background="#FFFFFF"
-android:layout_height="match_parent">
-
-<LinearLayout
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="60dp">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView35"
-            android:src="@drawable/logo2"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:id="@+id/def_set"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_weight="4"
-            android:background="@drawable/def_set" />
-
-
-    </RelativeLayout>
-
-</LinearLayout>
-
-
-<FrameLayout
-    android:layout_width="match_parent"
+    android:background="#FFFFFF"
     android:layout_height="match_parent">
-    <Button
-        android:id="@+id/ib3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_weight="4"
-        android:background="@drawable/plus" />
-    <ScrollView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/login_image"/>
+    </LinearLayout>
+
+    // line
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView1"
-        android:fillViewport="true"
-        android:background="#ffffff">
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="#000000">
+        android:background="#FFFFFF">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView"
+            android:fillViewport="true"
+            android:background="#FFFFFF">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFFFF">
 
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/list"
-                android:layout_weight="1"
-                android:background="#545454" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/list"
+                    android:listSelector=""
+                    android:layout_weight="1"
+                    android:background="#FFFFFF">
 
-        </LinearLayout>
+                </ListView>
 
-    </ScrollView>
+            </LinearLayout>
 
-</FrameLayout>
+        </ScrollView>
+
+    </FrameLayout>
 </LinearLayout>
