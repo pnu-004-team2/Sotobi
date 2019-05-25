@@ -61,7 +61,7 @@ public class pickme_register extends AppCompatActivity{
                 };
                 EditText How_give_point = (EditText)findViewById(R.id.pickme_Give_point);
                 EditText Where_go = (EditText)findViewById(R.id.pickme_Dest);
-                Using_Point = "-"+How_give_point.getText().toString();
+                Using_Point = How_give_point.getText().toString();
                 String Dest = Where_go.getText().toString();
                 String Lat  = intent.getStringExtra("Lat");
                 String Lng  = intent.getStringExtra("Lng");
@@ -69,6 +69,8 @@ public class pickme_register extends AppCompatActivity{
                 if(Dest.length() > 0 && Using_Point.length() > 0){
                     //서버 전송
                     pickme_registerRequest pickme_request = new pickme_registerRequest(Lat,Lng,"x", UserID,"x", Using_Point, Dest, responseListener);
+
+                    Using_Point = "-"+Using_Point;
                     RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
                     queue.add(pickme_request);
 

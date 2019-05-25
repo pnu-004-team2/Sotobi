@@ -47,7 +47,7 @@ public class history extends AppCompatActivity {
 
                         JSONObject item = jsonArray.getJSONObject(i);
 
-                        String Time = item.getString("TIme");
+                        String Time = item.getString("Time");
                         String How = item.getString("How");
                         String MP = item.getString("MovingPoint");
                         String Point = item.getString("Point");
