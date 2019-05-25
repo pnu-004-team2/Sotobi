@@ -64,7 +64,8 @@
                     android:textColor="#000000"
                     android:gravity="center"
                     android:background="@drawable/input_layout"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:singleLine="true"/>
                 // 아이디 확인 버튼
                 <Button
                     android:id="@+id/id_check"
@@ -164,7 +165,8 @@
                     android:maxLength="5"
                     android:background="@drawable/input_layout"
                     android:hint="이름 입력"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:singleLine="true"/>
             </LinearLayout>
             // 휴대폰 번호 입력
             <LinearLayout
@@ -193,7 +195,8 @@
                     android:maxLength="11"
                     android:background="@drawable/input_layout"
                     android:hint="휴대폰 번호 입력"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:singleLine="true"/>
             </LinearLayout>
             // line
             <View
@@ -244,7 +247,8 @@
                     android:textColor="#000000"
                     android:gravity="center"
                     android:background="@drawable/input_layout"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:singleLine="true"/>
                 // 이메일 인증 버튼
                 <Button
                     android:id="@+id/email_check"
@@ -284,7 +288,8 @@
                     android:textColor="#000000"
                     android:gravity="center"
                     android:background="@drawable/input_layout"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:singleLine="true"/>
                 // 인증번호 확인 버튼
                 <Button
                     android:id="@+id/code_check"

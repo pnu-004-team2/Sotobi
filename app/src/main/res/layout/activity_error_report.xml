@@ -54,7 +54,7 @@
             android:hint="이용에 불편하신 사항 입력바랍니다."
             android:textSize="20sp"
             android:textStyle="bold"
-            android:inputType="textNoSuggestions"
+            android:inputType="textMultiLine"
             android:background="@drawable/input_layout"
             android:textColor="#000000"/>
         <LinearLayout
