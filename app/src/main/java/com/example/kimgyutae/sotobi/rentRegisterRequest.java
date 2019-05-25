@@ -19,7 +19,6 @@ public class rentRegisterRequest extends StringRequest {
         params.put("location",String.valueOf(location));
 
     }
-
     @Override
     public Map<String, String> getParams() {
         return params;

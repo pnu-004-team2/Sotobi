@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,11 +26,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
 public class rent_complete extends AppCompatActivity {
     String password;
+    Timer mTimer;
+
     Intent BikeN = getIntent();
     public static String bnum;
 
@@ -78,35 +83,43 @@ public class rent_complete extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
         queue.add(rent_completeRequest);
 
-
-
-
-        // 반납 신청 버튼
-        Button returnBtn = (Button)findViewById(R.id.returnBtn);
-        returnBtn.setOnClickListener(new View.OnClickListener() {
+        TimerTask mTask = new TimerTask() {
             @Override
-            public void onClick(View view) {
-
+            public void run() {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
-
-                            Intent intent = new Intent(rent_complete.this, return_rent.class);
-                            startActivity(intent);
-                            finish();
-
+                            String state = jsonResponse.getString("state");
+                            if (state.equals("2")) {
+                                Toast.makeText(getApplicationContext(), "대여를 시작합니다.", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(rent_complete.this, renting.class);
+                                startActivity(intent);
+                                mTimer.cancel();
+                                finish();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 };
-                rentedRequest rentedrequest = new rentedRequest(UserID, responseListener);
+                rentingRequest Rrequest = new rentingRequest(bnum, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
-                queue.add(rentedrequest);
+                queue.add(Rrequest);
+            }
+        };
+        mTimer = new Timer();
+        mTimer.schedule(mTask,0,5000);
 
+        // 반납 신청 버튼
+        Button returntorentBtn = (Button)findViewById(R.id.returnBtn1);
+        returntorentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(rent_complete.this, rent.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

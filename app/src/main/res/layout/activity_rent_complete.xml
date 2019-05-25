@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="대여 중"
+            android:text="대여 대기"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#4472C0"
