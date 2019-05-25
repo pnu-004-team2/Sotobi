@@ -179,8 +179,6 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(pickme.this, modeselect.class);
-        startActivity(intent);
         finish();
     }
 }

@@ -65,7 +65,6 @@ public class rent_complete extends AppCompatActivity {
 
                         long resulttime = time - currtime;
 
-                        String stringtime = Long.toString(resulttime);
                         String stringtimeH = Long.toString(resulttime/1000/60/60);
                         String stringtimeM = Long.toString(resulttime/1000/60%60);
 

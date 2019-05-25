@@ -235,4 +235,10 @@ public class register extends AppCompatActivity {
         imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         return true;
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(register.this, login.class);
+        startActivity(intent);
+        finish();
+    }
 }

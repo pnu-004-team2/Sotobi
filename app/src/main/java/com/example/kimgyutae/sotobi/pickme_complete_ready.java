@@ -77,7 +77,7 @@ public class pickme_complete_ready extends AppCompatActivity {
             }
         };
         mTimer = new Timer();
-        mTimer.schedule(mTask,0,5000);
+        mTimer.schedule(mTask,0,3000);
 
         // 승차 취소 버튼
         Button pickme_cancel_Btn = (Button)findViewById(R.id.pickme_cancel_Btn);

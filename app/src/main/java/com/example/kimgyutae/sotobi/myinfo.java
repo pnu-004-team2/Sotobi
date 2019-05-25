@@ -170,4 +170,8 @@ public class myinfo extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

@@ -114,7 +114,7 @@ public class pickme_matching extends AppCompatActivity {
             }
         };
         mTimer = new Timer();
-        mTimer.schedule(mTask,0,5000);
+        mTimer.schedule(mTask,0,3000);
 
         // 만남 버튼
         Button pickme_meetBtn = (Button) findViewById(R.id.pickme_meet);

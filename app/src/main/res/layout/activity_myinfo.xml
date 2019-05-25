@@ -40,7 +40,6 @@
                 android:textSize="30sp"
                 android:padding="5dp"
                 android:textStyle="bold"
-                android:text="1203P"
                 android:textColor="#4472C0"
                 android:layout_margin="7sp"/>
         </AbsoluteLayout>

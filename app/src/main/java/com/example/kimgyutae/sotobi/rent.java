@@ -102,7 +102,7 @@ public class rent extends AppCompatActivity implements OnMapReadyCallback {
             }
         };
         mTimer = new Timer();
-        mTimer.schedule(mTask,0,10000);
+        mTimer.schedule(mTask,0,3000);
 
 
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
