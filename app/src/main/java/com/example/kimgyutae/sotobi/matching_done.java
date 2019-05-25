@@ -60,6 +60,7 @@ public class matching_done extends AppCompatActivity {
         LeftPoint_UpdateRequest inforequest = new LeftPoint_UpdateRequest(UserID, Integer.toString(Point_Result), responseListener);
         RequestQueue queue = Volley.newRequestQueue(matching_done.this);
         queue.add(inforequest);
+        queue.add(historyregisterrequest);
 
         // 완료 버튼
         Button doneBtn = (Button)findViewById(R.id.matching_DoneBtn);

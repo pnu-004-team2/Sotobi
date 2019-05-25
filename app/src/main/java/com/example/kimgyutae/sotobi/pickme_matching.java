@@ -2,6 +2,7 @@ package com.example.kimgyutae.sotobi;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class pickme_matching extends AppCompatActivity {
     Timer mTimer;
     String Lat, Lng;
     String name, phonenumber, motornumber;
+    String tel;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme_matching);
@@ -48,11 +50,18 @@ public class pickme_matching extends AppCompatActivity {
                         name = URLDecoder.decode(jsonResponse.getString("name"),"utf-8");
                         phonenumber = jsonResponse.getString("phonenumber");
                         motornumber = jsonResponse.getString("motornumber");
+                        tel = "tel:" + phonenumber;
 
                         TextView name_View = (TextView)findViewById(R.id.pickme_name);
                         name_View.setText(name);
                         TextView phonenumber_View = (TextView)findViewById(R.id.pickme_phone);
                         phonenumber_View.setText(phonenumber);
+                        phonenumber_View.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+                            }
+                        });
                         TextView bike_number_View = (TextView)findViewById(R.id.pickme_bike_number);
                         bike_number_View.setText(motornumber);
                     }
@@ -121,7 +130,7 @@ public class pickme_matching extends AppCompatActivity {
 
         // 만남 버튼
         Button pickme_meetBtn = (Button) findViewById(R.id.pickme_meet);
-        pickme_meetBtn .setOnClickListener(new View.OnClickListener() {
+        pickme_meetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
