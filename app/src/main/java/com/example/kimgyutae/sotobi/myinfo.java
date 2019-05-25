@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -156,6 +158,16 @@ public class myinfo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(myinfo.this, vehicle_register.class);
                 intent.putExtra("id",loginId);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        ImageView historyBtn = (ImageView)findViewById(R.id.my_history);
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(myinfo.this, history.class);
                 startActivity(intent);
                 finish();
             }

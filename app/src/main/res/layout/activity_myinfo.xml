@@ -19,6 +19,13 @@
         <AbsoluteLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/my_history"
+                android:layout_width="95dp"
+                android:layout_height="60dp"
+                android:layout_x="0dp"
+                android:padding="7dp"
+                android:src="@drawable/userinfo" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

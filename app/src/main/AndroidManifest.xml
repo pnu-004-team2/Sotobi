@@ -39,6 +39,7 @@
         <activity android:name=".myinfo" />
         <activity android:name=".errorreport" />
         <activity android:name=".renting" />
+        <activity android:name=".history" />
         <activity android:name=".vehicle_register"></activity>
 
         <meta-data
