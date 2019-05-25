@@ -54,7 +54,7 @@
         android:layout_marginRight="100dp">
         // 대여 취소 버튼
         <Button
-            android:id="@+id/returnBtn1"
+            android:id="@+id/rent_returnBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

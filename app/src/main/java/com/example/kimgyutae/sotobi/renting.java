@@ -21,7 +21,7 @@ public class renting extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_wait);
-        Button returnBtn = (Button)findViewById(R.id.returnBtn1);
+        Button returnBtn = (Button)findViewById(R.id.rent_returnBtn);
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
