@@ -101,7 +101,6 @@
             android:textStyle="bold"
             android:gravity="center"
             android:text="고장 및 기타 문의"/>
-        x
         // tail
         <LinearLayout
             android:layout_width="match_parent"

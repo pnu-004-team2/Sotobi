@@ -45,7 +45,7 @@ public class rent_complete extends AppCompatActivity {
         TextView rent_PW = (TextView)findViewById(R.id.rentPW);
         TextView bikenum = (TextView)findViewById(R.id.motor_number);
 
-        password = createCode.getCode();
+        password = createCode.getCode().substring(0,4);
         rent_PW.setText(password);
         bikenum.setText(bnum);
 
@@ -113,12 +113,11 @@ public class rent_complete extends AppCompatActivity {
         mTimer.schedule(mTask,0,5000);
 
         // 반납 신청 버튼
-        Button returntorentBtn = (Button)findViewById(R.id.returnBtn1);
+        Button returntorentBtn = (Button)findViewById(R.id.returnBtn);
         returntorentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(rent_complete.this, rent.class);
-                startActivity(intent);
+
                 finish();
             }
         });
