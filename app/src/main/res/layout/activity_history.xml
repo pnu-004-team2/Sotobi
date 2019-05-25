@@ -13,29 +13,90 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:src="@drawable/login_image"/>
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="이용 내역"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:textColor="#000000"/>
     </LinearLayout>
-
     // line
     <View
         android:layout_width="match_parent"
         android:layout_height="6sp"
         android:background="#4472C0"/>
-
+    // 열 이름
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            // 날짜
+            <TextView
+                android:id="@+id/list_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="이용날짜"/>
+            // 유형
+            <TextView
+                android:id="@+id/list_how"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="유형" />
+            // 사용 포인트
+            <TextView
+                android:id="@+id/list_movingpoint"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="사용 P."/>
+            // 잔여 포인트
+            <TextView
+                android:id="@+id/list_point"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="잔여 P."/>
+        </LinearLayout>
+    </LinearLayout>
+    // line
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6sp"
+        android:background="#4472C0"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF">
-
-        </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -46,19 +107,16 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="#FFFFFF">
-
                 <ListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/list"
                     android:layout_weight="1"
-                    android:background="#FFFFFF">
-
+                    android:background="#FFFFFF"
+                    android:divider="#4472C0"
+                    android:dividerHeight="4dp">
                 </ListView>
-
             </LinearLayout>
-
         </ScrollView>
-
     </FrameLayout>
 </LinearLayout>

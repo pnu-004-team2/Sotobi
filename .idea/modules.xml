@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Sotobi.iml" filepath="$PROJECT_DIR$/Sotobi.iml" />
       <module fileurl="file://$PROJECT_DIR$/activation/activation.iml" filepath="$PROJECT_DIR$/activation/activation.iml" />
       <module fileurl="file://$PROJECT_DIR$/additionnal/additionnal.iml" filepath="$PROJECT_DIR$/additionnal/additionnal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/git.iml" filepath="$PROJECT_DIR$/git.iml" />
       <module fileurl="file://$PROJECT_DIR$/mail/mail.iml" filepath="$PROJECT_DIR$/mail/mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sotobi.iml" filepath="$PROJECT_DIR$/sotobi.iml" />
     </modules>
   </component>
 </project>
