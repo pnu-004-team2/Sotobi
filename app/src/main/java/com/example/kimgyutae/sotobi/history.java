@@ -3,6 +3,9 @@ package com.example.kimgyutae.sotobi;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -17,7 +20,10 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
@@ -26,11 +32,15 @@ public class history extends AppCompatActivity {
     ArrayList<String> How_List = new ArrayList();
     ArrayList<String> MP_List = new ArrayList();
     ArrayList<String> Point_List = new ArrayList();
+    private ListView list;
+    ListViewAdapter adapter;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        adapter = new ListViewAdapter() ;
+        list = (ListView) findViewById(R.id.list);
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -42,7 +52,8 @@ public class history extends AppCompatActivity {
                     How_List.clear();
                     MP_List.clear();
                     Point_List.clear();
-
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss.SSS");
+                    Calendar calendar;
                     for(int i=0;i<jsonArray.length();i++){
 
                         JSONObject item = jsonArray.getJSONObject(i);
@@ -52,11 +63,25 @@ public class history extends AppCompatActivity {
                         String MP = item.getString("MovingPoint");
                         String Point = item.getString("Point");
 
-                        Time_List.add(Time);
+
+                        // Create a calendar object that will convert the date and time value in milliseconds to date.
+                        calendar = Calendar.getInstance();
+                        calendar.setTimeInMillis(Long.parseLong(Time));
+                        String date = formatter.format(calendar.getTime());
+                        date = date.substring(0,19);
+
+                        Time_List.add(date);
                         How_List.add(How);
                         MP_List.add(MP);
                         Point_List.add(Point);
+                        Log.e("adapter", date + " " + How + " " + MP + " " + Point);
+                        adapter.addItem(date,How,MP,Point);
                     }
+
+
+                    list.setAdapter(adapter);
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
