@@ -28,10 +28,6 @@ import java.util.Date;
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 
 public class history extends AppCompatActivity {
-    ArrayList<String> Time_List = new ArrayList();
-    ArrayList<String> How_List = new ArrayList();
-    ArrayList<String> MP_List = new ArrayList();
-    ArrayList<String> Point_List = new ArrayList();
     private ListView list;
     ListViewAdapter adapter;
 
@@ -48,10 +44,7 @@ public class history extends AppCompatActivity {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
                     JSONArray jsonArray = jsonResponse.getJSONArray("Show");
-                    Time_List.clear();
-                    How_List.clear();
-                    MP_List.clear();
-                    Point_List.clear();
+
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss.SSS");
                     Calendar calendar;
                     for(int i=0;i<jsonArray.length();i++){
@@ -70,10 +63,10 @@ public class history extends AppCompatActivity {
                         String date = formatter.format(calendar.getTime());
                         date = date.substring(0,19);
 
-                        Time_List.add(date);
-                        How_List.add(How);
-                        MP_List.add(MP);
-                        Point_List.add(Point);
+                        if((MP.charAt(0)!='-')){
+                            MP = '+' + MP;
+                        }
+
                         Log.e("adapter", date + " " + How + " " + MP + " " + Point);
                         adapter.addItem(date,How,MP,Point);
                     }
