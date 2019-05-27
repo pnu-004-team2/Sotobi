@@ -13,19 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d3be475-cf7b-469d-9de3-50ff0b6dc0ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/cancelRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/cancelRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/activation/.gradle/" />
@@ -87,66 +76,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="152" column="74" selection-start-line="152" selection-start-column="74" selection-end-line="152" selection-end-column="74" />
+            <state relative-caret-position="321">
+              <caret line="152" column="78" selection-start-line="152" selection-start-column="69" selection-end-line="152" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/cancelRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="160" selection-start-line="160" selection-end-line="160" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/errorreport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/history.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentingRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-717">
-              <caret line="97" column="43" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="43" />
+            <state relative-caret-position="429">
+              <caret line="179" column="98" selection-start-line="179" selection-start-column="89" selection-end-line="179" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="118" column="40" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
+            <state relative-caret-position="1413">
+              <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3236#3469#0" expanded="true" />
@@ -179,13 +112,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/history_register_request.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+            <state relative-caret-position="235">
+              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
               <folding>
                 <element signature="e#2625#2770#0" expanded="true" />
                 <element signature="e#2769#2770#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="57" column="71" lean-forward="true" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2080#2684#0" expanded="true" />
+                <element signature="e#2683#2684#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,14 +208,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentRegisterRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_wait.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_complete.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentingRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/cancelRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" />
       </list>
     </option>
   </component>
@@ -508,14 +464,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="오토바이 대여 잡것" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_register.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickup_check.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -781,18 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#796#1864#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.volley/volley/1.1.0/65ed7df4af0e83a626f383ff49c3403342659aa9/volley-1.1.0-sources.jar!/com/android/volley/Request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -829,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -865,13 +794,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="152" column="74" selection-start-line="152" selection-start-column="74" selection-end-line="152" selection-end-column="74" />
+        <state relative-caret-position="120">
+          <caret line="67" column="68" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding>
+            <element signature="e#2625#2770#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1413">
+          <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3236#3469#0" expanded="true" />
+            <element signature="e#3468#3469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="179" column="98" selection-start-line="179" selection-start-column="89" selection-end-line="179" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/history_register_request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-107">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
         </state>
       </provider>
     </entry>
@@ -892,42 +865,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/login.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="67" column="68" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding>
-            <element signature="e#2625#2770#0" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-717">
-          <caret line="97" column="43" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="43" />
+        <state relative-caret-position="321">
+          <caret line="152" column="78" selection-start-line="152" selection-start-column="69" selection-end-line="152" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="118" column="40" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
+        <state relative-caret-position="152">
+          <caret line="57" column="71" lean-forward="true" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3236#3469#0" expanded="true" />
-            <element signature="e#3468#3469#0" expanded="true" />
+            <element signature="e#2080#2684#0" expanded="true" />
+            <element signature="e#2683#2684#0" expanded="true" />
           </folding>
         </state>
       </provider>

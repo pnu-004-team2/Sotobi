@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 import static com.example.kimgyutae.sotobi.modeselect.uPoint;
 import static com.example.kimgyutae.sotobi.rent.rLat;
 import static com.example.kimgyutae.sotobi.rent.rLong;
@@ -158,6 +159,7 @@ public class rent_register extends AppCompatActivity {
                                 Intent intent = new Intent(rent_register.this, rent_complete.class);
                                 intent.putExtra("point_time", (spinner_hour.getSelectedItemPosition() * 6) + spinner_min.getSelectedItemPosition());
                                 // 앞에서 받은 latlng을 이용해서 그 오토바이에 하나 사용
+                                Using_Point = String.valueOf(usePoints);
                                 startActivity(intent);
                                 finish();
                             }
