@@ -39,7 +39,7 @@ public class matching_done extends AppCompatActivity {
     String mode;
 
     float rating_value;
-    String rating;
+    String rating = "2.5";
     Intent intent;
     String match_id;
 
@@ -95,7 +95,7 @@ public class matching_done extends AppCompatActivity {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 rating_value = v;
-                rating = Float.toString(rating_value);
+                rating = String.valueOf(rating_value);
             }
         });
 
@@ -130,8 +130,6 @@ public class matching_done extends AppCompatActivity {
                                     JSONObject jsonResponse = new JSONObject(response);
                                     boolean success = jsonResponse.getBoolean("success");
 
-                                    Intent intent = new Intent(matching_done.this, modeselect.class);
-                                    startActivity(intent);
                                     finish();
 
                                 } catch (JSONException e) {
@@ -161,8 +159,6 @@ public class matching_done extends AppCompatActivity {
                                 JSONObject jsonResponse = new JSONObject(response);
                                 boolean success = jsonResponse.getBoolean("success");
 
-                                Intent intent = new Intent(matching_done.this, modeselect.class);
-                                startActivity(intent);
                                 Toast.makeText(getApplicationContext(), "평점등록이 에러신고 없이 접수 되었습니다.", Toast.LENGTH_SHORT).show();
 
                                 finish();
