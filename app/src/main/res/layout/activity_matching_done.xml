@@ -100,6 +100,24 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
+            android:text="상대방 평점 주기"/>
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="2.5"
+            android:layout_gravity="center_horizontal"
+            android:stepSize="0.5"
+            android:max="6" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
             android:text="고장 및 기타 문의"/>
         // tail
         <LinearLayout
@@ -120,7 +138,7 @@
                 android:hint="이용에 불편하신 사항 입력바랍니다."
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:inputType="textMultiLine"
+                android:inputType="textNoSuggestions"
                 android:background="@drawable/input_layout"
                 android:textColor="#000000"/>
             <Button
