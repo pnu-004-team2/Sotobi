@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -30,6 +31,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 
 public class rent_complete extends AppCompatActivity {
     String password;
@@ -37,6 +39,8 @@ public class rent_complete extends AppCompatActivity {
 
     Intent BikeN = getIntent();
     public static String bnum;
+    TimerTask mTask;
+    RequestQueue Rqueue;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +49,7 @@ public class rent_complete extends AppCompatActivity {
         TextView rent_PW = (TextView)findViewById(R.id.rentPW);
         TextView bikenum = (TextView)findViewById(R.id.motor_number);
 
-        password = createCode.getCode();
+        password = createCode.getCode().substring(0,4);
         rent_PW.setText(password);
         bikenum.setText(bnum);
 
@@ -80,10 +84,10 @@ public class rent_complete extends AppCompatActivity {
         };
 
         rent_completeRequest rent_completeRequest = new rent_completeRequest(UserID,password,responseListener);
-        final RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
+        RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
         queue.add(rent_completeRequest);
 
-        final TimerTask mTask = new TimerTask() {
+        mTask = new TimerTask() {
             @Override
             public void run() {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -98,7 +102,7 @@ public class rent_complete extends AppCompatActivity {
                                 Intent intent = new Intent(rent_complete.this, renting.class);
                                 startActivity(intent);
                                 mTimer.cancel();
-                                queue.cancelAll(this);
+                                Rqueue.cancelAll(this);
                                 finish();
                             }
                         } catch (JSONException e) {
@@ -107,8 +111,11 @@ public class rent_complete extends AppCompatActivity {
                     }
                 };
                 rentingRequest Rrequest = new rentingRequest(bnum, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
-                queue.add(Rrequest);
+                Rrequest.setShouldCache(false);
+                Rrequest.setTag(rent_complete.this);
+                Rqueue = Volley.newRequestQueue(rent_complete.this);
+                Rqueue.getCache().clear();
+                Rqueue.add(Rrequest);
             }
         };
 
@@ -127,14 +134,14 @@ public class rent_complete extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            String id = jsonResponse.getString("id");
 
                             if(success){
                                 Intent intent = new Intent(rent_complete.this, modeselect.class);
                                 startActivity(intent);
                                 mTimer.cancel();
                                 mTask.cancel();
-                                queue.cancelAll(this);
+                                Rqueue.cancelAll(rent_complete.this);
+                                Rqueue.getCache().clear();
                                 finish();
                             }
 
@@ -147,7 +154,6 @@ public class rent_complete extends AppCompatActivity {
                 cancelRequest cancel = new cancelRequest(UserID,bnum,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
                 queue.add(cancel);
-                finish();
             }
         });
     }
