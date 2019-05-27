@@ -64,7 +64,7 @@ public class modeselect extends AppCompatActivity {
                                 Intent intent = new Intent(modeselect.this, rent.class);
                                 startActivity(intent);
                             } else {
-                                Intent intent = new Intent(modeselect.this, rent_complete.class);
+                                Intent intent = new Intent(modeselect.this, renting.class);
                                 startActivity(intent);
                             }
                         } catch (JSONException e) {

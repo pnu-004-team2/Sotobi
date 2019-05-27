@@ -45,7 +45,7 @@ public class rent_complete extends AppCompatActivity {
         TextView rent_PW = (TextView)findViewById(R.id.rentPW);
         TextView bikenum = (TextView)findViewById(R.id.motor_number);
 
-        password = createCode.getCode().substring(0,4);
+        password = createCode.getCode();
         rent_PW.setText(password);
         bikenum.setText(bnum);
 
@@ -65,6 +65,7 @@ public class rent_complete extends AppCompatActivity {
 
                         long resulttime = time - currtime;
 
+                        String stringtime = Long.toString(resulttime);
                         String stringtimeH = Long.toString(resulttime/1000/60/60);
                         String stringtimeM = Long.toString(resulttime/1000/60%60);
 
@@ -79,10 +80,10 @@ public class rent_complete extends AppCompatActivity {
         };
 
         rent_completeRequest rent_completeRequest = new rent_completeRequest(UserID,password,responseListener);
-        RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
+        final RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
         queue.add(rent_completeRequest);
 
-        TimerTask mTask = new TimerTask() {
+        final TimerTask mTask = new TimerTask() {
             @Override
             public void run() {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -91,11 +92,13 @@ public class rent_complete extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             String state = jsonResponse.getString("state");
+                            //boolean suc = jsonResponse.getBoolean("success");
                             if (state.equals("2")) {
                                 Toast.makeText(getApplicationContext(), "대여를 시작합니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(rent_complete.this, renting.class);
                                 startActivity(intent);
                                 mTimer.cancel();
+                                queue.cancelAll(this);
                                 finish();
                             }
                         } catch (JSONException e) {
@@ -108,15 +111,42 @@ public class rent_complete extends AppCompatActivity {
                 queue.add(Rrequest);
             }
         };
-        mTimer = new Timer();
-        mTimer.schedule(mTask,0,5000);
 
-        // 반납 신청 버튼
+        mTimer = new Timer();
+        mTimer.schedule(mTask,0,3000);
+
+
+        // cancel
         Button returntorentBtn = (Button)findViewById(R.id.returnBtn);
         returntorentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            String id = jsonResponse.getString("id");
 
+                            if(success){
+                                Intent intent = new Intent(rent_complete.this, modeselect.class);
+                                startActivity(intent);
+                                mTimer.cancel();
+                                mTask.cancel();
+                                queue.cancelAll(this);
+                                finish();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                cancelRequest cancel = new cancelRequest(UserID,bnum,responseListener);
+                RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
+                queue.add(cancel);
                 finish();
             }
         });
