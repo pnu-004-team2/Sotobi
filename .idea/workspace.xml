@@ -62,9 +62,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_wait.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/activation/.gradle/" />
@@ -124,10 +123,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="163" column="34" lean-forward="true" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,15 +135,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_loading.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="161" column="70" selection-start-line="161" selection-start-column="61" selection-end-line="161" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -160,8 +171,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="68" column="71" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
+            <state relative-caret-position="416">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -261,14 +272,14 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_complete.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rentingRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/cancelRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/matching_done.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_myinfo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rent_wait.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java" />
       </list>
     </option>
   </component>
@@ -326,7 +337,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="device.picker.selection" value="Nexus_5X_API_27" />
+    <property name="device.picker.selection" value="ce0217129d69a42405" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tobi2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -473,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558954127156</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="포인트 사용 오류 수정">
+      <created>1558955116628</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558955116628</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -494,9 +512,9 @@
       <window_info anchor="bottom" id="Logcat" order="2" sideWeight="0.49919224" weight="0.3260274" />
       <window_info anchor="bottom" id="TODO" order="3" />
       <window_info anchor="bottom" id="Android Profiler" order="4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.8901454" weight="0.33835617" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.8892617" visible="true" weight="0.2746186" />
       <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.450542" side_tool="true" visible="true" weight="0.22052705" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.110738255" side_tool="true" visible="true" weight="0.2746186" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.32844576" />
       <window_info anchor="bottom" id="Build" order="9" sideWeight="0.54945797" weight="0.22489391" />
       <window_info anchor="bottom" id="Find" order="10" />
@@ -515,7 +533,8 @@
     <MESSAGE value="오토바이 대여 서버작동" />
     <MESSAGE value="오토바이 대여 잡것" />
     <MESSAGE value="이용내역 아이콘 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="이용내역 아이콘 변경" />
+    <MESSAGE value="포인트 사용 오류 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="포인트 사용 오류 수정" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pickme_complete.xml">
@@ -799,26 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2299">
-          <caret line="152" column="78" selection-start-line="152" selection-start-column="69" selection-end-line="152" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/history_register_request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -902,20 +901,40 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="68" column="71" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
+        <state relative-caret-position="226">
+          <caret line="161" column="70" selection-start-line="161" selection-start-column="61" selection-end-line="161" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_register.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/modeselect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="163" column="34" lean-forward="true" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
+        <state relative-caret-position="285">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/renting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kimgyutae/sotobi/rent_complete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

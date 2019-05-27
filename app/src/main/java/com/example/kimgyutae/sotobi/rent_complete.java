@@ -31,6 +31,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
+import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 import static com.example.kimgyutae.sotobi.rent_register.orgPoints;
 
 public class rent_complete extends AppCompatActivity {
@@ -98,6 +99,26 @@ public class rent_complete extends AppCompatActivity {
                             String state = jsonResponse.getString("state");
                             //boolean suc = jsonResponse.getBoolean("success");
                             if (state.equals("2")) {
+
+                                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        try {
+                                            JSONObject jsonResponse = new JSONObject(response);
+                                            boolean success = jsonResponse.getBoolean("success");
+                                            if(success){
+                                            }
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                };
+                                int point = orgPoints- Integer.parseInt(Using_Point);
+                                history_register_request historyregisterrequest = new history_register_request(UserID,
+                                        Long.toString(System.currentTimeMillis()),"rent","-" + Using_Point,String.valueOf(point),responseListener);
+                                RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
+                                queue.add(historyregisterrequest);
+
                                 Toast.makeText(getApplicationContext(), "대여를 시작합니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(rent_complete.this, renting.class);
                                 startActivity(intent);

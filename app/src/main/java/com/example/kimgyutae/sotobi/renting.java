@@ -51,23 +51,5 @@ public class renting extends AppCompatActivity {
             }
         });
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    boolean success = jsonResponse.getBoolean("success");
-                    if(success){
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        int point = orgPoints- Integer.parseInt(Using_Point);
-        history_register_request historyregisterrequest = new history_register_request(UserID,
-                Long.toString(System.currentTimeMillis()),"rent","-" + Using_Point,String.valueOf(point),responseListener);
-        RequestQueue queue = Volley.newRequestQueue(renting.this);
-        queue.add(historyregisterrequest);
     }
 }
