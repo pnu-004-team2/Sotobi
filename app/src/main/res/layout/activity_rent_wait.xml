@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="나는 오늘도 달린다"
+            android:text="대여 중"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#4472C0"
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="반납한다시발"
+            android:text="반납하기"
             android:textSize="25sp"
             android:textStyle="bold"
             android:background="@drawable/button_layout"/>

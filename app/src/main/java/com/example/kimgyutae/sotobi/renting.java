@@ -66,7 +66,7 @@ public class renting extends AppCompatActivity {
         };
         int point = orgPoints- Integer.parseInt(Using_Point);
         history_register_request historyregisterrequest = new history_register_request(UserID,
-                Long.toString(System.currentTimeMillis()),"rent",Using_Point,String.valueOf(point),responseListener);
+                Long.toString(System.currentTimeMillis()),"rent","-" + Using_Point,String.valueOf(point),responseListener);
         RequestQueue queue = Volley.newRequestQueue(renting.this);
         queue.add(historyregisterrequest);
     }
