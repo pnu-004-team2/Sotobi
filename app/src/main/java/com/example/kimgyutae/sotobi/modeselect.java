@@ -77,21 +77,6 @@ public class modeselect extends AppCompatActivity {
                 queue.add(rent_completerequest);
             }
         });
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    boolean success = jsonResponse.getBoolean("success");
-                    uPoint = jsonResponse.getString("point");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        pointRequest pointrequest = new pointRequest(UserID, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
-        queue.add(pointrequest);
 
         // 승차 요청
         ImageButton pickme = (ImageButton)findViewById(R.id.gotopickme);
@@ -118,6 +103,26 @@ public class modeselect extends AppCompatActivity {
         Intent intent = new Intent(modeselect.this, login.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    uPoint = jsonResponse.getString("point");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        pointRequest pointrequest = new pointRequest(UserID, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
+        queue.add(pointrequest);
     }
 }
 

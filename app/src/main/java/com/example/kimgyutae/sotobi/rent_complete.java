@@ -31,7 +31,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
-import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
+import static com.example.kimgyutae.sotobi.rent_register.orgPoints;
 
 public class rent_complete extends AppCompatActivity {
     String password;
@@ -150,8 +150,7 @@ public class rent_complete extends AppCompatActivity {
                         }
                     }
                 };
-
-                cancelRequest cancel = new cancelRequest(UserID,bnum,responseListener);
+                cancelRequest cancel = new cancelRequest(UserID,bnum,orgPoints,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(rent_complete.this);
                 queue.add(cancel);
             }

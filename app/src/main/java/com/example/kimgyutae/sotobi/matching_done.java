@@ -67,8 +67,6 @@ public class matching_done extends AppCompatActivity {
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(matching_done.this, modeselect.class);
-                startActivity(intent);
                 finish();
             }
         });

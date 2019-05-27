@@ -37,7 +37,7 @@ public class rent_register extends AppCompatActivity {
     ArrayList<Integer> timeList_min;
     ArrayAdapter<Integer> timeAdapter_min;
     int usePoints;
-    int orgPoints;
+    public static int orgPoints;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcanrent);
