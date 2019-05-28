@@ -189,7 +189,12 @@ public class pickup extends AppCompatActivity implements OnMapReadyCallback {
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
         for(final Marker marker:markerList){
             final int index = markerList.indexOf(marker);
-            marker.setIcon(MarkerIcons.YELLOW);
+            if(Integer.parseInt(pointList.get(index)) < 10)
+                marker.setIcon(MarkerIcons.GREEN);
+            else if(Integer.parseInt(pointList.get(index)) < 20)
+                marker.setIcon(MarkerIcons.YELLOW);
+            else
+                marker.setIcon(MarkerIcons.RED);
             marker.setMap(naverMap);
             // 각 마커에 대한 오토바이 픽업 요청 승인하기
             marker.setOnClickListener(new Overlay.OnClickListener() {

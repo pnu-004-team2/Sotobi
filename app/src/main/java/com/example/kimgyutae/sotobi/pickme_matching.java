@@ -42,6 +42,8 @@ public class pickme_matching extends AppCompatActivity {
         Lat  = intent.getStringExtra("Lat");
         Lng  = intent.getStringExtra("Lng");
 
+        Toast.makeText(getApplicationContext(), "번호를 누르시면 전화됩니다!", Toast.LENGTH_SHORT).show();
+
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

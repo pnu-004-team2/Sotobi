@@ -301,4 +301,10 @@ public class vehicle_register extends AppCompatActivity {
         imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         return true;
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(vehicle_register.this, myinfo.class);
+        startActivity(intent);
+        finish();
+    }
 }

@@ -39,24 +39,24 @@ public class ListViewAdapter extends BaseAdapter {
         final Context context = parent.getContext();
         int viewType = getItemViewType(position) ;
 
-        if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
 
-            // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
-            ListViewItem listViewItem = listViewItemList.get(position);
-            convertView = inflater.inflate(R.layout.list_item,
-                    parent, false);
-            TextView timeTextView = (TextView) convertView.findViewById(R.id.list_time);
-            TextView howTextView = (TextView) convertView.findViewById(R.id.list_how);
-            TextView mpTextView = (TextView) convertView.findViewById(R.id.list_movingpoint);
-            TextView pointTextView = (TextView) convertView.findViewById(R.id.list_point);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
+
+        // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
+        ListViewItem listViewItem = listViewItemList.get(position);
+        convertView = inflater.inflate(R.layout.list_item,
+                parent, false);
+        TextView timeTextView = (TextView) convertView.findViewById(R.id.list_time);
+        TextView howTextView = (TextView) convertView.findViewById(R.id.list_how);
+        TextView mpTextView = (TextView) convertView.findViewById(R.id.list_movingpoint);
+        TextView pointTextView = (TextView) convertView.findViewById(R.id.list_point);
 
 
-            timeTextView.setText(listViewItem.getTime());
-            howTextView.setText(listViewItem.getHow());
-            mpTextView.setText(listViewItem.getMp());
-            pointTextView.setText(listViewItem.getpoint());
-        }
+        timeTextView.setText(listViewItem.getTime());
+        howTextView.setText(listViewItem.getHow());
+        mpTextView.setText(listViewItem.getMp());
+        pointTextView.setText(listViewItem.getpoint());
+
 
         return convertView;
     }

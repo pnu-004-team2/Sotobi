@@ -107,7 +107,7 @@
                 android:layout_weight="1"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:inputType="textNoSuggestions"
+                android:inputType="number"
                 android:background="@drawable/input_layout"
                 android:textColor="#000000"/>
         </LinearLayout>

@@ -84,7 +84,5 @@ public class history extends AppCompatActivity {
         history_view_request historyrequest = new history_view_request(UserID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(history.this);
         queue.add(historyrequest);
-
-
     }
 }

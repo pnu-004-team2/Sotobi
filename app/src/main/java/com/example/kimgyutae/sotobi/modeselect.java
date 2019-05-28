@@ -1,11 +1,12 @@
 
 package com.example.kimgyutae.sotobi;
 
+        import android.content.DialogInterface;
         import android.content.Intent;
         import android.os.Bundle;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
-        import android.widget.Button;
         import android.widget.ImageButton;
         import android.widget.ImageView;
         import android.widget.Toast;
@@ -49,6 +50,7 @@ public class modeselect extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         // 대여
         ImageButton rent = (ImageButton)findViewById(R.id.gotorent);
         rent.setOnClickListener(new View.OnClickListener() {
@@ -100,9 +102,27 @@ public class modeselect extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(modeselect.this, login.class);
-        startActivity(intent);
-        finish();
+        AlertDialog.Builder alert_confirm = new AlertDialog.Builder(modeselect.this);
+        alert_confirm.setMessage("로그아웃 하시겠습니다?").setCancelable(false).setPositiveButton("예",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 'YES'
+                        Intent intent = new Intent(modeselect.this, login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).setNegativeButton("아니요",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 'No'
+                        return;
+                    }
+                });
+        AlertDialog alert = alert_confirm.create();
+        alert.show();
+
     }
 
     @Override

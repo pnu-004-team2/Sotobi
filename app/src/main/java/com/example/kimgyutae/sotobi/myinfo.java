@@ -169,7 +169,6 @@ public class myinfo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(myinfo.this, history.class);
                 startActivity(intent);
-                finish();
             }
         });
 
