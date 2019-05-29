@@ -192,5 +192,8 @@
     <orderEntry type="module" module-name="mail" />
     <orderEntry type="module" module-name="additionnal" />
     <orderEntry type="module" module-name="activation" />
+    <orderEntry type="module" module-name="mail" />
+    <orderEntry type="module" module-name="additionnal" />
+    <orderEntry type="module" module-name="activation" />
   </component>
 </module>

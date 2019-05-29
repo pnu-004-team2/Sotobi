@@ -30,6 +30,8 @@ public class pickup_matching extends AppCompatActivity {
     String Lat, Lng;
     String name,phonenumber;
     String tel;
+    String match_id;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickup_matching);
@@ -47,6 +49,7 @@ public class pickup_matching extends AppCompatActivity {
                     if(success){
                         name = URLDecoder.decode(jsonResponse.getString("name"),"utf-8");
                         phonenumber = jsonResponse.getString("phonenumber");
+                        match_id = jsonResponse.getString("id");
                         tel = "tel:" + phonenumber;
 
                         TextView name_View = (TextView)findViewById(R.id.pickup_name);
@@ -105,6 +108,7 @@ public class pickup_matching extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Intent intent = new Intent(pickup_matching.this, matching_done.class);
+                                intent.putExtra("match_id", match_id);
                                 startActivity(intent);
                                 mTimer.cancel();
                                 finish();
