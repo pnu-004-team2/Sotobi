@@ -1,22 +1,33 @@
 
 package com.example.kimgyutae.sotobi;
 
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v7.app.AlertDialog;
-        import android.support.v7.app.AppCompatActivity;
-        import android.view.View;
-        import android.widget.ImageButton;
-        import android.widget.ImageView;
-        import android.widget.Toast;
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-        import com.android.volley.RequestQueue;
-        import com.android.volley.Response;
-        import com.android.volley.toolbox.Volley;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 
-        import org.json.JSONException;
-        import org.json.JSONObject;
+import com.google.firebase.messaging.RemoteMessage;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import javax.mail.Message;
+
+import static com.google.firebase.iid.FirebaseInstanceId.getInstance;
 
 /**
  * Created by KimGyuTae on 2019-04-02.
@@ -26,10 +37,74 @@ public class modeselect extends AppCompatActivity {
     public static String UserID;
     public static String Using_Point;
     public static String uPoint;
+    @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modeselect);
+
+
+        FireBaseMessagingService fbms = new FireBaseMessagingService();
+        fbms.onNewToken(UserID);
+        getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        Response.Listener<String> responseListener = new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonResponse = new JSONObject(response);
+                                    boolean success = jsonResponse.getBoolean("success");
+                                    if (!success) {
+                                    } else {
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        //Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
+
+                        tokenRegisterRequest tokenregisterrequest = new tokenRegisterRequest(UserID, token, responseListener);
+                        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
+                        queue.add(tokenregisterrequest);
+                    }
+                });
+
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    String token = jsonResponse.getString("token");
+                    if(success){
+                        // This registration token comes from the client FCM SDKs.
+                        String registrationToken = "YOUR_REGISTRATION_TOKEN";
+
+                        RemoteMessage message;
+                        message = RemoteMessage.Builder.Build;
+
+
+                        String FBresponse = FirebaseMessaging.getInstance().send(message);
+                        Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        tokenGetRequest tokengetrequest = new tokenGetRequest(UserID,responseListener);
+        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
+        queue.add(tokengetrequest);
 
         // 에러
         ImageView errorreport = (ImageView)findViewById(R.id.error_report);

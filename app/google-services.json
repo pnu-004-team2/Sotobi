@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "781855208861",
+    "firebase_url": "https://sotobi-75f7b.firebaseio.com",
+    "project_id": "sotobi-75f7b",
+    "storage_bucket": "sotobi-75f7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781855208861:android:8ef2aca07f7088e8",
+        "android_client_info": {
+          "package_name": "com.example.kimgyutae.sotobi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781855208861-jj49hons51v7nu5lcua6c2dp7rdvnr8n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kimgyutae.sotobi",
+            "certificate_hash": "13820cdb665cf56567f6660901ab35aa7991c1b8"
+          }
+        },
+        {
+          "client_id": "781855208861-tmofgr7fs570f19e5l920h9o5lgkeanf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzSKBlEwtlo76PhZ0GrDig4H22nPH9JdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781855208861-tmofgr7fs570f19e5l920h9o5lgkeanf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

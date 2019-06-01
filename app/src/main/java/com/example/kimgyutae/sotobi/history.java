@@ -71,9 +71,7 @@ public class history extends AppCompatActivity {
                         adapter.addItem(date,How,MP,Point);
                     }
 
-
                     list.setAdapter(adapter);
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();

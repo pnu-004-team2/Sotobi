@@ -42,6 +42,31 @@
         <activity android:name=".renting" />
         <activity android:name=".history" />
         <activity android:name=".vehicle_register"></activity>
+        <service
+
+            android:name=".FireBaseMessagingService">
+
+            <intent-filter>
+
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+
+            </intent-filter>
+
+        </service>
+
+
+
+        <service
+
+            android:name=".FirebaseInstanceIDService">
+
+            <intent-filter>
+
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+
+            </intent-filter>
+
+        </service>
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"

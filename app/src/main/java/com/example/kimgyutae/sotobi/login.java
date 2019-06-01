@@ -1,10 +1,9 @@
 package com.example.kimgyutae.sotobi;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -34,6 +33,8 @@ public class login extends AppCompatActivity{
 
         final EditText lg_id = (EditText)findViewById(R.id.login_id);
         final EditText lg_pw = (EditText)findViewById(R.id.login_pw);
+
+
 
         // 로그인 버튼
         final Button loginBtn = (Button)findViewById(R.id.loginBtn);
