@@ -52,21 +52,38 @@ public class pickup_matching extends AppCompatActivity {
                         phonenumber = jsonResponse.getString("phonenumber");
                         tel = "tel:" + phonenumber;
                         rating = jsonResponse.getDouble("rating");
-                        rating_result = String.format("%.1f",rating);
-                        rating_result += " / 5.0";
+                        if(rating == -1){
+                            TextView name_View = (TextView)findViewById(R.id.pickup_name);
+                            name_View.setText(name);
+                            TextView phonenumber_View = (TextView)findViewById(R.id.pickup_phone);
+                            phonenumber_View.setText(phonenumber);
+                            phonenumber_View.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+                                }
+                            });
+                            TextView rating_View = (TextView)findViewById(R.id.pickup_rating);
+                            rating_View.setText("평점기록이 없습니다.");
+                        }
+                        else{
+                            rating_result = String.format("%.1f",rating);
+                            rating_result += " / 5.0";
 
-                        TextView name_View = (TextView)findViewById(R.id.pickup_name);
-                        name_View.setText(name);
-                        TextView phonenumber_View = (TextView)findViewById(R.id.pickup_phone);
-                        phonenumber_View.setText(phonenumber);
-                        phonenumber_View.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
-                            }
-                        });
-                        TextView rating_View = (TextView)findViewById(R.id.pickup_rating);
-                        rating_View.setText(rating_result);
+                            TextView name_View = (TextView)findViewById(R.id.pickup_name);
+                            name_View.setText(name);
+                            TextView phonenumber_View = (TextView)findViewById(R.id.pickup_phone);
+                            phonenumber_View.setText(phonenumber);
+                            phonenumber_View.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+                                }
+                            });
+                            TextView rating_View = (TextView)findViewById(R.id.pickup_rating);
+                            rating_View.setText(rating_result);
+                        }
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
