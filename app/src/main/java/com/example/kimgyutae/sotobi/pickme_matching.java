@@ -33,6 +33,8 @@ public class pickme_matching extends AppCompatActivity {
     String name, phonenumber, motornumber;
     String tel;
     String match_id;
+    double rating;
+    String rating_result;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,11 @@ public class pickme_matching extends AppCompatActivity {
                         phonenumber = jsonResponse.getString("phonenumber");
                         motornumber = jsonResponse.getString("motornumber");
                         match_id = jsonResponse.getString("id");
+                        rating = jsonResponse.getDouble("rating");
+                        rating_result = String.format("%.1f",rating);
+                        rating_result += " / 5.0";
+
+
                         tel = "tel:" + phonenumber;
 
                         TextView name_View = (TextView)findViewById(R.id.pickme_name);
@@ -69,6 +76,8 @@ public class pickme_matching extends AppCompatActivity {
                         });
                         TextView bike_number_View = (TextView)findViewById(R.id.pickme_bike_number);
                         bike_number_View.setText(motornumber);
+                        TextView rating_View = (TextView)findViewById(R.id.pickme_rating);
+                        rating_View.setText(rating_result);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

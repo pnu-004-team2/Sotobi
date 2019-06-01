@@ -30,7 +30,8 @@ public class pickup_matching extends AppCompatActivity {
     String Lat, Lng;
     String name,phonenumber;
     String tel;
-    String match_id;
+    double rating;
+    String rating_result;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +50,10 @@ public class pickup_matching extends AppCompatActivity {
                     if(success){
                         name = URLDecoder.decode(jsonResponse.getString("name"),"utf-8");
                         phonenumber = jsonResponse.getString("phonenumber");
-                        match_id = jsonResponse.getString("id");
                         tel = "tel:" + phonenumber;
+                        rating = jsonResponse.getDouble("rating");
+                        rating_result = String.format("%.1f",rating);
+                        rating_result += " / 5.0";
 
                         TextView name_View = (TextView)findViewById(R.id.pickup_name);
                         name_View.setText(name);
@@ -62,6 +65,8 @@ public class pickup_matching extends AppCompatActivity {
                                 startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
                             }
                         });
+                        TextView rating_View = (TextView)findViewById(R.id.pickup_rating);
+                        rating_View.setText(rating_result);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -108,7 +113,6 @@ public class pickup_matching extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Intent intent = new Intent(pickup_matching.this, matching_done.class);
-                                intent.putExtra("match_id", match_id);
                                 startActivity(intent);
                                 mTimer.cancel();
                                 finish();

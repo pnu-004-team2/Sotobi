@@ -113,6 +113,35 @@
                 android:clickable="false"
                 android:textColor="#000000"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="상대방 평점"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5sp"
+                android:layout_weight="1.4"/>
+            <EditText
+                android:id="@+id/pickup_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLength="10"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:inputType="textNoSuggestions"
+                android:background="@drawable/input_layout"
+                android:focusable="false"
+                android:clickable="false"
+                android:textColor="#000000"/>
+        </LinearLayout>
     </LinearLayout>
     // tail
     <LinearLayout
