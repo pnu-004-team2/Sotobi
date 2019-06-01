@@ -18,7 +18,10 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,10 +31,13 @@ public class pickup_matching extends AppCompatActivity {
     Intent intent;
     Timer mTimer;
     String Lat, Lng;
-    String name,phonenumber;
+    String name,phonenumber,id;
     String tel;
     double rating;
     String rating_result;
+
+    private static final String FCM_MESSAGE_URL = "https://fcm.googleapis.com/fcm/send";
+    private static final String SERVER_KEY = "AAAAtgoztZ0:APA91bGR11-3PebRW6Pgnw0b7armEPD63nucupufYeUSnVd9Hxlyu9klN1xjjRrtY063oiPRjSYEEXyEUYH-v5OKW2dPMyQJtHyHescGqxQ6wWFu4qmLc8r6yXsdo_qPnEkcGmtgwfrK";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +57,7 @@ public class pickup_matching extends AppCompatActivity {
                         name = URLDecoder.decode(jsonResponse.getString("name"),"utf-8");
                         phonenumber = jsonResponse.getString("phonenumber");
                         tel = "tel:" + phonenumber;
+                        id = jsonResponse.getString("id");
                         rating = jsonResponse.getDouble("rating");
                         if(rating == -1){
                             TextView name_View = (TextView)findViewById(R.id.pickup_name);
@@ -83,6 +90,56 @@ public class pickup_matching extends AppCompatActivity {
                             TextView rating_View = (TextView)findViewById(R.id.pickup_rating);
                             rating_View.setText(rating_result);
                         }
+                        Response.Listener<String> responseListener = new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonResponse = new JSONObject(response);
+                                    boolean success = jsonResponse.getBoolean("success");
+                                    final String token = jsonResponse.getString("token");
+                                    if(success){
+                                        new Thread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    // FMC 메시지 생성 start
+                                                    JSONObject root = new JSONObject();
+                                                    JSONObject notification = new JSONObject();
+                                                    notification.put("content", "pick!");
+                                                    notification.put("msg", "pick!");
+                                                    notification.put("title", "승차 신청 완료! 내용을 확인하세요.");
+                                                    root.put("notification", notification);
+                                                    root.put("to", token);
+                                                    // FMC 메시지 생성 end
+
+                                                    URL Url = new URL(FCM_MESSAGE_URL);
+                                                    HttpURLConnection conn = (HttpURLConnection) Url.openConnection();
+                                                    conn.setRequestMethod("POST");
+                                                    conn.setDoOutput(true);
+                                                    conn.setDoInput(true);
+                                                    conn.addRequestProperty("Authorization", "key=" + SERVER_KEY);
+                                                    conn.setRequestProperty("Accept", "application/json");
+                                                    conn.setRequestProperty("Content-type", "application/json");
+                                                    OutputStream os = conn.getOutputStream();
+                                                    os.write(root.toString().getBytes("utf-8"));
+                                                    os.flush();
+                                                    conn.getResponseCode();
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }).start();
+
+                                        //Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        tokenGetRequest tokengetrequest = new tokenGetRequest(id,responseListener);
+                        RequestQueue queue = Volley.newRequestQueue(pickup_matching.this);
+                        queue.add(tokengetrequest);
 
                     }
                 } catch (JSONException e) {
@@ -130,6 +187,7 @@ public class pickup_matching extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Intent intent = new Intent(pickup_matching.this, matching_done.class);
+                                intent.putExtra("match_id", id);
                                 startActivity(intent);
                                 mTimer.cancel();
                                 finish();

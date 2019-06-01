@@ -2,7 +2,6 @@ package com.example.kimgyutae.sotobi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
@@ -23,15 +21,12 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-
 import javax.mail.MessagingException;
 import javax.mail.SendFailedException;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
-import static com.example.kimgyutae.sotobi.modeselect.uPoint;
 import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
+import static com.example.kimgyutae.sotobi.modeselect.uPoint;
 
 
 public class matching_done extends AppCompatActivity {

@@ -18,15 +18,11 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
 import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 import static com.example.kimgyutae.sotobi.modeselect.uPoint;
-import static com.example.kimgyutae.sotobi.rent.rLat;
-import static com.example.kimgyutae.sotobi.rent.rLong;
 import static com.example.kimgyutae.sotobi.rent_complete.bnum;
 
 public class rent_register extends AppCompatActivity {
@@ -163,9 +159,28 @@ public class rent_register extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
-                            else
-                                Toast.makeText(getApplicationContext(), "현재 장소에 대여가능한 오토바이가 없습니다.", Toast.LENGTH_SHORT).show();
+                            else {
+                                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        try {
+                                            JSONObject jsonResponse = new JSONObject(response);
+                                            boolean success = jsonResponse.getBoolean("success");
 
+                                            Intent intent = new Intent(rent_register.this, rent.class);
+                                            startActivity(intent);
+                                            finish();
+
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                };
+                                rentedRequest rentedrequest = new rentedRequest(UserID, responseListener);
+                                RequestQueue queue = Volley.newRequestQueue(rent_register.this);
+                                queue.add(rentedrequest);
+                                Toast.makeText(getApplicationContext(), "현재 장소에 대여가능한 오토바이가 없습니다.", Toast.LENGTH_SHORT).show();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

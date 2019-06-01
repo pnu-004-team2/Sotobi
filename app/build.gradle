@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.kimgyutae.sotobi"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -36,6 +36,8 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'gun0912.ted:tedpermission:1.0.3'
     implementation 'com.google.firebase:firebase-messaging:18.0.0'
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

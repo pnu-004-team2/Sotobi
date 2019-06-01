@@ -6,8 +6,8 @@ package com.example.kimgyutae.sotobi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Point;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,15 +19,23 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.InstanceIdResult;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.example.kimgyutae.sotobi.modeselect.UserID;
-import static com.example.kimgyutae.sotobi.modeselect.uPoint;
 import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
+import static com.example.kimgyutae.sotobi.modeselect.uPoint;
+import static com.google.firebase.iid.FirebaseInstanceId.getInstance;
 
 public class pickme_register extends AppCompatActivity{
+
+    private static final String FCM_MESSAGE_URL = "https://fcm.googleapis.com/fcm/send";
+    private static final String SERVER_KEY = "AAAAtgoztZ0:APA91bGR11-3PebRW6Pgnw0b7armEPD63nucupufYeUSnVd9Hxlyu9klN1xjjRrtY063oiPRjSYEEXyEUYH-v5OKW2dPMyQJtHyHescGqxQ6wWFu4qmLc8r6yXsdo_qPnEkcGmtgwfrK";
+
     Intent intent;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,11 +81,48 @@ public class pickme_register extends AppCompatActivity{
                     RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
                     queue.add(pickme_request);
 
+                    FireBaseMessagingService fbms = new FireBaseMessagingService();
+                    fbms.onNewToken(UserID);
+                    getInstance().getInstanceId()
+                            .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                                    if (!task.isSuccessful()) {
+                                        return;
+                                    }
+                                    // Get new Instance ID token
+                                    String token = task.getResult().getToken();
+
+                                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+                                            try {
+                                                JSONObject jsonResponse = new JSONObject(response);
+                                                boolean success = jsonResponse.getBoolean("success");
+                                                if (!success) {
+                                                } else {
+                                                }
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    };
+                                    //Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
+
+                                    tokenRegisterRequest tokenregisterrequest = new tokenRegisterRequest(UserID, token, responseListener);
+                                    RequestQueue queue = Volley.newRequestQueue(pickme_register.this);
+                                    queue.add(tokenregisterrequest);
+                                }
+                            });
+
                     Intent intent = new Intent(pickme_register.this, pickme_complete_ready.class);
                     intent.putExtra("Lat",Lat);
                     intent.putExtra("Lng",Lng);
                     intent.putExtra("Dest",Dest);
                     intent.putExtra("Left_Point",uPoint);
+
+                    modeselect.Psave(uPoint, Using_Point);
+
                     startActivity(intent);
                     finish();
                 }

@@ -71,6 +71,7 @@ public class login extends AppCompatActivity{
 
                                                     Intent intent = new Intent(login.this, modeselect.class);
                                                     UserID = gid;
+                                                    modeselect.save();
                                                     //Toast.makeText(getApplicationContext(), "name : "+name+ " id : " +id, Toast.LENGTH_SHORT).show();
 
                                                     login.this.startActivity(intent);

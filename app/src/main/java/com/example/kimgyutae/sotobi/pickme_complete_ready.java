@@ -3,6 +3,7 @@ package com.example.kimgyutae.sotobi;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,18 +13,12 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.naver.maps.geometry.LatLng;
-import com.naver.maps.map.overlay.Marker;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.Timer;
 import java.util.TimerTask;
-import android.support.v7.app.AlertDialog;
 
 import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
 
@@ -38,6 +33,7 @@ public class pickme_complete_ready extends AppCompatActivity {
 
         Lat  = intent.getStringExtra("Lat");
         Lng  = intent.getStringExtra("Lng");
+        modeselect.Lsave(Lat,Lng);
         String Dest  = intent.getStringExtra("Dest");
         String Left_Point  = intent.getStringExtra("Left_Point");
 
@@ -60,8 +56,6 @@ public class pickme_complete_ready extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Intent intent = new Intent(pickme_complete_ready.this, pickme_matching.class);
-                                intent.putExtra("Lat",Lat);
-                                intent.putExtra("Lng",Lng);
                                 startActivity(intent);
                                 mTimer.cancel();
                                 finish();
@@ -112,6 +106,7 @@ public class pickme_complete_ready extends AppCompatActivity {
                                 RequestQueue queue = Volley.newRequestQueue(pickme_complete_ready.this);
                                 queue.add(pickme_request);
 
+                                modeselect.Lsave("","");
                                 Intent intent = new Intent(pickme_complete_ready.this, pickme.class);
                                 startActivity(intent);
                                 mTimer.cancel();
@@ -159,6 +154,7 @@ public class pickme_complete_ready extends AppCompatActivity {
                         RequestQueue queue = Volley.newRequestQueue(pickme_complete_ready.this);
                         queue.add(pickme_request);
 
+                        modeselect.Lsave("","");
                         Intent intent = new Intent(pickme_complete_ready.this, pickme.class);
                         startActivity(intent);
                         mTimer.cancel();

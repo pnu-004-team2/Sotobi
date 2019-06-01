@@ -4,30 +4,20 @@ package com.example.kimgyutae.sotobi;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.InstanceIdResult;
-import com.google.firebase.messaging.FirebaseMessaging;
 
-import com.google.firebase.messaging.RemoteMessage;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import javax.mail.Message;
-
-import static com.google.firebase.iid.FirebaseInstanceId.getInstance;
 
 /**
  * Created by KimGyuTae on 2019-04-02.
@@ -37,76 +27,18 @@ public class modeselect extends AppCompatActivity {
     public static String UserID;
     public static String Using_Point;
     public static String uPoint;
+
+    public static SharedPreferences appData;
+
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modeselect);
 
+        appData = getSharedPreferences("appData", MODE_PRIVATE);
 
-        FireBaseMessagingService fbms = new FireBaseMessagingService();
-        fbms.onNewToken(UserID);
-        getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            return;
-                        }
-
-                        // Get new Instance ID token
-                        String token = task.getResult().getToken();
-
-                        Response.Listener<String> responseListener = new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                try {
-                                    JSONObject jsonResponse = new JSONObject(response);
-                                    boolean success = jsonResponse.getBoolean("success");
-                                    if (!success) {
-                                    } else {
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        };
-                        //Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
-
-                        tokenRegisterRequest tokenregisterrequest = new tokenRegisterRequest(UserID, token, responseListener);
-                        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
-                        queue.add(tokenregisterrequest);
-                    }
-                });
-
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    boolean success = jsonResponse.getBoolean("success");
-                    String token = jsonResponse.getString("token");
-                    if(success){
-                        /*
-                        // This registration token comes from the client FCM SDKs.
-                        String registrationToken = "YOUR_REGISTRATION_TOKEN";
-
-                        RemoteMessage message;
-                        message = RemoteMessage.Builder.Build;
-
-
-                        String FBresponse = FirebaseMessaging.getInstance().send(message);
-                        */
-                        Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        tokenGetRequest tokengetrequest = new tokenGetRequest(UserID,responseListener);
-        RequestQueue queue = Volley.newRequestQueue(modeselect.this);
-        queue.add(tokengetrequest);
+        load();
 
         // 에러
         ImageView errorreport = (ImageView)findViewById(R.id.error_report);
@@ -175,6 +107,15 @@ public class modeselect extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        String Lat  = appData.getString("Lat", "");
+        String Lng  = appData.getString("Lng", "");
+
+        if(Lat!=""&&Lng!=""){
+            Intent intent = new Intent(modeselect.this, pickme_matching.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -185,6 +126,8 @@ public class modeselect extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // 'YES'
+                        UserID = null;
+                        save();
                         Intent intent = new Intent(modeselect.this, login.class);
                         startActivity(intent);
                         finish();
@@ -220,6 +163,58 @@ public class modeselect extends AppCompatActivity {
         pointRequest pointrequest = new pointRequest(UserID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(modeselect.this);
         queue.add(pointrequest);
+    }
+
+
+    // 설정값을 저장하는 함수
+    public static void save() {
+        // SharedPreferences 객체만으론 저장 불가능 Editor 사용
+        SharedPreferences.Editor editor = appData.edit();
+
+        // 에디터객체.put타입( 저장시킬 이름, 저장시킬 값 )
+        // 저장시킬 이름이 이미 존재하면 덮어씌움
+        editor.putString("ID", UserID);
+
+        // apply, commit 을 안하면 변경된 내용이 저장되지 않음
+        editor.apply();
+    }
+
+    // 설정값을 불러오는 함수
+    public static void load() {
+        // SharedPreferences 객체.get타입( 저장된 이름, 기본값 )
+        // 저장된 이름이 존재하지 않을 시 기본값
+        String s = appData.getString("ID", "");
+        if(s.length()>4){
+            UserID = s;
+        }
+    }
+
+    // 설정값을 저장하는 함수
+    public static void Lsave(String Lat, String Lng) {
+        // SharedPreferences 객체만으론 저장 불가능 Editor 사용
+        SharedPreferences.Editor editor = appData.edit();
+
+        // 에디터객체.put타입( 저장시킬 이름, 저장시킬 값 )
+        // 저장시킬 이름이 이미 존재하면 덮어씌움
+        editor.putString("Lat", Lat);
+        editor.putString("Lng", Lng);
+
+        // apply, commit 을 안하면 변경된 내용이 저장되지 않음
+        editor.apply();
+    }
+
+    // 설정값을 저장하는 함수
+    public static void Psave(String uP, String usP) {
+        // SharedPreferences 객체만으론 저장 불가능 Editor 사용
+        SharedPreferences.Editor editor = appData.edit();
+
+        // 에디터객체.put타입( 저장시킬 이름, 저장시킬 값 )
+        // 저장시킬 이름이 이미 존재하면 덮어씌움
+        editor.putString("uP", uP);
+        editor.putString("usP", usP);
+
+        // apply, commit 을 안하면 변경된 내용이 저장되지 않음
+        editor.apply();
     }
 }
 

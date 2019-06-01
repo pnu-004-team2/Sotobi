@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
@@ -25,6 +24,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static com.example.kimgyutae.sotobi.modeselect.Using_Point;
+import static com.example.kimgyutae.sotobi.modeselect.appData;
+import static com.example.kimgyutae.sotobi.modeselect.uPoint;
 
 public class pickme_matching extends AppCompatActivity {
     Intent intent;
@@ -39,10 +40,9 @@ public class pickme_matching extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pickme_matching);
-        intent = getIntent();
 
-        Lat  = intent.getStringExtra("Lat");
-        Lng  = intent.getStringExtra("Lng");
+        Lat  = appData.getString("Lat", "");
+        Lng  = appData.getString("Lng", "");
 
         Toast.makeText(getApplicationContext(), "번호를 누르시면 전화됩니다!", Toast.LENGTH_SHORT).show();
 
@@ -61,10 +61,6 @@ public class pickme_matching extends AppCompatActivity {
                         rating = jsonResponse.getDouble("rating");
 
                         if(rating == -1){
-
-
-
-
                             TextView name_View = (TextView)findViewById(R.id.pickme_name);
                             name_View.setText(name);
                             TextView phonenumber_View = (TextView)findViewById(R.id.pickme_phone);
@@ -83,8 +79,6 @@ public class pickme_matching extends AppCompatActivity {
                         else{
                             rating_result = String.format("%.1f",rating);
                             rating_result += " / 5.0";
-
-
 
                             TextView name_View = (TextView)findViewById(R.id.pickme_name);
                             name_View.setText(name);
@@ -127,6 +121,7 @@ public class pickme_matching extends AppCompatActivity {
                             if(!success){
                                 Toast.makeText(getApplicationContext(), "상대가 취소하였습니다!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(pickme_matching.this, pickme.class);
+                                modeselect.Lsave("","");
                                 startActivity(intent);
                                 mTimer.cancel();
                                 finish();
@@ -147,8 +142,14 @@ public class pickme_matching extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
+                                if(uPoint==null || Using_Point==null){
+                                    uPoint = appData.getString("uP", "");
+                                    Using_Point = appData.getString("usP", "");
+                                }
+
                                 Using_Point = "-"+Using_Point;
                                 Intent intent = new Intent(pickme_matching.this, matching_done.class);
+                                modeselect.Lsave("","");
                                 intent.putExtra("match_id", match_id);
                                 startActivity(intent);
                                 mTimer.cancel();
@@ -224,6 +225,8 @@ public class pickme_matching extends AppCompatActivity {
                                 RequestQueue queue = Volley.newRequestQueue(pickme_matching.this);
                                 queue.add(pickme_request);
 
+                                modeselect.Lsave("","");
+
                                 Intent intent = new Intent(pickme_matching.this, pickme.class);
                                 startActivity(intent);
                                 mTimer.cancel();
@@ -273,6 +276,7 @@ public class pickme_matching extends AppCompatActivity {
 
                         Intent intent = new Intent(pickme_matching.this, pickme.class);
                         startActivity(intent);
+                        modeselect.Lsave("","");
                         mTimer.cancel();
                         finish();
                     }
