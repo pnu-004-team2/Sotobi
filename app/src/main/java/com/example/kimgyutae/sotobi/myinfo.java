@@ -113,7 +113,14 @@ public class myinfo extends AppCompatActivity {
                 EditText myinfo_pass = (EditText)findViewById(R.id.myinfo_password);
                 EditText myinfo_newPass = (EditText)findViewById(R.id.myinfo_newPass);
                 comparePass = myinfo_pass.getText().toString();
-                if(comparePass.equals(curpassword)) {
+                // 비밀번호 암호화
+                String encPass = "";
+                try {
+                    encPass = AESCipher.encrypt(comparePass);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if(encPass.equals(curpassword)) {
                     Toast.makeText(getApplicationContext(),"확인 되었습니다.", Toast.LENGTH_SHORT).show();
                     passOk = true;
                     myinfo_newPass.requestFocus();
@@ -141,7 +148,15 @@ public class myinfo extends AppCompatActivity {
                                 finish();
                             }
                         };
-                        passChangeRequest passrequest = new passChangeRequest(loginId,newpassword, responseListener);
+                        // 비밀번호 암호화
+                        String encPass = "";
+                        try {
+                            encPass = AESCipher.encrypt(newpassword);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        passChangeRequest passrequest = new passChangeRequest(loginId,encPass, responseListener);
                         RequestQueue queue = Volley.newRequestQueue(myinfo.this);
                         queue.add(passrequest);
                     }

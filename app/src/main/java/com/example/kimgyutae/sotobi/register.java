@@ -199,7 +199,17 @@ public class register extends AppCompatActivity {
                                     if(AuthDone){
                                         if(phone.length() > 0){
                                             // 서버 전송
-                                            registerRequest registerrequest = new registerRequest(email, id, pName, pw, phone, responseListener);
+
+                                            // 비밀번호 암호화
+                                            String encPass = "";
+                                            try {
+                                                encPass = AESCipher.encrypt(pw);
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                            }
+
+                                            registerRequest registerrequest = new registerRequest(email, id, pName, encPass, phone, responseListener);
+
                                             RequestQueue queue = Volley.newRequestQueue(register.this);
                                             queue.add(registerrequest);
                                         }

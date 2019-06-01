@@ -86,7 +86,14 @@ public class login extends AppCompatActivity{
                                         }
                                     };
 
-                                    loginRequest loginrequest = new loginRequest(id, password, responseListener2);
+                                    // 비밀번호 암호화
+                                    String encPass = "";
+                                    try {
+                                        encPass = AESCipher.encrypt(password);
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                    loginRequest loginrequest = new loginRequest(id, encPass, responseListener2);
                                     RequestQueue queue = Volley.newRequestQueue(login.this);
                                     queue.add(loginrequest);
 
