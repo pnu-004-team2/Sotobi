@@ -87,6 +87,7 @@ public class modeselect extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
                     String token = jsonResponse.getString("token");
                     if(success){
+                        /*
                         // This registration token comes from the client FCM SDKs.
                         String registrationToken = "YOUR_REGISTRATION_TOKEN";
 
@@ -95,6 +96,7 @@ public class modeselect extends AppCompatActivity {
 
 
                         String FBresponse = FirebaseMessaging.getInstance().send(message);
+                        */
                         Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
