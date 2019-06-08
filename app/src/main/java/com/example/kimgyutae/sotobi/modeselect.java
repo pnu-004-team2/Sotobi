@@ -121,7 +121,7 @@ public class modeselect extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder alert_confirm = new AlertDialog.Builder(modeselect.this);
-        alert_confirm.setMessage("로그아웃 하시겠습니다?").setCancelable(false).setPositiveButton("예",
+        alert_confirm.setMessage("로그아웃 하시겠습니까?").setCancelable(false).setPositiveButton("예",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

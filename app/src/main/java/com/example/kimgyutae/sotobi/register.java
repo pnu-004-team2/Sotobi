@@ -1,18 +1,15 @@
 package com.example.kimgyutae.sotobi;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -22,7 +19,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Random;
 import java.util.regex.Pattern;
 
 import javax.mail.MessagingException;
@@ -69,17 +65,17 @@ public class register extends AppCompatActivity {
 
                                 if (success) {
                                     if(input_id.length() > 4) {
-                                        Toast.makeText(getApplicationContext(), "생성 가능한 아이디 입니다", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "생성 가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
                                         idCheckValue = true;
                                         et_id.setClickable(false);
                                         et_id.setFocusable(false);
                                     }
                                     else{
-                                        Toast.makeText(getApplicationContext(), "아이디 5자 이상 입력하세요", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "아이디 5자 이상 입력하세요.", Toast.LENGTH_SHORT).show();
                                     }
 
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "아이디 중복입니다", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "아이디 중복입니다.", Toast.LENGTH_SHORT).show();
                                 }
 
                             } catch (JSONException e) {
@@ -92,7 +88,7 @@ public class register extends AppCompatActivity {
                     queue.add(dupcheckrequest);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "ID는 영문자와 숫자를 혼합하여 입력하세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "ID는 영문자와 숫자를 혼합하여 입력하세요.", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -213,19 +209,19 @@ public class register extends AppCompatActivity {
                                             RequestQueue queue = Volley.newRequestQueue(register.this);
                                             queue.add(registerrequest);
                                         }
-                                        else Toast.makeText(getApplicationContext(), "전화 번호 입력해주세요", Toast.LENGTH_SHORT).show();
+                                        else Toast.makeText(getApplicationContext(), "전화 번호 입력해주세요.", Toast.LENGTH_SHORT).show();
                                     }
-                                    else Toast.makeText(getApplicationContext(), "이메일 인증해주세요", Toast.LENGTH_SHORT).show();
+                                    else Toast.makeText(getApplicationContext(), "이메일 인증해주세요.", Toast.LENGTH_SHORT).show();
                                 }
-                                else Toast.makeText(getApplicationContext(), "이름을 올바르게 입력해주세요", Toast.LENGTH_SHORT).show();
+                                else Toast.makeText(getApplicationContext(), "이름을 올바르게 입력해주세요.", Toast.LENGTH_SHORT).show();
                             }
-                            else Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                            else Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다.", Toast.LENGTH_SHORT).show();
                         }
-                        else Toast.makeText(getApplicationContext(), "비밀번호는 대/소문자, 숫자를 혼합하여 5자이상 입력하세요", Toast.LENGTH_SHORT).show();
+                        else Toast.makeText(getApplicationContext(), "비밀번호는 대/소문자, 숫자를 혼합하여 5자이상 입력하세요.", Toast.LENGTH_SHORT).show();
                     }
-                    else Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    else Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
-                else Toast.makeText(getApplicationContext(), "아이디 중복 확인을 해주세요", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(), "아이디 중복 확인을 해주세요.", Toast.LENGTH_SHORT).show();
             }
         });
         // 취소 버튼

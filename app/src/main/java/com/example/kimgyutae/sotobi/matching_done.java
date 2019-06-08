@@ -107,7 +107,7 @@ public class matching_done extends AppCompatActivity {
             public void onClick(View view) {
 
                 mailadd = errorcontent.getText().toString();
-                mailcontent = "[Sotobi] 고장 및 에러접수 내용입니다.\n" + "접수자 : ";
+                mailcontent = "[Sotobi] 사용자신고 및 에러사항 접수 내용입니다.\n" + "접수자 : ";
                 if(mailadd.length()>0){
                     try {
                         MailSender gMailSender = new MailSender("zz5473@pusan.ac.kr", "Redsky76^");
@@ -116,8 +116,8 @@ public class matching_done extends AppCompatActivity {
                         mailcontent+="접수내용 : ";
                         mailcontent+=mailadd;
                         //GMailSender.sendMail(제목, 본문내용, 받는사람);
-                        gMailSender.sendMail("[Sotobi]고장 및 에러신고", mailcontent, "zz5473@pusan.ac.kr");
-                        Toast.makeText(getApplicationContext(), "에러신고와 평점등록이 정상접수 되었습니다.", Toast.LENGTH_SHORT).show();
+                        gMailSender.sendMail("[Sotobi]사용자신고 및 에러접수", mailcontent, "zz5473@pusan.ac.kr");
+                        Toast.makeText(getApplicationContext(), "에러사항과 평점등록이 정상접수 되었습니다.", Toast.LENGTH_SHORT).show();
                         Response.Listener<String> responseListener2 = new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -154,7 +154,7 @@ public class matching_done extends AppCompatActivity {
                                 JSONObject jsonResponse = new JSONObject(response);
                                 boolean success = jsonResponse.getBoolean("success");
 
-                                Toast.makeText(getApplicationContext(), "평점등록이 에러신고 없이 접수 되었습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "평점등록이 에러사항 없이 접수 되었습니다.", Toast.LENGTH_SHORT).show();
 
                                 finish();
 

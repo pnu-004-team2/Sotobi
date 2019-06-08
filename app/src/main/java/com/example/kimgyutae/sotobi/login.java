@@ -45,10 +45,10 @@ public class login extends AppCompatActivity{
                 final String password = lg_pw.getText().toString();
 
                 if(id.length()<1){
-                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
                 else if(password.length()<1){
-                    Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -78,7 +78,7 @@ public class login extends AppCompatActivity{
 
                                                     finish();
                                                 } else {
-                                                    Toast.makeText(getApplicationContext(), "로그인 실패! 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getApplicationContext(), "로그인 실패! 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show();
                                                 }
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
@@ -100,7 +100,7 @@ public class login extends AppCompatActivity{
                                     queue.add(loginrequest);
 
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "로그인 실패! 아이디를 확인하세요", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "로그인 실패! 아이디를 확인하세요.", Toast.LENGTH_SHORT).show();
                                 }
 
                             } catch (JSONException e) {

@@ -25,7 +25,6 @@ import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.NaverMapOptions;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
-import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
 
 import java.util.List;
@@ -112,7 +111,7 @@ public class pickme extends AppCompatActivity implements OnMapReadyCallback {
                     finish();
                 }
                 else
-                    Toast.makeText(getApplicationContext(), "승차 위치 찍어주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "승차 위치를 찍어주세요.", Toast.LENGTH_SHORT).show();
             }
         });
     }

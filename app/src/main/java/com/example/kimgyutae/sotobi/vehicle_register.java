@@ -1,6 +1,5 @@
 package com.example.kimgyutae.sotobi;
 
-import android.app.AppComponentFactory;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -278,8 +277,8 @@ public class vehicle_register extends AppCompatActivity {
                         vehicle_registerRequest Vrequest = new vehicle_registerRequest(id,company,model,number, responseListener);
                         RequestQueue queue = Volley.newRequestQueue(vehicle_register.this);
                         queue.add(Vrequest);
-                    } else  Toast.makeText(getApplicationContext(), "오토바이 번호를 입력해주세요", Toast.LENGTH_SHORT).show();
-                } else  Toast.makeText(getApplicationContext(), "오토바이 모델을 선택해주세요", Toast.LENGTH_SHORT).show();
+                    } else  Toast.makeText(getApplicationContext(), "오토바이 번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                } else  Toast.makeText(getApplicationContext(), "오토바이 모델을 선택해주세요.", Toast.LENGTH_SHORT).show();
             }
         });
 

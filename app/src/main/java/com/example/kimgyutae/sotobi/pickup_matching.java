@@ -236,7 +236,7 @@ public class pickup_matching extends AppCompatActivity {
             public void onClick(View view) {
 
                 AlertDialog.Builder alert_confirm = new AlertDialog.Builder(pickup_matching.this);
-                alert_confirm.setMessage("승차 취소를 하시겠습니다?").setCancelable(false).setPositiveButton("예",
+                alert_confirm.setMessage("승차 취소를 하시겠습니까?").setCancelable(false).setPositiveButton("예",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -283,7 +283,7 @@ public class pickup_matching extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder alert_confirm = new AlertDialog.Builder(pickup_matching.this);
-        alert_confirm.setMessage("승차 취소를 하시겠습니다?").setCancelable(false).setPositiveButton("예",
+        alert_confirm.setMessage("승차 취소를 하시겠습니까?").setCancelable(false).setPositiveButton("예",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
