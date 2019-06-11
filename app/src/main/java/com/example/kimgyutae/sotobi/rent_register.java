@@ -94,13 +94,15 @@ public class rent_register extends AppCompatActivity {
         left_point.setText(uPoint);
         orgPoints = Integer.parseInt(uPoint);
 
+        final calculate_point cp = new calculate_point(orgPoints);
+
         spinner_hour.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int rent = 0;
                 rent = (spinner_hour.getSelectedItemPosition()*6) + spinner_min.getSelectedItemPosition();
                 rent_point.setText(String.valueOf(rent));
-                usePoints = orgPoints - rent;
+                usePoints = cp.rent_calculate_point(rent);
             }
 
             @Override
